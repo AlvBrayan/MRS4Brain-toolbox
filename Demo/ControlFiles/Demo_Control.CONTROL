@@ -1,0 +1,38 @@
+ $LCMODL
+ owner= 'Center for Biomedical Imaging, Lausanne'
+ key= 210387309
+ title= '@FILENAME@  ($(date +"%x %r %Z"))'
+ savdir= 'Z:\Brayan\Matlab Codes\LCModel\lcmodelmodelfiles\saved'
+ atth2o= 0.2434
+ attmet= 0.3364
+ chcomb= 'GPC+PCho' 'NAA+NAAG' 'Glu+Gln' 'Cr+PCr'
+ chomit= '-CrCH2' 'Gua' 'Ser' 'Lip13a' 'Lip13b' 'Lip09' 'MM09' 'Lip20' 'MM20' 'MM12' 'MM14' 'MM17' 'Ace' 'Cit' 'bHB'
+ deltat= 1.40e-04
+ dkntmn= 0.25
+ degppm= 0
+ sddegp= 0
+ dgppmn= -5
+ dgppmx= 5
+ dows= T
+ dorefs = F
+ lcoord=9
+ ltable= 7
+ filtab= '$1/tables/@FILENAME@.table'
+ filcoo= '$1/@FILENAME@.coord'
+ filbas= '/home/dunja/.lcmodel/basis-sets/14T_SIM_MRSI_Dunja_sim_main_MRSI_MM_3.BASIS'
+ filh2o= '$1/@FILENAME@w.RAW'
+ filps= '$1/@FILENAME@.ps'
+ filraw= '$1/@FILENAME@.RAW'
+ hzpppm= 599.419
+ neach= 999
+ namrel='Cr+PCr'
+ conrel=8
+ nomit= 15
+ nunfil= 1024
+ ppmend= 0.2
+ ppmst= 4.0
+ wconc= 44444.
+ hwdwat= 0.5
+ $END"
+
+
