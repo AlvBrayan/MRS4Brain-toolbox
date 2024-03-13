@@ -1,0 +1,84 @@
+ LCModel (Version 6.3-1N)
+ Slice_N1@21_22  02-Jun-2023 14:37:28
+
+$$CONC 27 lines in following concentration table = NCONC+1
+    Conc.  %SD /Cr+PCr  Metabolite                                         
+ 2.73E-06  13% 4.5E-04 Mac                                                 
+ 2.46E-02  26%   4.027 Cr                                                  
+ 2.43E-02  25%   3.973 PCr                                                 
+ 5.17E-02  15%   8.452 Ins                                                 
+ 7.84E-02   8%  12.816 NAA                                                 
+ 5.92E-02  12%   9.687 Tau                                                 
+    0.000 999%   0.000 PCho                                                
+ 6.87E-03  26%   1.123 GPC                                                 
+ 6.45E-02  14%  10.550 Glu                                                 
+ 2.22E-02  30%   3.625 Gln                                                 
+ 5.38E-03 120%   0.880 Ala                                                 
+ 2.94E-02  42%   4.805 Asc                                                 
+ 7.78E-03  83%   1.273 Asp                                                 
+ 1.49E-03 237%   0.244 GABA                                                
+ 6.10E-03  68%   0.998 Glc                                                 
+ 5.95E-03  62%   0.973 GSH                                                 
+    0.000 999%   0.000 Lac                                                 
+ 1.02E-03 445%   0.166 NAAG                                                
+    0.000 999%   0.000 PE                                                  
+ 6.87E-03  26%   1.123 GPC+PCho                                            
+ 7.94E-02  10%  12.983 NAA+NAAG                                            
+ 8.67E-02  12%  14.174 Glu+Gln                                             
+ 4.89E-02  11%   8.000 Cr+PCr                                              
+ 7.94E-02  10%  12.983 NAA+NAAG                                            
+ 4.89E-02  11%   8.000 Cr+PCr                                              
+ 8.67E-02  12%  14.174 Glu+Gln                                             
+
+$$MISC  6 lines in following misc. output table
+  FWHM = 0.023 ppm    S/N =   4                                            
+  Data shift = 0.029 ppm                                                   
+  Ph:  22 deg     -14.0 deg/ppm                                            
+  alphaB,S = 3.1E+01,   1.2E+01                                            
+   18 spline knots.   Ns = 5(1)                                            
+   2 inflections.     1 extrema                                            
+
+$$DIAG  4 lines in following diagnostic table:
+   1 info      STARTV 20                                                  
+   7 info's    RFALSI 11                                                  
+   3 info's    RFALSI  4                                                  
+   1 info      TWOREG  8                                                  
+
+$$INPU 37 lines in following table of input changes:
+ hwdwat= 0.5                                                              
+ wconc= 810.                                                              
+ ppmst= 4.0                                                               
+ ppmend= 0.2                                                              
+ nunfil= 1024                                                             
+ nomit= 15                                                                
+ conrel=8                                                                 
+ namrel='Cr+PCr'                                                          
+ neach= 999                                                               
+ hzpppm= 599.419                                                          
+ filraw= 'Z:\Brayan\Data Processing\31052022_NewB                         
+   asis_1avgT1\Slice_N1\Data\Slice_N1@21_22.RAW'                          
+ filps= 'Z:\Brayan\Data Processing\31052022_NewBa                         
+   sis_1avgT1\Slice_N1\Data\Slice_N1@21_22.ps'                            
+ filh2o= 'Z:\Brayan\Data Processing\31052022_NewB                         
+   asis_1avgT1\Slice_N1\Data\Slice_N1@21_22w.RAW'                         
+ filbas= 'Y:\TE=1300microsec_Basis_16052023\14T_S                         
+   IM_MRSI_Dunja_Brayan_TE=1300microsec_test.BASI                         
+   S'                                                                     
+ filcoo= 'Z:\Brayan\Data Processing\31052022_NewB                         
+   asis_1avgT1\Slice_N1\Data\Slice_N1@21_22.coord                         
+   '                                                                      
+ filtab= 'Z:\Brayan\Data Processing\31052022_NewB                         
+   asis_1avgT1\Slice_N1\Data\tables\Slice_N1@21_2                         
+   2.table'                                                               
+ ltable= 7                                                                
+ lcoord=9                                                                 
+ dows= T                                                                  
+ dkntmn= 0.25                                                             
+ deltat= 1.40e-04                                                         
+ chomit= '-CrCH2' 'Gua' 'Ser' 'Lip13a' 'Lip13b' '                         
+   Lip09' 'MM09' 'Lip20' 'MM20' 'MM12' 'MM14' 'MM                         
+   17' 'Ace' 'Cit' 'bHB'                                                  
+ chcomb= 'GPC+PCho' 'NAA+NAAG' 'Glu+Gln' 'Cr+PCr'                         
+ atth2o= 1.0                                                              
+ savdir= 'Z:\Brayan\Matlab Codes\LCModel\lcmodelm                         
+   odelfiles\saved'                                                       
