@@ -1,0 +1,14 @@
+##TITLE=Parameter List, ParaVision 360 V1.1
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums
+$$ 2022-05-31 14:46:11.688 +0200  cristina@cibmscannerd
+$$ /opt/nmrdata/user/Cristina/data/20220531_122600_MRSI_Rat_Reproducibility_31052022_MRSI_Rat_Reproducibility_31052022_1_1/21/pdata/2/id
+$$ process /opt/PV-360.1.1/prog/bin/parxserver
+##$DATASET_KEY=( 65 )
+<2.16.756.5.5.100.8323328.22134.1654001171.2596>
+##$DATASET_Modality=MR_Modality
+##END=
+$$ File finished by PARX at 2022-05-31 14:46:11.688 +0200
