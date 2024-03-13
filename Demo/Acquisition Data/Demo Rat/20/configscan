@@ -1,0 +1,104 @@
+##TITLE=Parameter List, ParaVision 360 V1.1
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums, RLE encoded arrays, symbol visibility
+$$ 2022-05-31 14:19:25.681 +0200  cristina@cibmscannerd
+$$ /opt/nmrdata/user/Cristina/data/20220531_122600_MRSI_Rat_Reproducibility_31052022_MRSI_Rat_Reproducibility_31052022_1_1/20/configscan
+$$ process /opt/PV-360.1.1/prog/bin/parxserver
+##$CONFIG_SCAN_version=1
+##$AdjConfigurationMode=( <MRI_TxSuc> , <MRI_TxSuc> )
+##$AdjListPerScan=( 4 )
+(<ATS_Scan>, <ATS Position>, <Retrieves or Sets ATS Position for Current Scan>
+, <#METHOD#>, <>, <>, study_result, Yes, Yes, <>, HANDLE_ACQUISITION, No) 
+(<SHIM_Scan>, <Scan Shim>, <Calculating shims ...>, <ADJ_SHIM_scan>, <>, <>, 
+scan_result, Yes, Yes, <>, HANDLE_ACQUISITION, No) (<ArrayPhase>, <Rx Array 
+Phases>, <Adjustment of phase correction for array reconstruction>, <#METHOD#>
+, <>, <03-111Bruker:CSI>, scan_result, No, Yes, <>, HANDLE_ACQUISITION, Yes) 
+(<RCVR_Standard>, <Receiver Gain>, <Setting Receiver Gain ...>, <#METHOD#>, <>
+, <>, scan_result, Yes, Yes, <>, HANDLE_ACQUISITION, Yes)
+##$AdjListOnDemand=( 3 )
+(<TRANSM_Standard>, <Reference Power>, <Setting TX Reference Power ...>, 
+<ADJ_REF_POW_TxSuc>, <>, <>, study_result, Yes, Yes, <>, HANDLE_ACQUISITION, 
+Yes) (<WOBBLE_Standard>, <Wobble Adj.>, <Tuning & matching the coil ...>, 
+<ADJ_WOBBLE>, <>, <>, study_result, Yes, No, <>, HANDLE_ACQUISITION, Yes) 
+(<B0Map_Standard>, <B0 Map>, <Measuring B0 map ...>, <ADJ_B0MAP>, <>, <>, 
+study_result, Yes, Yes, <>, HANDLE_ACQUISITION, Yes)
+##$CONFIG_SCAN_coil_configuration=( 65 )
+<2.16.756.5.5.100.9223372038154968522.32918.1568795697.9>
+##$CONFIG_SCAN_coil_table=( 10240 )
+<$Bis,1,20191011,2048,COILTABLE,1#$Name,1H-QSurf_Rat#$Id,1.0,
+2.16.756.5.5.100.9223372038154968522.32918.1568795697.9,,0#$PMap,2.0,1,
+QRES_Rat,Lausanne,SU001,1,,0,TR 1H#$PCAuxInfo,3.0,1,1,,PreampProbe,3,1,0,
+PreampProbe,3,1,0#$PCAuxInfo,3.0,1,2,,PreampProbe,4,1,90,PreampProbe,4,1,
+0#$EndBis, BE, A5#>
+##$CONFIG_SCAN_coils=( 1, 10240 )
+<$Bis,1,20210118,2048,PICS,6#\
+$Prd,SU001,1,,,Lausanne,0#\
+$Nam,QRES_Rat#\
+$PComp,1.0,MRI,,600#\
+$PType,1.0,MRI#\
+$PACoi,2.0,2#\
+$PMRI,1.1,Surface,1,1,,,#\
+$PChan,3.0,0,T/R,1H#\
+$PCoil,3.0,1,1,0,0#\
+$PCoil,3.0,2,1,0,0#\
+$PCConn,2.0,1,,1,rx1,1,rx1,,,,,,,,,#\
+$PCConn,2.0,2,,1,rx2,1,rx2,,,,,,,,,#\
+$PPwNuc,1.0,0,200.000000,1,200.000000,5.000000#\
+$EndBis,9D,FD#>
+##$CONFIG_SCAN_operation_mode=( <$Bis,1,20210722,2048,ROUTING,2#$Name,[1H] 
+TX/RX Surface Array#$OpMode,1.0,D/A,
+2.16.756.5.5.100.9223372038154968522.32918.1568795697.9#$TxCoil,1.0,1,
+QRES_Rat,Lausanne,SU001,1,1-2#$RxCoil,1.0,1,QRES_Rat,Lausanne,SU001,1,
+1-2#$RfConn,1.0, Chan,1, Nuc,1H#$RfConn,1.0, Chan,1, TxSgu,2/3#$RfConn,1.0, 
+TxSgu,2/3, Amp,2/3#$RfConn,1.0, Amp,2/3, TxPreamp,3/4#$RfConn,1.0, Chan,1, 
+RxSgu,2/3#$RfConn,1.0, RxSgu,2/3, Rec,2/3#$RfConn,1.0, Rec,2/3, RxPreamp,
+3/4#$RfDevProp,1.0, Amp,2/3, HpMode,On#$RfDevProp,1.0, Amp,2, OutSwitchPos,
+1#$RfDevProp,1.0, Amp,3, OutSwitchPos,1##$EndBis,2A,7D#> , <[1H] TX/RX 
+Surface Array> )
+##$CONFIG_SCAN_receive_coil_select=( 2 )
+Yes Yes
+##$CONFIG_SCAN_transmit_coil_select=( 2 )
+Yes Yes
+##$CONFIG_SCAN_RxCoilsSelect=( 1, 2 )
+1 1
+##$CONFIG_SCAN_TxCoilsSelect=( 1, 2 )
+1 1
+##$CONFIG_SCAN_gradient_system=( 10240 )
+<$Bis,1,20080411,2048,GRADSYS,1#$Production,1861554,6383,00,00,RRI,
+20190426#$Name,BFG240-120-S12B#$GradSystem,1.0,21,S116,0,,1#$GradTempSensor,
+1.0,1,PT100,65#$GradTempSensor,1.0,2,PT100,65#$GradTempSensor,1.0,3,PT100,
+65#$GradTempSensor,1.0,4,PT100,65#$GradTempSensor,1.0,5,PT100,
+65#$GradTempSensor,1.0,6,PT100,65#$GradCoil,1.0,X,S,1630,0.15,,700,500,
+1490#$GradCoil,1.0,Y,S,1830,0.167,,700,500,1516#$GradCoil,1.0,Z,S,1332,0.122,,
+700,500,1523#$EndBis,D2,1E#>
+##$CONFIG_SCAN_shim_system=( 10240 )
+<$Bis,1,20080411,2048,SHIMSYS,1#$Production,1861554,6383,00,00,RRI,
+20190426#$Name,BFG240-120-S12B#$ShimSystem,1.0,21,S116,12,#$ShimTempSensor,
+1.0,,,#$ShimCoil,1.0,1,3.2,100,10,#$ShimCoil,1.0,2,0.4,100,10,#$ShimCoil,1.0,
+3,0.4,100,10,#$ShimCoil,1.0,4,1.4,100,10,#$ShimCoil,1.0,5,1.4,100,10,
+#$ShimCoil,1.0,6,3.4,100,10,#$ShimCoil,1.0,7,0.8,100,10,#$ShimCoil,1.0,8,0.8,
+100,10,#$ShimCoil,1.0,9,0.3,100,10,#$ShimCoil,1.0,10,0.3,100,10,#$ShimCoil,
+1.0,11,0.6,100,10,#$ShimCoil,1.0,12,0.6,100,10,#$ShimFunction,1.0,1,Z2,2,
+225#$ShimFunction,1.0,2,ZX,2,80#$ShimFunction,1.0,3,ZY,2,80#$ShimFunction,1.0,
+4,2XY,2,31.6#$ShimFunction,1.0,5,X2-Y2,2,31.6#$ShimFunction,1.0,6,Z3,3,
+15#$ShimFunction,1.0,7,Z2X,3,2.5#$ShimFunction,1.0,8,Z2Y,3,2.5#$ShimFunction,
+1.0,9,Z(X2-Y2),3,1.2#$ShimFunction,1.0,10,XYZ,3,1.2#$ShimFunction,1.0,11,X3,3,
+1#$ShimFunction,1.0,12,Y3,3,1#$ShimMatrix,1.0,1,1,1.0#$ShimMatrix,1.0,2,2,
+1.0#$ShimMatrix,1.0,3,3,1.0#$ShimMatrix,1.0,4,4,1.0#$ShimMatrix,1.0,5,5,
+1.0#$ShimMatrix,1.0,6,6,1.0#$ShimMatrix,1.0,7,7,1.0#$ShimMatrix,1.0,8,8,
+1.0#$ShimMatrix,1.0,9,9,1.0#$ShimMatrix,1.0,10,10,1.0#$ShimMatrix,1.0,11,11,
+1.0#$ShimMatrix,1.0,12,12,1.0#$EndBis,3B,C9#>
+##$ACQ_status=( 128 )
+<RRI_1861554_6383>
+##$SHIM_status_check_sum=479065
+$$ @vis= CONFIG_SCAN CONFIG_SCAN_version ADJUSTMENT_GROUP AdjListPerScan
+$$ @vis= AdjListOnDemand CONFIG_SCAN_COIL_GROUP CONFIG_SCAN_coil_table
+$$ @vis= CONFIG_SCAN_coils CONFIG_SCAN_operation_mode
+$$ @vis= CONFIG_SCAN_receive_coil_select CONFIG_SCAN_transmit_coil_select
+$$ @vis= CONFIG_SCAN_RxCoilsSelect CONFIG_SCAN_TxCoilsSelect ACQ_status
+$$ @vis= SHIM_status_check_sum
+##END=
+$$ File finished by PARX at 2022-05-31 14:19:25.681 +0200

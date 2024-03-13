@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (c) 2010-2018 Bruker BioSpin MRI GmbH. All Rights Reserved.
+$Id$
+Description: Report template for Shim Calculation.
+-->
+
+<article xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="en">
+    <info>
+        <title>Shim Calculation</title>
+        <subtitle>Protocol "T2_TurboRARE_6_54K_180121"</subtitle>
+<publisher>
+    <publishername>Bruker BioSpin MRI GmbH</publishername>
+    <address>
+        <street>Rudolf-Plank-Str. 23</street>
+        <postcode>D-76275</postcode> 
+        <city>Ettlingen</city> 
+        <country>Germany</country>
+        <phone>+49 721 5161-6500</phone>
+        <email>mri@bruker.com</email>
+    </address>
+</publisher>
+<copyright>
+    <year>2018</year>
+    <holder>Bruker BioSpin MRI GmbH</holder>
+</copyright>
+<releaseinfo>ParaVision 360 V1.1</releaseinfo>
+    </info>
+    <section>
+        <title>System and Acquisition Information</title>
+<table>
+    <title>System Information</title>
+    <tgroup cols="2">
+    <colspec colnum="1" colwidth="200" align="left"/>
+        <tbody>
+            <row>
+                <entry>Institution</entry>
+                <entry>EPFL Lausanne</entry>
+            </row>
+            <row>
+                <entry>System Name</entry>
+                <entry>BAP141/26</entry>
+            </row>
+            <row>
+                <entry>Electronic System</entry>
+                <entry>AVANCE NEO</entry>
+            </row>
+            <row>
+                <entry>Software Version</entry>
+                <entry>PV-360.1.1</entry>
+            </row>
+            <row>
+                <entry>Field Strength</entry>
+                <entry>14.078 T</entry>
+            </row>
+            <row>
+                <entry>Frequency</entry>
+                <entry>599.42 MHz</entry>
+            </row>
+        </tbody>
+    </tgroup>
+</table>
+<table>
+    <title>Gradient Hardware Information</title>
+    <tgroup cols="2">
+    <colspec colnum="1" colwidth="200" align="left"/>
+        <tbody>
+            <row>
+                <entry>Gradient Coil</entry>
+                <entry>BFG240-120-S12B (RRI_1861554_6383)</entry>
+            </row>
+            <row>
+                <entry>Gradient Amplifier Type</entry>
+                <entry>BGA</entry>
+            </row>
+            <row>
+                <entry>Gradient Power Supplies</entry>
+                <entry>IECO_300A_500V</entry>
+            </row>
+        </tbody>
+    </tgroup>
+</table>
+        <para>
+            Shim chain identifier: 
+        </para>
+        <para> BFG240-120-S12B (RRI 1861554/6383).479065.no </para>
+        <para> 
+            Parameter that determine the shim chain identifier are marked with a (*). 
+        </para>
+       <table>
+            <title>Shim Hardware Information</title>
+            <tgroup cols="2">
+                <colspec colnum="1" colwidth="200" align="left"/>
+                <tbody>
+                    <row>
+                        <entry>Shim Coil (*)</entry>
+                        <entry>BFG240-120-S12B (RRI_1861554_6383)</entry>
+                    </row>
+                    <row>
+                        <entry>Shim Power Supply</entry>
+                        <entry>BSPS_66010</entry>
+                    </row> 
+                    <row>
+                        <entry>
+                            Total SPS ouptut channels (*)
+                        </entry>
+                        <entry>
+                            1
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>Shim Unit Type (*)</entry>
+                        <entry>GTCUBE</entry>
+                    </row>
+                    <row>
+                        <entry>Max Shim Value / Hardware units (*)</entry>
+                        <entry>131,070</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Shim Power Supply Output Channels</title>
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry> SPS Chan To Coil List (*) </entry>
+                        <entry> SPS Chan To Coil Imax (*) </entry>
+                        <entry> SPS Chan To Coil Umax (*) </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry> Shim_Z2  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Shim_YZ  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Shim_XZ  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Not Connected  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Not Connected  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Not Connected  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Not Connected  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Not Connected  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Not Connected  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Shim_X2_Y2  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Shim_2XY  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                    <row>
+                        <entry> Not Connected  </entry>
+                        <entry> 10 A </entry>
+                        <entry> 60 V </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title>Shim Coil Properties</title>
+            <tgroup cols="4" align="center">
+                <colspec colnum="1" colname="col1" colwidth="200"/>
+                <colspec colnum="2" colname="col2" colwidth="700"/>
+                <colspec colnum="3" colname="col3" />
+                <colspec colnum="4" colname="col4" />
+                <thead>
+                    <row>
+                        <entry> Coil Name </entry>
+                        <entry> Coil Identifier </entry>
+                        <entry> SPS Index </entry>
+                        <entry> SPS Imax/A </entry>                        
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry> Z0</entry>    
+                        <entry> Ch1: Spf17 FRED</entry>
+                        <entry> 0</entry>
+                        <entry> 1</entry>
+                    </row>
+                    <row>
+                        <entry> Z</entry>    
+                        <entry> Ch2: Spf3 Gradient Z</entry>
+                        <entry> 0</entry>
+                        <entry> 3.596</entry>
+                    </row>
+                    <row>
+                        <entry> Z2</entry>    
+                        <entry> Ch3: Spf4 SPS1,1 CoilPins=B1-B2 CoilId=1</entry>
+                        <entry> 1</entry>
+                        <entry> 10</entry>
+                    </row>
+                    <row>
+                        <entry> X</entry>    
+                        <entry> Ch4: Spf1 Gradient X</entry>
+                        <entry> 0</entry>
+                        <entry> 3.622</entry>
+                    </row>
+                    <row>
+                        <entry> Y</entry>    
+                        <entry> Ch5: Spf2 Gradient Y</entry>
+                        <entry> 0</entry>
+                        <entry> 3.596</entry>
+                    </row>
+                    <row>
+                        <entry> ZX</entry>    
+                        <entry> Ch6: Spf5 SPS1,3 CoilPins=C4-C5 CoilId=2</entry>
+                        <entry> 1</entry>
+                        <entry> 10</entry>
+                    </row>
+                    <row>
+                        <entry> ZY</entry>    
+                        <entry> Ch7: Spf6 SPS1,2 CoilPins=D1-D2 CoilId=3</entry>
+                        <entry> 1</entry>
+                        <entry> 10</entry>
+                    </row>
+                    <row>
+                        <entry> 2XY</entry>    
+                        <entry> Ch8: Spf7 SPS2,5 CoilPins=F1-F2 CoilId=4</entry>
+                        <entry> 2</entry>
+                        <entry> 10</entry>
+                    </row>
+                    <row>
+                        <entry> X2-Y2</entry>    
+                        <entry> Ch9: Spf8 SPS2,4 CoilPins=E4-E5 CoilId=5</entry>
+                        <entry> 2</entry>
+                        <entry> 10</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        
+        
+        <table>
+            <title> Gradient Hardware Components</title>
+            <tgroup cols="2">
+                <colspec colnum="1" colwidth="200" align="left"/>
+                <tbody>
+                    <row>
+                        <entry>Gradient Power Supply (*) </entry>
+                        <entry>IECO_300A_500V</entry>
+                    </row>
+                    <row>
+                        <entry>Max Current (*)</entry>
+                        <entry>300 A </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+<table>
+    <title>Acquisition Information</title>
+    <tgroup cols="2">
+    <colspec colnum="1" colwidth="200" align="left"/>
+        <tbody>
+            <row>
+                <entry>Acquisition Date and Time</entry>
+                <entry>May 31, 2022 1:22:35 PM</entry>
+            </row>
+            <row>
+                <entry>Subject</entry>
+                <entry>MRSI_Rat_Reproducibility_31052022^^^^</entry>
+            </row>
+            <row>
+                <entry>Study / Expno / Procno</entry>
+                <entry>MRSI_Rat_Reproducibility_31052022 / E12 / 1</entry>
+            </row>
+        </tbody>
+    </tgroup>
+</table>
+        <para> Study Directory:</para>
+        <para> 20220531_122600_MRSI_Rat_Reproducibility_31052022_MRSI_Rat_Reproducibility_31052022_1_1 </para>
+        <table>
+            <title> Field Map </title>
+            <tgroup cols="2" align="center">
+                <colspec colnum="1" colname="col1" />
+                <colspec colnum="2" colname="col2" />
+                <thead>
+                    <row>
+                        <entry> Property </entry>
+                        <entry> Value    </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry> Expno  </entry>
+                        <entry> 900,001</entry>
+                    </row>         
+                    <row>
+                        <entry> Procno </entry>
+                        <entry> 1</entry>
+                    </row>         
+                </tbody>                       
+            </tgroup>
+        </table>
+        <table>
+            <title> Basic Shim Area </title>
+            <tgroup cols="2" align="center">
+                <colspec colnum="1" colname="col1" />
+                <colspec colnum="2" colname="col2" />
+                <thead>
+                    <row>
+                        <entry> Property </entry>
+                        <entry> Value    </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry> Shape </entry>
+                        <entry> Ellipsoid_In_GobjShape </entry>
+                    </row>         
+                    <row>
+                        <entry> Extent  +1; 1st dir</entry>
+                        <entry> 13.8 mm </entry>
+                    </row>         
+                    <row>
+                        <entry> Extent  +2; 2nd dir</entry>
+                        <entry> 8 mm </entry>
+                    </row>         
+                    <row>
+                        <entry> Extent  +3; 3rd dir</entry>
+                        <entry> 15 mm </entry>
+                    </row>         
+                    <row>
+                        <entry> Margin  +1; 1st dir</entry>
+                        <entry> 0 mm </entry>
+                    </row>         
+                    <row>
+                        <entry> Margin  +2; 2nd dir</entry>
+                        <entry> 0 mm </entry>
+                    </row>         
+                    <row>
+                        <entry> Margin  +3; 3rd dir</entry>
+                        <entry> 0 mm </entry>
+                    </row>         
+                </tbody>                       
+            </tgroup>
+        </table>
+    </section>
+    <section>
+        <title>Basic Shim Results</title>
+        <para> Status of shim calculation </para>
+        <para> Succeeded. </para>
+        <table>
+            <title> Used Pixels </title>
+            <tgroup cols="2" align="center">
+                <colspec colnum="1" colname="col1" />
+                <colspec colnum="2" colname="col2" />
+                <tbody>
+                    <row>
+                        <entry> Used Field Values  </entry>
+                        <entry> 19,428</entry>
+                    </row>         
+                    <row>
+                        <entry> Effective Volume </entry>
+                        <entry> 863.08ul</entry>
+                    </row>         
+                </tbody>                       
+            </tgroup>
+        </table>
+        <table>
+            <title>Basic Shim Vector</title>
+            <tgroup cols="4" align="center">
+                <colspec colnum="1" colname="col1" colwidth="200"/>
+                <colspec colnum="2" colname="col2" align="right"/>
+                <colspec colnum="3" colname="col3" align="right"/>
+                <colspec colnum="4" colname="col4" align="right"/>
+                <thead>
+                    <row>
+                        <entry> Coil </entry>
+                        <entry> Map Shim /% </entry>
+                        <entry> New Shim /% </entry>
+                        <entry> New Shim /A </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry> Z0</entry>    
+                        <entry> -0.000</entry>
+                        <entry> -0.034</entry>
+                        <!--
+                        <entry> -0.000</entry>
+                        -->
+                        <entry> -0.000</entry>
+                    </row>
+                    <row>
+                        <entry> Z</entry>    
+                        <entry> -0.229</entry>
+                        <entry> -6.783</entry>
+                        <!--
+                        <entry> -0.008</entry>
+                        -->
+                        <entry> -0.244</entry>
+                    </row>
+                    <row>
+                        <entry> Z2</entry>    
+                        <entry> 1.343</entry>
+                        <entry> 4.813</entry>
+                        <!--
+                        <entry> 0.134</entry>
+                        -->
+                        <entry> 0.481</entry>
+                    </row>
+                    <row>
+                        <entry> X</entry>    
+                        <entry> -1.562</entry>
+                        <entry> -1.108</entry>
+                        <!--
+                        <entry> -0.057</entry>
+                        -->
+                        <entry> -0.040</entry>
+                    </row>
+                    <row>
+                        <entry> Y</entry>    
+                        <entry> 7.401</entry>
+                        <entry> 3.197</entry>
+                        <!--
+                        <entry> 0.266</entry>
+                        -->
+                        <entry> 0.115</entry>
+                    </row>
+                    <row>
+                        <entry> ZX</entry>    
+                        <entry> 2.069</entry>
+                        <entry> -6.016</entry>
+                        <!--
+                        <entry> 0.207</entry>
+                        -->
+                        <entry> -0.602</entry>
+                    </row>
+                    <row>
+                        <entry> ZY</entry>    
+                        <entry> -5.865</entry>
+                        <entry> 31.704</entry>
+                        <!--
+                        <entry> -0.586</entry>
+                        -->
+                        <entry> 3.170</entry>
+                    </row>
+                    <row>
+                        <entry> 2XY</entry>    
+                        <entry> 3.754</entry>
+                        <entry> 1.551</entry>
+                        <!--
+                        <entry> 0.375</entry>
+                        -->
+                        <entry> 0.155</entry>
+                    </row>
+                    <row>
+                        <entry> X2-Y2</entry>    
+                        <entry> 1.820</entry>
+                        <entry> 13.710</entry>
+                        <!--
+                        <entry> 0.182</entry>
+                        -->
+                        <entry> 1.371</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <table>
+            <title> Basic Shim Statistics </title>
+            <tgroup cols="3" align="center">
+                <colspec colnum="1" colname="col1" />
+                <colspec colnum="2" colname="col2" />
+                <colspec colnum="3" colname="col3" />
+                <thead>
+                    <row>
+                        <entry> Property </entry>
+                        <entry>  Map </entry>
+                        <entry>
+			Basic Shim
+			(est.)
+			</entry>
+                    </row>
+                </thead>               
+                <tbody>
+                    <row>
+                        <entry> Mean/Hz  </entry>
+                        <entry> -46.4</entry>
+                        <entry> 0.0</entry>
+                    </row>         
+                    <row>
+                        <entry> Standard Deviation /Hz  </entry>
+                        <entry> 105.3</entry>
+                        <entry> 33.3</entry>
+                    </row>         
+                    <row>
+                        <entry> Min/Hz  </entry>
+                        <entry> -492.9</entry>
+                        <entry> -240.5</entry>
+                    </row>         
+                    <row>
+                        <entry> Max/Hz  </entry>
+                        <entry>	144.6</entry>
+                        <entry>	162.5</entry>
+                    </row>         
+                    <row>
+                        <entry> Absolute Dev./Hz  </entry>
+                        <entry> 86.6</entry>
+                        <entry> 20.6</entry>
+                    </row>         
+                    <row>
+                        <entry> Outliers Low/High  </entry>
+                        <entry> 
+                            85  /
+                            0  
+                        </entry>
+                        <entry> 
+                            408  /
+                            94  
+                        </entry>                        
+                    </row>         
+                </tbody>                       
+            </tgroup>
+        </table>  
+        <figure>
+            <title>
+                Histogramm of measured Field Values
+            </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata align="center"
+                               width="5in"
+                               format="svg"
+                               fileref="Figures/Figure_1.svg"
+                        />
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>
+                Histogramm of Predicted Field Values
+            </title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata align="center"
+                               width="5in"
+                               format="svg"
+                               fileref="Figures/Figure_2.svg"
+                        />
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+ 
+      
+</article>
