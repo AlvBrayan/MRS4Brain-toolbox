@@ -1,6 +1,8 @@
 Non-Commercial License Agreement
 
-This license is a legally binding agreement between Ecole Polytechnique Federale de Lausanne (EPFL), Bâtiment CE – 3.316, Station 1, CH - 1015 Lausanne, Switzerland (“the Licensor”) and licensee end user (“the Licensee”) setting forth the terms and conditions governing the use and operation of EPFL’s proprietary computer software products called “MRS4Brain toolbox” available under this GitHub repository (the “Program”). By downloading and installing, copying or otherwise using the Program, and/or otherwise accepting this License, the Licensee agrees to be bound by the terms and conditions of this License. If the Licensee does not agree to or accept the terms of this Agreement, the Licensee may not access or use the Program.
+This license is a legally binding agreement between Ecole Polytechnique Federale de Lausanne (EPFL), Bâtiment CE – 3.316, Station 1, CH - 1015 Lausanne, Switzerland (“the Licensor”) and licensee end user (“the Licensee”) setting forth the terms and conditions governing the use and operation of EPFL’s proprietary computer software products called “MRS4Brain toolbox” available under this GitHub repository (the “Program”).
+By downloading and installing, copying or otherwise using the Program, and/or otherwise accepting this License, the Licensee agrees to be bound by the terms and conditions of this License. 
+If the Licensee does not agree to or accept the terms of this Agreement, the Licensee may not access or use the Program.
 	
 The Licensee will access to the source code or a compiled version of the Program, under the following conditions (hereafter: the “Agreement”):
 
