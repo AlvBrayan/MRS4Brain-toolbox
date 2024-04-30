@@ -48,9 +48,9 @@ try
     cd(obj.tmp_registration_path)
     start_docker = '';
     if strcmp(computer,'MACI64')
-        start_docker = '/usr/local/bin/docker run -v "./tmp_registration:/data" --rm antsx/ants';
+        start_docker = '/usr/local/bin/docker run -v "./tmp_registration:/data" --rm antsx/ants:v2.5.0';
     elseif strcmp(computer,'PCWIN64')
-        start_docker = 'docker run -v ".\tmp_registration:/data" antsx/ants';
+        start_docker = 'docker run -v ".\tmp_registration:/data" antsx/ants:v2.5.0';
     end
     disp([start_docker ' /opt/ants/bin/antsApplyTransforms -d 3' ...
             ' -i /data/' temp_label_fn '.nii.gz' ...
