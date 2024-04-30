@@ -126,8 +126,9 @@ for i = 1:length(obj.SVS_struct)
             processed_study.fidaprocess.fsb = fsb;
             processed_study.fidaprocess.metricb = metricb;
             processed_study.fidaprocess.badAveragesb = badAveragesb;
-
-            processed_study.params.nt = size(fidmocor,1);
+            % processed_study.params.nt = size(fidmocor,1);
+            %JM 18032024
+            processed_study.params.nt = size(fidmocor,1)*2;
             processed_study.multiplicity = size(fidmocor,1);
 
             processed_study.process.apodparam1 = zeros(1,size(fidmocor,1));
