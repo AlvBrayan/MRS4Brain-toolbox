@@ -69,6 +69,9 @@ for i = 1:length(obj.SVS_struct)
                 metric = zeros(study.multiplicity,1);
                 badAverages = [];
                 out2 = out1;
+                % JM added 19/03/2024
+                out2.fids=conj(out2.fids);
+                out2.specs=fftshift(ifft(out2.fids,[],out2.dims.t),out2.dims.t);
             end
     
             %% 4-add all the info to the Matlab study structure
@@ -77,7 +80,9 @@ for i = 1:length(obj.SVS_struct)
             processed_study.fidaprocess.fs = fs;
             processed_study.fidaprocess.metric = metric;
             processed_study.fidaprocess.badAverages = badAverages;
-            processed_study.params.nt = size(out2.fids,2);
+             % processed_study.params.nt = size(out2.fids,2);
+           %JM 18032024
+            processed_study.params.nt = processed_study.params.nt - length(badAverages);
             processed_study.multiplicity = size(out2.fids,2);
             processed_study.process.apodparam1 = zeros(1,size(out2.fids,2));
             processed_study.process.apodparam2 = zeros(1,size(out2.fids,2));
