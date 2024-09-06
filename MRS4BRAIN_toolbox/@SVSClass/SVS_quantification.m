@@ -131,9 +131,10 @@ cfile = fullfile(LCModel_results_folder,[filenameRAW,'.CONTROL']);
 fileid = fopen(cfile,'w');
 fprintf(fileid,' $LCMODL\n');
 fprintf(fileid,' ATTH2O = 1.0\n'); % attenuation of the NMR-visible water signal
-if ~svs_param.NRATIO
-    fprintf(fileid,'NRATIO = 0\n'); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
-end
+fprintf(fileid,'NRATIO = %.2f\n',svs_param.NRATIO); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
+% if ~svs_param.NRATIO
+%     fprintf(fileid,'NRATIO = 0\n'); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
+% end
 if ~svs_param.NSIMUL
     fprintf(fileid,'NSIMUL = 0\n'); % NSIMUL parameter : number of Basis Spectra that you will simulate (default = 13)
 end
@@ -161,7 +162,7 @@ if idx_ref ~= 0
 else
     fprintf(fileid,' DOWS = F\n'); % DO water scaling
 end
-fprintf(fileid,' DOREFS = F\n'); % DO Cr referencing
+fprintf(fileid,' DOREFS = T\n'); % DO Cr referencing %changed by BA 30/07/2024
 fprintf(fileid,' FWHMBA = 0.0050\n');
 fprintf(fileid,' HZPPPM = %.3f\n',study_met.resfreq); % NMRfreq
 fprintf(fileid,' LCOORD = 9\n'); % Save coord file, Y : LCOORD = 9, N : LCOORD = 0
@@ -202,3 +203,4 @@ fprintf(fileid,' $END');
 
 fclose(fileid);
 end
+end 
