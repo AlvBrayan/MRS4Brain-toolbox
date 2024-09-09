@@ -58,6 +58,14 @@ for pa = 1:qp
     if ~isfolder(directory_results)
         mkdir(directory_results)
     end
+    src_dir = dir([directory_data '\*.RAW']);
+    name_list = {src_dir.name};
+    check_fullname = name_list{1};
+    check_name_list = strsplit(check_fullname,'@');
+    check_name = check_name_list{1};
+    if ~contains(check_name,folder_name)
+        folder_name = check_name;
+    end
     % Intitialization, find N_met
     [x,y] = find(squeeze(obj.Final_mask(slice,:,:)) == 1);
     % folder_name = '1avg_1st'; % tune if not the same as the folder_name
@@ -73,6 +81,9 @@ for pa = 1:qp
             end
         end
         h = h + 1;
+        if h>length(x)
+            fid = 0;
+        end
     end
     h=h-1;
     if isfile(fullfile(directory_table,filename))
