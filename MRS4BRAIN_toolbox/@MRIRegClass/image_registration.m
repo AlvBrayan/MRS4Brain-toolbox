@@ -76,6 +76,8 @@ try
         start_docker = '/usr/local/bin/docker run -v "./tmp_registration:/data" --rm antsx/ants:v2.5.0';
     elseif strcmp(computer,'PCWIN64')
         start_docker = 'docker run -v ".\tmp_registration:/data" antsx/ants:v2.5.0';
+    elseif strcmp(computer,'GLNXA64')
+        mkdir(fullfile(obj.tmp_registration_path,'tmp_registration','data'));
     end
     [~,cmdout] = system([start_docker ' /opt/ants/bin/antsRegistrationSyNQuick.sh -d 3' ...
         ' -f /data/' image_fn '.nii.gz' ...
