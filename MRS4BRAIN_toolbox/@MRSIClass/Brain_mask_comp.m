@@ -61,7 +61,7 @@ try
             max_slice = slice_number + obj.Slice_range;
             slice = rot90(squeeze(sum(double(brain_mask(:,:,min_slice:max_slice)),3)),-1);
             slice = double(logical(slice));
-            super_image = kron(slice,ones(MatSize));
+            super_image = kron(slice,ones(MatSize(1),MatSize(2)));
             R = reshape(super_image, Nx, MatSize(1), Ny, MatSize(2));
             S = sum(sum(R,1),3)/(Nx * Ny);
             final_slice = reshape(S, MatSize(1), MatSize(2));

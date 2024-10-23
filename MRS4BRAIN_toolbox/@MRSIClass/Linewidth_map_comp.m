@@ -63,12 +63,13 @@ try
             end
         end
     
-        mean_FWHM = mean_FWHM/(sum(sum(obj.Brain_mask(ii,x,y))));
+        mean_FWHM = mean_FWHM/(sum(sum(obj.Brain_mask(ii,:,:))));
     
         ppm_map = FWHM_map/obj.acq_params.resfreq;
         mean_ppm = mean_FWHM/obj.acq_params.resfreq;
     
         obj.Linewidth_map(ii,:,:) = FWHM_map;
+        obj.avg_Linewidth(ii) = mean_FWHM;
     
         
         % Save figure on the data folder

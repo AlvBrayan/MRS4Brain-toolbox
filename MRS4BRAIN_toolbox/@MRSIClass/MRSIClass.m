@@ -12,6 +12,7 @@ classdef MRSIClass < handle
         Nslices                         % Number of MRSI slices
         Slice_range                     % Slice range from the central slice number
         Slices_number                   % MRI central slices
+        MRSI3D                          % 3D MRSI functionalities
         Lipsup = false                  % Lipid suppression enabled / disabled
         Fillgaps = false                % Fillgaps enabled / disabled
 
@@ -19,6 +20,7 @@ classdef MRSIClass < handle
         data_folder                     % Directory of the Brucker data
         metab_expnb                     % Folder with the metabolite fid
         ref_expnb                       % Folder with the reference fid
+        reco_expnb                      % Folder with the reconstruction number
         
         % Intermediate Data
         fid_mat_tkkn                    % Fid of the metabolites in Fourier domain
@@ -26,7 +28,9 @@ classdef MRSIClass < handle
         Brain_mask                      % Brain mask computed from a MRI segmentation
         Power_map                       % Powermap based on Linewidth
         Linewidth_map                   % Water Linewidth map
+        avg_Linewidth                   % Average Water Linewidth
         SNR_map                         % SNR map
+        avg_SNR                         % Average SNR
         HSVD_fid_tkkn                   % Applied custom_HSVD on metabolites fid_mat_tkkn
         HSVD_lipsup_fid_tkkn            % Applied Lipsup_MRSI on metabolites HSVD_fid_tkkn
         HSVD_lipsup_filled_fid_tkkn     % Applied Fillgaps_MRSI on metabolites HSVD__lipsup_fid_tkkn
@@ -42,15 +46,17 @@ classdef MRSIClass < handle
     methods(Access = public)
         
         % MRSIClass class constructor
-        function obj = MRSIClass(data_folder, metab_expnb, ref_expnb, ...
-                mrsi_params, Slice_range, Slices_number)
+        function obj = MRSIClass(data_folder, metab_expnb, ref_expnb, reco_expnb, ...
+                mrsi_params, Slice_range, Slices_number,mrsi3d_bool)
             obj.data_folder = data_folder;
             obj.metab_expnb = metab_expnb;
             obj.ref_expnb = ref_expnb;
+            obj.reco_expnb = reco_expnb;
             obj.Slices_number = Slices_number;
             obj.mrsi_params = mrsi_params;
             obj.Slice_range = Slice_range;
             obj.Nslices = length(Slices_number);
+            obj.MRSI3D = mrsi3d_bool;
         end
 
         varargout = check_prexisting_results(varargin);     % Check if the data have already been quantified or already saved as Raw files
