@@ -18,8 +18,11 @@
 %
 % OUTPUT :
 % msg       = Error message
-function update_px_dim(obj,G)
+function update_px_dim(obj,G,head_prone)
 % Change the pixel dimension to correspond to human brain dimensions
+if nargin < 3
+    head_prone = 0;
+end
 if nargin < 2
     G = 10;
 end
@@ -27,6 +30,10 @@ end
 info = niftiinfo(obj.Nifti_image_filename);
 % Open the image slices
 V = niftiread(info);
+
+if head_prone
+    V = V(:,end:-1:1,:);
+end
 
 info.PixelDimensions = G*info.PixelDimensions;
 

@@ -42,7 +42,7 @@ classdef MRIRegClass < handle
 
     methods(Access = public)
 
-        function obj = MRIRegClass(Nifti_image,mrireg_param,Bruker_folder,result_folder)
+        function obj = MRIRegClass(Nifti_image,mrireg_param,Bruker_folder,result_folder,head_prone)
 
             % MRI REGISTRATION PARAMETERS 
             obj.MRIReg_parameters = mrireg_param;
@@ -62,7 +62,7 @@ classdef MRIRegClass < handle
             obj.result_folder = result_folder;
             
             % CHANGE PX DIMENSION AND READ INPUT IMAGE
-            obj.update_px_dim(10);
+            obj.update_px_dim(10,head_prone);
             obj.original_image = double(niftiread(obj.Nifti_image_xG_filename));
         end
         
