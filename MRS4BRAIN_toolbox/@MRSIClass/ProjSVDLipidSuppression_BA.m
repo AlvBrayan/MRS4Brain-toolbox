@@ -2,7 +2,7 @@
 % See the LICENSE.TXT file for more details.
 
 function [mrsiDataLR_tkk,LipidFree_frr,Lipid_rrf,NBasis,...
-    LipidProj] = ProjSVDLipidSuppression_BA(~,mrsiData_tkk,LipData_tkk,mrsiReconParams,NBasis)
+    LipidProj] = ProjSVDLipidSuppression_BA(~,mrsiData_tkk,LipData_tkk,mrsiReconParams,NBasis,NameData)
  % mrsiReconParams.mrsiData dims: time-k-k
 Data_kkf = fft(permute(mrsiData_tkk,[2,3,1]),[],3);
 Data_rrf = ifft(ifft(Data_kkf,[],1),[],2);
@@ -115,4 +115,49 @@ Lipids = Vorig(:,1:Nbasis);
 Slipid = Sorig(1:Nbasis,1:Nbasis);
 
 LipidProj = Lipids*Lipids';
+if  ~isempty(NameData)
+    if exist('Lipid')
+	s=[mrsiReconParams.Log_Dir,NameData, '_Lipid'];
+	VisualizeSpectral( ifft(Lipid(low_bnd_L:high_bnd_L,:),[],1),Slipid ,s)
+    end
+
+    s=[mrsiReconParams.Log_Dir,NameData, '_Lipid_Images.ps'];
+    if exist(s);delete(s);end
+    figs=figure('visible', 'off');
+    imagesc( ~lipid_mask.*sum(abs(Lipid_rrf),3));%,[ 0, 10*mean(image2plot(:))] )
+    colormap default;colorbar;
+    title('Filtered out Lipids in Brain & Outside head')
+    print(figs, '-append', '-dpsc2', s);
+
+    imagesc( ~lipid_mask.*sum(abs(Data_rrf),3));%,[ 0, 10*mean(image2plot(:))] )
+    colormap default;colorbar;
+    title('Original Data in Brain & Outside head')
+    print(figs, '-append', '-dpsc2', s);   
+
+    imagesc( ~lipid_mask.*squeeze(sum(abs( LipidFree_frr),1)));%,[ 0, 10*mean(image2plot(:))] )
+    title('Lipid-Free Data in Brain & Outside head');
+    colormap default;colorbar;
+    print(figs, '-append', '-dpsc2', s);
+
+
+    imagesc( sum(abs(Lipid_rrf),3));%,[ 0, 10*mean(image2plot(:))] )
+    colormap default;colorbar;
+    title('Filtered out Lipids in Image')
+    print(figs, '-append', '-dpsc2', s);
+
+    imagesc( sum(abs(Data_rrf),3));%,[ 0, 10*mean(image2plot(:))] )
+    colormap default;colorbar;
+    title('Original Data in Image')
+    print(figs, '-append', '-dpsc2', s);   
+
+    imagesc( squeeze(sum(abs( LipidFree_frr),1)));%,[ 0, 10*mean(image2plot(:))] )
+    title('Lipid-Free Data in Image');
+    colormap default;colorbar;
+    print(figs, '-append', '-dpsc2', s);
+
+    imagesc( lipid_mask);%,[ 0, 10*mean(image2plot(:))] )
+    title('Lipid masks');
+    colormap default;colorbar;
+    print(figs, '-append', '-dpsc2', s);
+end
 end

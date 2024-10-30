@@ -21,6 +21,14 @@ try
         slice_tkk = obj.HSVD_fid_tkkn(:,:,:,ii); % Current slice metabolite fid
         BrainMap = squeeze(obj.Brain_mask(ii,:,:)); % Brain mask of current slice
         mrsiReconParams = obj.Create_mrsiReconParams_BA(slice_tkk,PercentThres,BrainMap);
+
+        %ADDED THE 30/10/2024
+        if ~exist([mrsiReconParams.Log_Dir '/LipidSuppression/']);mkdir([mrsiReconParams.Log_Dir '/LipidSuppression/']);end
+
+        cd([mrsiReconParams.Log_Dir '/LipidSuppression/']);
+        
+        mrsiReconParams.Log_Dir = [mrsiReconParams.Log_Dir '/LipidSuppression/'];
+        %END
         
         % Nbasis
         if(mrsiReconParams.L2SVDparams.PercentThres < 2)
@@ -29,7 +37,7 @@ try
             Nbasis = round(mrsiReconParams.L2SVDparams.PercentThres);
         end
 
-        [newMRSI_tkk,~,~,~,~] = obj.ProjSVDLipidSuppression_BA(slice_tkk,slice_tkk,mrsiReconParams,Nbasis);
+        [newMRSI_tkk,~,~,~,~] = obj.ProjSVDLipidSuppression_BA(slice_tkk,slice_tkk,mrsiReconParams,Nbasis,'LipidComponents');
 
         obj.HSVD_lipsup_fid_tkkn(:,:,:,ii) = newMRSI_tkk; % update the HSVD lipsup matrix
     end

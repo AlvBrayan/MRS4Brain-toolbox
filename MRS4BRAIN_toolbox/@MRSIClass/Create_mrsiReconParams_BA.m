@@ -5,6 +5,7 @@ function mrsiReconParams = Create_mrsiReconParams_BA(obj,mrsiData_tkk,PercentThr
 
 MatSize = obj.acq_params.matrix_sz;
 
+mrsiReconParams.Log_Dir = obj.data_folder;
 mrsiReconParams.InitialB0MapFromWater = 1; % yes / no, Compute a initial B0 map from water signal (generally 1 but might be incorrect in phantoms)
 
 mrsiReconParams.AcqDelay = obj.acq_params.acq_delay; % 0 for a Spin-echo. For FID-MRSI sequence, put the acquisition delay in second. First missing point of the FID will be predicted to correct the 1st order phase
