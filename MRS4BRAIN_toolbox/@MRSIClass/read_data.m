@@ -124,8 +124,13 @@ try
         ref_filename = fullfile(obj.data_folder,num2str(obj.ref_expnb),'pdata',num2str(obj.reco_expnb),'fid_proc.64');
     % Paravision 1.1
     else
-        metab_filename = fullfile(obj.data_folder,num2str(obj.metab_expnb),'fid');
-        ref_filename = fullfile(obj.data_folder,num2str(obj.ref_expnb),'fid');
+        if (obj.reco_expnb > 1)
+            metab_filename = fullfile(obj.data_folder,num2str(obj.metab_expnb),'fid');
+            ref_filename = fullfile(obj.data_folder,num2str(obj.ref_expnb),'fid');
+        else
+            metab_filename = fullfile(obj.data_folder,num2str(obj.metab_expnb),'fid_nofilter');
+            ref_filename = fullfile(obj.data_folder,num2str(obj.ref_expnb),'fid_nofilter');
+        end
     end
     
     fileid = fopen(metab_filename,'r','ieee-le'); % read binary format
