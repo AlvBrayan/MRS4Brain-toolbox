@@ -37,7 +37,11 @@ else
 end
 fmax = study.params.sw/2;
 % Data ppm scale
-f_data = fmax:-2*fmax/(floor(study.np/2) - 1):-fmax;
+if(study.np/2 < size(study.data.real,3))
+    f_data = fmax:-2*fmax/(size(study.data.real,3) - 1):-fmax;
+else
+    f_data = fmax:-2*fmax/(floor(study.np/2) - 1):-fmax;
+end
 scale_ppm = f_data/study.params.sfrq + study.ppm_ref - study.ppm_workoffset;
 
 data_conj = squeeze(study.data.real(multi,:,:)) + 1j*squeeze(study.data.imag(multi,:,:));

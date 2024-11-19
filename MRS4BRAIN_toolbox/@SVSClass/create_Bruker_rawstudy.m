@@ -89,7 +89,7 @@ for i = 1:length(obj.SVS_struct)
     %     "gdiff_z","dwdir_x","dwdir_y","dwdir_z"};
     
     % Fill the study struct
-    study = fill_study(study,methodfile,BRUKERparamnames,GUIparamnames);
+    [study,~] = fill_study(study,methodfile,BRUKERparamnames,GUIparamnames);
     % study = fill_study(study,methodfile,BRUKER_DWSparamnames,GUI_DWSparamnames,'dwsparams');
     
     % Make adjustements to the study struct and check that it is MRS
@@ -98,22 +98,35 @@ for i = 1:length(obj.SVS_struct)
     % Group Delay - acqus file
     if isfile(fullfile(folderexp,num2str(expnb),'acqus'))
         acqusfile = fileread(fullfile(folderexp,num2str(expnb),'acqus'));
-        study = fill_study(study,acqusfile,{"##$GRPDLY= "},{"grpdly"},'params');
+        [study,~] = fill_study(study,acqusfile,{"##$GRPDLY= "},{"grpdly"},'params');
     elseif isfile(fullfile(folderexp,num2str(expnb),'acqp'))
         acqpfile = fileread(fullfile(folderexp,num2str(expnb),'acqp'));
-        study = fill_study(study,acqpfile,{"##$ACQ_RxFilterInfo=( 2 )" + newline + "("},{"grpdly"},'params');
+        [study,~] = fill_study(study,acqpfile,{"##$ACQ_RxFilterInfo=( 2 )" + newline + "("},{"grpdly"},'params');
     end
     
     % ADCoverflow? - acqp file
     acqpfile = fileread(fullfile(folderexp,num2str(expnb),'acqp'));
-    study = fill_study(study,acqpfile,{"##$ACQ_adc_overflow=( 2 )" + newline},{"adcoverflow"},'params');
+    [study,check_change] = fill_study(study,acqpfile,{"##$ACQ_adc_overflow=( 1 )" + newline},{"adcoverflow"},'params');
+    if ~check_change
+        [study,~] = fill_study(study,acqpfile,{"##$ACQ_adc_overflow=( 2 )" + newline},{"adcoverflow"},'params');
+    end
     adcoverflow = strsplit(study.params.adcoverflow);
-    if or(strcmp(adcoverflow{1},'Yes'),strcmp(adcoverflow{2},'Yes'))
-        study.params.adcoverflow = 'Yes';
-        % f=msgbox(['ADC overflow during acquisition E' num2str(expnb)]);
+    if length(adcoverflow) > 1
+        if or(strcmp(adcoverflow{1},'Yes'),strcmp(adcoverflow{2},'Yes'))
+            study.params.adcoverflow = 'Yes';
+            % f=msgbox(['ADC overflow during acquisition E' num2str(expnb)]);
+        else
+            study.params.adcoverflow = 'No';
+        end 
     else
-        study.params.adcoverflow = 'No';
-    end 
+        if strcmp(adcoverflow{1},'Yes')
+            study.params.adcoverflow = 'Yes';
+            % f=msgbox(['ADC overflow during acquisition E' num2str(expnb)]);
+        else
+            study.params.adcoverflow = 'No';
+        end 
+    end
+
     
     %% Read data
     
@@ -142,9 +155,25 @@ for i = 1:length(obj.SVS_struct)
             msg = {'Cannot open the FID file'};
             return
         end
+    elseif isfile(fullfile(folderexp,num2str(expnb),'pdata','1','fid_proc.64'))
+        fileid = fopen(fullfile(folderexp,num2str(expnb),'pdata','1','fid_proc.64'),'r','ieee-le'); %read binary format
+        if fileid == -1
+            msg = {'Cannot open the FID file'};
+            return
+        end
     end
     
-    buffer = fread(fileid,'int32'); 
+    
+    if isfile(fullfile(folderexp,num2str(expnb),'fid'))
+
+        % Paravision v.1.1
+        buffer = fread(fileid,'int32'); 
+    else
+
+        % Paravision v.3.3
+        buffer = fread(fileid,'double'); 
+    end
+
     nbptsfid = length(buffer)/(2*study.nrep);
     
     buffer_ser = zeros(study.nrep,nbptsfid*2);
@@ -158,7 +187,11 @@ for i = 1:length(obj.SVS_struct)
     if study.ppm_workoffset ~= 0
         offset_hz = study.ppm_workoffset*study.resfreq;
         dw = 1/study.spectralwidth;
-        timecode = 0:dw:(study.np/2-1)*dw;
+        if(study.np/2 < nbptsfid)
+            timecode = 0:dw:(nbptsfid-1)*dw;
+        else
+            timecode = 0:dw:(study.np/2-1)*dw;
+        end
         tmat = repmat(timecode,study.nrep,1);
         ser_c_shift = ser_c.*exp(1i.*(2*pi*offset_hz).*tmat);
         study.data.real(:,1,:) = real(ser_c_shift);
@@ -220,7 +253,7 @@ if and(isfile(fullfile(folderexp,num2str(expnb),'fid.refscan')),refscanbool)
     BRUKERparamnames_refscan={"PVM_RefScanNA=","##$PVM_RefScanRG="};
     localparamnames_refscan={"NArefscan","RGrefscan"};
     refscan = struct;
-    refscan = fill_study(refscan,methodfile,BRUKERparamnames_refscan,localparamnames_refscan);
+    [refscan,~] = fill_study(refscan,methodfile,BRUKERparamnames_refscan,localparamnames_refscan);
 
     %store data
     fileid=fopen(fullfile(folderexp,num2str(expnb),'fid.refscan'),'r','ieee-le'); %read binary format
@@ -277,13 +310,14 @@ end
     
 %% Additional functions
 
-function study = fill_study(study,file,paramnames,GUIparamnames,substruct)
+function [study,change] = fill_study(study,file,paramnames,GUIparamnames,substruct)
 if nargin < 5
     substruct = '';
 end
 for par = 1:length(paramnames)
     startind = strfind(file,paramnames{par}); % find the starting index in method file
     lparam = strlength(paramnames{par}); % length of the parameter in method file
+    change = 0;
     if ~isempty(startind)
         startind=startind(1);
         kparam = 1;
@@ -304,8 +338,10 @@ for par = 1:length(paramnames)
         varname = matlab.lang.makeValidName(GUIparamnames{par}); % Ensure the fieldname is compatible
         if isempty(substruct)
             study.(varname{1}) = param;
+            change = 1;
         else
             study.(substruct).(varname{1}) = param;
+            change = 1;
         end
     end
 end

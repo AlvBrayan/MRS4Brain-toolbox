@@ -33,6 +33,7 @@ for i = 1:length(obj.SVS_struct)
             %% step 1 - do preprocessing with FIDA
             %% 1-Convert Bruker study to FID A structure
             [out0a,out0b] = obj.convert2FidA_isison(i); % Convert study struct to FidA struct
+
             % apply Line Broadening (LB)
             dw = out0a.dwelltime;
             tt = 0:dw:dw*(out0a.n-1);

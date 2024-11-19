@@ -22,7 +22,11 @@
 function msg = preprocessing_SVS_FidA(obj,prog_dbox)
 % Preprocessing function using FidA from Jamie Near
 if obj.SVS_param.ISIS_bool
-    msg = obj.preprocessing_SVS_FidA_isison(prog_dbox);
+    if obj.SVS_param.FidA_smallvoxel
+        msg = obj.preprocessing_SVS_FidA_isison_smallvoxel(prog_dbox);
+    else
+        msg = obj.preprocessing_SVS_FidA_isison(prog_dbox);
+    end
 else
     msg = obj.preprocessing_SVS_FidA_isisoff(prog_dbox);
 end
