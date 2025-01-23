@@ -29,7 +29,9 @@ try
     end
     for ii = 1:obj.Nslices % goes through all the slices
         if and(obj.Fillgaps,obj.Lipsup)
-            metab_data_tkk = obj.HSVD_lipsup_filled_fid_tkkn(1:1024,:,:,ii); % WITH FILLGAPS & LIPSUP
+            metab_data_tkk = obj.HSVD_lipsup_filled_fid_tkkn(1:obj.acq_params.np_met,:,:,ii); % WITH FILLGAPS & LIPSUP
+        elseif and(obj.Fillgaps,~obj.Lipsup)
+            metab_data_tkk = obj.HSVD_lipsup_filled_fid_tkkn(1:obj.acq_params.np_met,:,:,ii); % WITH FILLGAPS & LIPSUP
         elseif and(obj.Lipsup,~obj.Fillgaps)
             metab_data_tkk = obj.HSVD_lipsup_fid_tkkn(:,:,:,ii); % WITH LIPSUP
         else

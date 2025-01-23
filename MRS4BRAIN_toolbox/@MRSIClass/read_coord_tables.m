@@ -50,10 +50,17 @@ Matrix_Size = obj.acq_params.matrix_sz;
 Nx = Matrix_Size(1); Ny = Matrix_Size(2);
 
 for pa = 1:qp
+    % Water Quantif (13/11/2024 BA)
+    w_quantif = false;
+
     [~,folder_name,~] = fileparts(quantify_paths{pa});
     slice = str2double(regexp(folder_name,'\d*','Match'));
     directory_data = fullfile(quantify_paths{pa},'Data');
     directory_table = fullfile(directory_data,'tables');
+    if(isfolder(fullfile(directory_data,'tablesW')))
+        w_quantif = true;
+        directory_tableW = fullfile(directory_data,'tablesW');
+    end
     directory_results = fullfile(quantify_paths{pa},'Results');
     if ~isfolder(directory_results)
         mkdir(directory_results)
@@ -104,6 +111,7 @@ for pa = 1:qp
         idx_ppmaxis = find(contains(S, 'points on ppm-axis = NY'));
         idx_SNR_FWHM = contains(S, 'S/N');
         idx_data_points = find(contains(S, 'NY phased data points follow'));
+        idx_phase = find(contains(S, 'Ph:'));
         idx_baseline_points = find(contains(S, 'NY background values follow'));
         diff_points = idx_data_points - idx_ppmaxis;
         S2 = cellfun(@str2double,cellfun(@strsplit, ...
@@ -111,9 +119,15 @@ for pa = 1:qp
         data = cat(2,S2{:}).';
     end
     % Matrix initialization
-    abs_conc = zeros(N_met,Nx,Ny);
-    rel_conc = zeros(N_met,Nx,Ny);
-    CRLB = zeros(N_met,Nx,Ny);
+    if(w_quantif)
+        abs_conc = zeros(N_met+1,Nx,Ny);
+        rel_conc = zeros(N_met+1,Nx,Ny);
+        CRLB = zeros(N_met+1,Nx,Ny);
+    else
+        abs_conc = zeros(N_met,Nx,Ny);
+        rel_conc = zeros(N_met,Nx,Ny);
+        CRLB = zeros(N_met,Nx,Ny);
+    end
     % Merged results
     N_points = length(data);
     ppm_scale = data;
@@ -122,6 +136,8 @@ for pa = 1:qp
     baseline_pts_tot = zeros(N_points,Nx,Ny);
     SNR = zeros(Nx,Ny);
     FWHM = zeros(Nx,Ny);
+    phase0 = zeros(Nx,Ny);
+    phase1 = zeros(Nx,Ny);
     for i = 1:Nx
         for j = 1:Ny
             if (obj.Final_mask(slice,i,j) == 1)
@@ -139,7 +155,24 @@ for pa = 1:qp
                             rel_conc(Met,i,j) = C{1,3}(Met);
                             CRB_temp(Met) = C{1,2}(Met);
                         end
-                        CRLB(:,i,j) = CRB_c(CRB_temp);
+                        CRLB(1:N_met,i,j) = CRB_c(CRB_temp);
+                    end
+                    if(w_quantif)
+                        filename = [folder_name '@' num2str(i) '_' num2str(j) 'w.table'];
+                        fid = fopen(fullfile(directory_tableW,filename));
+                        if isfile(fullfile(directory_tableW,filename))
+                            % Getting the concentrations
+                            [C, ~] = textscan(fid, '%f %s %f %s', 'headerlines', 5);
+                            fclose(fid);
+                            if length(C{1,3}) >= 1
+                                CRB_temp = cell(1);
+                                abs_conc(1:end-1,i,j) = obj.mrsi_params.WCONC*abs_conc(1:end-1,i,j)./C{1,1}(1); %QUANTIF ABSOLUE
+                                abs_conc(end,i,j) = C{1,1}(1);
+                                rel_conc(end,i,j) = C{1,3}(1);
+                                CRB_temp(1) = C{1,2}(1);
+                                CRLB(end,i,j) = CRB_c(CRB_temp);
+                            end
+                        end
                     end
                 end
                 coord_filename = [folder_name '@' num2str(i) '_' num2str(j) '.coord'];
@@ -163,6 +196,14 @@ for pa = 1:qp
                         SF = rmmissing(S2{:});
                         SNR(i,j) = SF(2);
                         FWHM(i,j) = SF(1);
+                        % Getting the 0 & 1st order phase
+                        S1 = cellfun(@strsplit, ...
+                            S(idx_phase),{':'},'UniformOutput',false);
+                        S2 = cellfun(@str2double,cellfun(@strsplit, ...
+                            S1{1}(2),'UniformOutput',false),'UniformOutput',false);
+                        SF = rmmissing(S2{:});
+                        phase0(i,j) = SF(1);
+                        phase1(i,j) = SF(2);
                     else
                         data_pts_tot(:,i,j) = zeros(N_points,1);
                         % Getting the fitted data points from coord file
@@ -172,6 +213,9 @@ for pa = 1:qp
                         % Getting the SNR & FWHM
                         SNR(i,j) = 0;
                         FWHM(i,j) = 0;
+                        % Getting the 0 & 1st order phase
+                        phase0(i,j) = 0;
+                        phase1(i,j) = 0;
                     end
                 end
             end
@@ -181,14 +225,21 @@ for pa = 1:qp
     met_map.abs_conc = abs_conc;
     met_map.rel_conc = rel_conc;
     met_map.CRB = CRLB;
-    met_map.met_names = string(name_conc_tot);
-    obj.Met_names = string(name_conc_tot);
+    if(w_quantif)
+        met_map.met_names = [string(name_conc_tot);"Water"];
+        obj.Met_names = [string(name_conc_tot);"Water"];
+    else
+        met_map.met_names = string(name_conc_tot);
+        obj.Met_names = string(name_conc_tot);
+    end
     met_map.ppm_scale = ppm_scale;
     met_map.data_pts_tot = data_pts_tot;
     met_map.fit_pts_tot = fit_pts_tot;
     met_map.baseline_pts_tot = baseline_pts_tot;
     met_map.SNR = SNR;
     met_map.FWHM = FWHM;
+    met_map.phase0 = phase0;
+    met_map.phase1 = phase1;
     if pa == 1
         obj.Final_met_map = met_map;
     else

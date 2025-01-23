@@ -148,7 +148,7 @@ cfile = fullfile(cfile_dir,[filename,'.CONTROL']);
 fileid = fopen(cfile,'w');
 fprintf(fileid,' $LCMODL\n');
 fprintf(fileid,' ATTH2O = 1.0\n'); % attenuation of the NMR-visible water signal
-fprintf(fileid,'NRATIO = %.2f\n',mrsi_params.NRATIO); % NRATIO parameter : number of soft constraints on concentration ratios
+fprintf(fileid,'NRATIO = %i\n',mrsi_params.NRATIO); % NRATIO parameter : number of soft constraints on concentration ratios
 % if ~mrsi_params.NRATIO
 %     fprintf(fileid,'NRATIO = 0\n'); % NRATIO parameter : number of soft constraints on concentration ratios
 % end
@@ -199,10 +199,10 @@ fprintf(fileid,' SHIFMX = 0.3,0.3\n');
 fprintf(fileid,' KEY = %i\n',mrsi_params.KEY); % Licence KEY
 fprintf(fileid," OWNER = '%s'\n",mrsi_params.OWNER); % Licence OWNER
 fprintf(fileid," FILBAS = '%s'\n",basis_set);
-fprintf(fileid,' DEGPPM = 0\n');
-% fprintf(fileid,' DEGZER = 0\n');
-fprintf(fileid,' SDDEGP = 0\n');
-% fprintf(fileid,' SDDEGZ = 999\n');
+fprintf(fileid,' DEGPPM = %1.2f\n', mrsi_params.DEGPPM);
+fprintf(fileid,' DEGZER = %1.2f\n', mrsi_params.DEGZER);
+fprintf(fileid,' SDDEGP = %1.2f\n', mrsi_params.SDDEGP);
+fprintf(fileid,' SDDEGZ = %1.2f\n', mrsi_params.SDDEGZ);
 add_title = char(datetime);
 fprintf(fileid," TITLE = '%s %s'\n",filename,add_title);
 fprintf(fileid," FILPS = '%s'\n",fullfile(MRSIdataDir,[filename,'.ps']));
