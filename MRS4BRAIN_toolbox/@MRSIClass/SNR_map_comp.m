@@ -41,18 +41,34 @@ try
             slice_tkk = squeeze(obj.HSVD_fid_tkkn(:,:,:,ii)); % CHANGE XNUCLEI
         end
         ref_tkk = squeeze(obj.ref_mat_tkkn(:,:,:,ii)); 
-        slice_frr = fftshift(fft(ifft(ifft(slice_tkk,[],2),[],3),[],1),1);
-        ref_frr = fftshift(fft(ifft(ifft(ref_tkk,[],2),[],3),[],1),1);
+        slice_frr_temp = fftshift(fft(ifft(ifft(slice_tkk,[],2),[],3),[],1),1);
+        ref_frr_temp = fftshift(fft(ifft(ifft(ref_tkk,[],2),[],3),[],1),1);
         
         % CHANGE HERE FOR X NUCLEI %!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%
         ppm_range_NAA = logical((obj.acq_params.scale_ppm < 2.1).*(obj.acq_params.scale_ppm > 1.9));
         ppm_range_wat = logical((obj.acq_params.scale_ppm < 4.8).*(obj.acq_params.scale_ppm > 4.6));
+        ppm_range_noise = logical((obj.acq_params.scale_ppm < 0.5).*(obj.acq_params.scale_ppm > -0.5));
+
+        %Recentering of the spectrum to 0
+        corr_factor = ones(FidPoints,MatSize(1),MatSize(2));
+        noise = squeeze(real(slice_frr_temp(ppm_range_noise,:,:)));
+        for xx=1:MatSize(1)
+            for yy=1:MatSize(2)
+                noise_1d = noise(:,xx,yy);
+                P = polyfit(obj.acq_params.scale_ppm(ppm_range_noise),noise_1d,1);
+                corr_factor(:,xx,yy) = polyval(P,obj.acq_params.scale_ppm);
+            end
+        end
+
+        slice_frr = slice_frr_temp-corr_factor;
+        ref_frr = ref_frr_temp-corr_factor;
+
 
         map_data = squeeze(max(abs(slice_frr(ppm_range_wat,:,:)),[],1));
         map_ref = squeeze(max(abs(ref_frr(ppm_range_wat,:,:)),[],1));
         max_signal = squeeze(max(abs(slice_frr(ppm_range_NAA,:,:)),[],1));
     
-        SNR_data = squeeze(max_signal./squeeze(mean(abs(slice_frr(end-100:end,:,:)),1)));
+        SNR_data = squeeze(max_signal./squeeze(std(real(slice_frr(ppm_range_noise,:,:)),[],1)));
         
         obj.SNR_map(ii,:,:) = SNR_data;
         ratio_dat_ref = (map_data./map_ref)*100;
@@ -108,7 +124,7 @@ try
             fid_3 = figure('Visible','off');
             imagesc(SNR_data .* squeeze(obj.Brain_mask(ii,end:-1:1,:)))
             title(['SNR Map / Slice ' num2str(slice_number) ' / Mean = ' num2str(Average_SNR)])
-            clim([6 15])
+            clim([0 100])
             colorbar;
             set(findall(gcf,'-property','FontSize'),'FontSize',18)
             set(findall(gcf,'-property','FontWeight'),'FontWeight','bold')
@@ -116,7 +132,7 @@ try
             fid_4 = figure('Visible','off');
             imagesc(SNR_pert_data(end:-1:1,:) .* squeeze(obj.Brain_mask(ii,end:-1:1,:)))
             title(['SNR per time / Slice ' num2str(ii) ' / Mean = ' num2str(Average_SNR_pert)])
-            clim([0 0.55])
+            clim([0 5])
             colorbar;
             set(findall(gcf,'-property','FontSize'),'FontSize',18)
             set(findall(gcf,'-property','FontWeight'),'FontWeight','bold')
