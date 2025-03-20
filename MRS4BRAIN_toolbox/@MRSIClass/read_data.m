@@ -25,7 +25,7 @@ msg = {''}; % Output initialization
 fields = {'acqtype','path','fulldate','day','timeacq','sequence','acquisition_time','nucleus', ...
     'Bo','resfreq','matrix_sz','np_met','np_ref','spectralwidth','acq_delay',...
     'rep_time','nav','nrep','acq_freqshift','ppm_ref','ppm_workoffset','scale_ppm','grpdly',...
-    'gain','acq_time_spec','voxs'};
+    'gain_met','gain_ref','acq_time_spec','voxs'};
 c = cell(length(fields),1);
 acq_params = cell2struct(c,fields);
 
@@ -87,7 +87,7 @@ try
     
     GUIparamnames = {"acq_time_spec","acquisition_time","spectralwidth","sequence","np_met","nucleus",...
         "matrix_sz","resfreq","acq_freqshift","ppm_ref","ppm_workoffset",...
-        "rep_time","gain","voxs","nrep","nav","acq_delay"};
+        "rep_time","gain_met","gain_ref","voxs","nrep","nav","acq_delay"};
     
     acq_params = fill_params(acq_params,methodfile,BRUKERparamnames,GUIparamnames);
 
@@ -112,6 +112,7 @@ try
     end
     methodfile = fileread(methodfilename);
     acq_params = fill_params(acq_params,methodfile,{"##$PVM_SpecMatrix=( 1 )"},{"np_ref"});
+    acq_params = fill_params(acq_params,methodfile,{"##$PVM_RgValue="},{"gain_ref"});
 
     acq_params = params_adjustements(acq_params);
     assignin("base",'acq_params',acq_params)
@@ -165,6 +166,14 @@ try
     
     obj.fid_mat_tkkn = fid_mat_tkkn .* Freqshift_1t; % We apply the frequency shift to center the water peak on the receiveroffset (ppm scale)
     obj.ref_mat_tkkn = ref_mat_tkkn .* Freqshift_1t; % Same for the reference signal
+    
+    %Normalization to have the RG between water and metabolites
+
+    if(acq_params.gain_met~=acq_params.gain_ref)
+        RG_corr = (acq_params.gain_met/acq_params.gain_ref);
+        obj.ref_mat_tkkn = obj.ref_mat_tkkn*(RG_corr);
+    end
+
 catch ME
     msg = {'Error while reading the spectroscopy data : ',ME.message};
 end

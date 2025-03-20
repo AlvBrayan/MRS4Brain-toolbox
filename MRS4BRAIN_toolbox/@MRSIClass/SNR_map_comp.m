@@ -50,7 +50,7 @@ try
         ppm_range_noise = logical((obj.acq_params.scale_ppm < 0.5).*(obj.acq_params.scale_ppm > -0.5));
 
         %Recentering of the spectrum to 0
-        corr_factor = ones(FidPoints,MatSize(1),MatSize(2));
+        corr_factor = ones(obj.acq_params.np_met,MatSize(1),MatSize(2));
         noise = squeeze(real(slice_frr_temp(ppm_range_noise,:,:)));
         for xx=1:MatSize(1)
             for yy=1:MatSize(2)
@@ -104,6 +104,8 @@ try
         [~, ind_line_prime] = max(SNR_data .* squeeze(obj.Brain_mask(ii,:,:)));
         maxSNR_ind_line(ii) = ind_line_prime(maxSNR_ind_column(ii));
                 
+
+        save(fullfile(obj.data_folder,num2str(obj.metab_expnb),['SNR_map_' num2str(ii) '.mat']),'SNR_data');
 
         if save_figure
             % Plot

@@ -73,6 +73,8 @@ try
     
         
         % Save figure on the data folder
+        save(fullfile(obj.data_folder,num2str(obj.metab_expnb),['Lw_map_' num2str(ii) '.mat']),'FWHM_map');
+
         if save_figure
             % Plot
             f = figure('Visible','off');

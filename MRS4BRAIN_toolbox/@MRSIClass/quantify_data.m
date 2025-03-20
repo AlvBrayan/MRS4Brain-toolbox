@@ -61,6 +61,8 @@ for pa = 1:qp
     name_list = {src_dir.name}; % Metabolite and reference files
     size_name = length(name_list)/2;
 
+
+    tic
     parfor t = 1:size_name
         size(name_list);
         filename = name_list{2*t-1};
@@ -72,6 +74,18 @@ for pa = 1:qp
     if any(~cellfun(@isempty,msg))
         return
     end
+    toc
+
+    tic
+    for t = 1:size_name
+        filename = name_list{2*t-1};
+        filename = filename(1:end-4);
+        if ~isfile(fullfile(MRSI_datadir,[filename '.ps'])) %Check if all data were well quantified
+            BatchLCModel(filename,MRSI_datadir,mrsi_params,acq_params,control_path);
+        end
+    end
+    toc
+    
 end
 cd(current_dir)
 end
