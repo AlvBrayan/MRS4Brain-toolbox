@@ -3,10 +3,10 @@
 ## Description:
 The *MRS4Brain Toolbox* is developed by [*MRS4Brain*](https://www.epfl.ch/labs/mrs4brain/) research group @ CIBM MRI EPFL AIT and was designed to offer advanced functionalities for Bruker preclinical MRSI data, encompassing preprocessing, fitting, quantification, semi-automatic quality control, co-registration and segmentation of metabolic maps using anatomical images, all conveniently integrated within a single open-source graphical user interface (GUI). The development of this user-friendly toolbox aims to streamline the processing workflow and enhance the accessibility of MRSI for researchers in the preclinical field.
 
-The *MRS4Brain Toolbox* is written in MATLAB 2023a (MathWorks, USA) and encompasses three distinct spectroscopy modalities (MRSI, single voxel MRS, dMRS), with our primary focus directed towards MRSI.
+The *MRS4Brain Toolbox* is written in MATLAB 2023 or later (MathWorks, USA) and encompasses three distinct spectroscopy modalities (MRSI, single voxel MRS, dMRS), with our primary focus directed towards MRSI.
 
 ### Supported file formats:
--	raw Bruker Paravision 360 (version 1.1 (*fid*) and 3.3 (*fid_proc.64*)) data
+-	raw Bruker Paravision 360 (version 1.1 (*fid*), 3.X (*fid_proc.64*)) data
 
 ### Supported methods:
 -	1H-FID-MRSI, 1H-PRESS-MRSI
@@ -15,14 +15,14 @@ The *MRS4Brain Toolbox* is written in MATLAB 2023a (MathWorks, USA) and encompas
 
 ## Functionalities:
 
--	The main functionalities are described in the document [MRS4Brain_Toolbox.pdf](https://github.com/AlvBrayan/MRS4Brain-toolbox/blob/main/MRS4Brain_Toolbox.pdf) , recently submitted manuscript to NMR Biomed (https://arxiv.org/abs/2307.03261, under revision) and in the accepted abstract at ISMRM 2024 (Briand G., Alves B., Mosso J, Pierzchala K., Near J., Lanz B., Cudalbu C. *MRS4Brain Toolbox: an harmonized and accessible workflow for preclinical MRSI data processing*, ISMRM 2024 Singapore)
+-	The main functionalities are described in the document [MRS4Brain_Toolbox.pdf](https://github.com/AlvBrayan/MRS4Brain-toolbox/blob/main/MRS4Brain_Toolbox.pdf) , published in NMR in Biomedicine (Simicic D, Alves B, Mosso J, Briand G, Lê TP, van Heeswijk RB, Starčuková J, Lanz B, Klauser A, Strasser B, Bogner W, Cudalbu C. *Fast High-Resolution Metabolite Mapping in the rat Brain Using 1H-FID-MRSI at 14.1 T*, [DOI: 10.1002/nbm.5304](https://doi.org/10.1002/nbm.5304)) and in the presented abstract at ISMRM 2024 (Briand G., Alves B., Mosso J, Pierzchala K., Near J., Lanz B., Cudalbu C. *MRS4Brain Toolbox: an harmonized and accessible workflow for preclinical MRSI data processing*, ISMRM 2024 Singapore)
 -	External software:
  
     -	The *MRS4Brain Toolbox* utilizes an additional software, ANTs, for registration and segmentation purposes. ANTs is designed for the UNIX environment. To facilitate this on non-UNIX systems, we employ another tool called Docker Desktop, enabling the containerization of Linux-built software. Details can be found here: [Registration_MRS4Brain_Toolbox.pdf](https://github.com/AlvBrayan/MRS4Brain-toolbox/blob/main/Registration_MRS4Brain_Toolbox.pdf)
 
     -	ANTs is combined with an in-house developed template (Wistar adult rat brain, acquisitions at 14.1T) based on the SIGMA atlas, customized to handle the dimensions of the rodent brain. 
 
-    -	LCModel (version 6.2) is used for metabolite fitting. LCModel is now freely available and can be downloaded from here: http://s-provencher.com/lcmodel.shtml or [schorschinho/LCModel: A collection of compiled LCModel binaries for various operating systems. (github.com)](https://github.com/schorschinho/LCModel)
+    -	LCModel (version 6.3) is used for metabolite fitting. LCModel is now freely available and can be downloaded from here: http://s-provencher.com/lcmodel.shtml or [schorschinho/LCModel: A collection of compiled LCModel binaries for various operating systems. (github.com)](https://github.com/schorschinho/LCModel)
 
     -	The preprocessing steps in SVS are based on FID-A functions [CIC-methods/FID-A: Toolbox for simulation and processing of in-vivo magnetic resonance spectroscopy (MRS) data (github.com)](https://github.com/CIC-methods/FID-A)
 
@@ -41,7 +41,7 @@ The *MRS4Brain Toolbox* is written in MATLAB 2023a (MathWorks, USA) and encompas
 
   - MATLAB version 2023a or later version (on all operating systems)
   - ANTs (on all operating systems)
-  - LCModel version 6.2 (on all operating systems)
+  - LCModel version 6.3 (on all operating systems)
   - Docker (for Windows & MAC OS,  https://www.docker.com/products/docker-desktop/)
                 
 ### Installation: 
@@ -81,13 +81,13 @@ For more details please check [Contributors file](https://github.com/AlvBrayan/M
 
 Dunja Simicic, Brayan Alves, Jessie Mosso, Guillaume Briand, Thanh Phong Lê, Ruud B. van Heeswijk, Jana Starčuková, Bernard Lanz, Antoine Klauser, Bernhard Strasser, Wolfgang Bogner, Cristina Cudalbu
 
-*under review in NMR in Biomed*
+*Published in NMR in Biomedicine* : [DOI: 10.1002/nbm.5304](https://doi.org/10.1002/nbm.5304)
 
 “*Noise-reduction techniques for 1H-FID-MRSI at 14.1T: Monte-Carlo validation & in vivo application*”
 
 Brayan Alves, Dunja Simicic, Jessie Mosso, Thanh Phong Lê, Guillaume Briand, Wolfgang Bogner, Bernard Lanz, Bernhard Strasser, Antoine Klauser, Cristina Cudalbu
 
-*Under review in NMR in Biomed*
+*Published in NMR in Biomedicine* : [DOI: 10.1002/nbm.5211](https://doi.org/10.1002/nbm.5211)
 
 ## Contact, Feedback, Suggestions: 
 
