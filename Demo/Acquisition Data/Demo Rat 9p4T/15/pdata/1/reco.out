@@ -1,0 +1,13 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums, RLE encoded arrays, symbol visibility
+$$ 2025-02-28 11:25:51.143 +0100  cristina@cibmsafe94t1
+$$ /opt/PV-360.3.5/data/cristina/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/pdata/1/reco.out
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$RECO_abs_time=(1740738351, 132, 60)
+$$ @vis= RECO_OUT
+##END=
+$$ File finished by PARX at 2025-02-28 11:25:51.143 +0100

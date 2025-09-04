@@ -1,0 +1,10 @@
+2025/02/28  11:25:52.188  [TRACE]   MrAcqSimulationPlugin: Plugin::init(): started
+2025/02/28  11:25:52.188  [TRACE]   MrAcqSimulationPlugin: SimulationServant_impl::SimulationServant_impl(): started/finished
+2025/02/28  11:25:52.188  [TRACE]   MrAcqSimulationPlugin: Plugin::init(): return true
+2025/02/28  11:25:52.189  [TRACE]   MrAcqSimulationPlugin: Plugin::afterStart(): started
+2025/02/28  11:25:52.189  [TRACE]   MrAcqSimulationPlugin: Plugin::afterStart(): return true
+2025/02/28  11:25:52.189  [INFO]    MxiAcqRecoPlugin: Plugin::init(): run 'reco -psMode 87 -prototypeMode 0 -procnoPath /opt/PV-360.3.5/data/cristina/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/pdata/2 -serverName MxiAcqReco_2.16.756.5.5.200.8323328.110284.1740737544.1460_866307_21723110352_87 -logSeverityLevel SL_INFO ')
+2025/02/28  11:25:52.486  [INFO]    MxiAcqRecoPlugin: Plugin::beforeStop(): finished
+2025/02/28  11:25:52.487  [TRACE]   MrAcqSimulationPlugin: Plugin::beforeStop(): started
+2025/02/28  11:25:52.487  [TRACE]   MrAcqSimulationPlugin: Plugin::beforeStop(): return true
+2025/02/28  11:25:52.488  [TRACE]   MrAcqSimulationPlugin: SimulationServant_impl::~SimulationServant_impl(): started/finished
