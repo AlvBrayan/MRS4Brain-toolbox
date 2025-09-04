@@ -1,0 +1,88 @@
+ LCModel (Version 6.3-1N)
+ Slice_N1@14_19  28-Feb-2025 11:40:30
+
+$$CONC 27 lines in following concentration table = NCONC+1
+    Conc.  %SD /Cr+PCr  Metabolite                                         
+ 2.02E-04   5% 1.8E-04 Mac                                                 
+    4.947  29%   4.487 Cr                                                  
+    3.874  37%   3.513 PCr                                                 
+    5.946  13%   5.393 Ins                                                 
+    9.852   7%   8.935 NAA                                                 
+    6.846  12%   6.209 Tau                                                 
+    0.996  97%   0.903 PCho                                                
+    1.538  59%   1.395 GPC                                                 
+    7.758  11%   7.036 Glu                                                 
+    2.969  24%   2.692 Gln                                                 
+    0.000 999%   0.000 Ala                                                 
+    3.086  37%   2.799 Asc                                                 
+    2.544  38%   2.307 Asp                                                 
+    0.990  51%   0.898 GABA                                                
+    0.330 215%   0.300 Glc                                                 
+    1.400  31%   1.270 GSH                                                 
+    5.980  10%   5.423 Lac                                                 
+    0.958  58%   0.869 NAAG                                                
+    1.345  76%   1.220 PE                                                  
+    2.534  11%   2.298 GPC+PCho                                            
+   10.810   6%   9.804 NAA+NAAG                                            
+   10.727  10%   9.728 Glu+Gln                                             
+    8.821   7%   8.000 Cr+PCr                                              
+   10.810   6%   9.804 NAA+NAAG                                            
+    8.821   7%   8.000 Cr+PCr                                              
+   10.727  10%   9.728 Glu+Gln                                             
+
+$$MISC  6 lines in following misc. output table
+  FWHM = 0.033 ppm    S/N =   4                                            
+  Data shift = 0.024 ppm                                                   
+  Ph:-110 deg       0.0 deg/ppm                                            
+  alphaB,S = 2.8E-01,   1.8E+01                                            
+   19 spline knots.   Ns = 5(1)                                            
+  ( 4) 4 infls.   ( 3) 1 extrs.                                            
+
+$$DIAG  2 lines in following diagnostic table:
+   1 info      STARTV 20                                                  
+   1 info      RFALSI 11                                                  
+
+$$INPU 43 lines in following table of input changes:
+ hwdwat= 0.5                                                              
+ wconc= 44444.                                                            
+ ppmst= 4.1                                                               
+ ppmend= 0.2                                                              
+ nunfil= 768                                                              
+ nomit= 15                                                                
+ conrel=8                                                                 
+ namrel='Cr+PCr'                                                          
+ neach= 999                                                               
+ hzpppm= 400.216                                                          
+ filraw= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\Slice_N1@14_19.RAW'                                
+ filps= 'Z:\Brayan\Data Processing\28022025_2DFID                         
+   MRSI\Slice_N1\Data\Slice_N1@14_19.ps'                                  
+ filh2o= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\Slice_N1@14_19w.RAW'                               
+ filbas= 'Z:\Brayan\Basis_Sets\TE=1300microsec\9.                         
+   4T_29102024\9_4T_SIM_MRSI_Brayan_TE=1300micros                         
+   ec_9_4T_TRUEBasis29102024.BASIS'                                       
+ filcoo= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\Slice_N1@14_19.coord'                              
+ filtab= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\tables\Slice_N1@14_19.tabl                         
+   e'                                                                     
+ ltable= 7                                                                
+ lcoord=9                                                                 
+ n1hmet = 3                                                               
+ wsppm = 0.0                                                              
+ wsmet = 'Cr'                                                             
+ dorefs = F                                                               
+ dows= T                                                                  
+ dgppmx= 5                                                                
+ dgppmn= -5                                                               
+ sddegp= 0                                                                
+ degppm= 0                                                                
+ dkntmn= 0.25                                                             
+ deltat= 2e-04                                                            
+ chomit= '-CrCH2' 'Gua' 'Ser' 'Lip13a' 'Lip13b' '                         
+   Lip09' 'MM09' 'Lip20' 'MM20' 'MM12' 'MM14' 'MM                         
+   17' 'Ace' 'Cit' 'bHB'                                                  
+ chcomb= 'GPC+PCho' 'NAA+NAAG' 'Glu+Gln' 'Cr+PCr'                         
+ savdir= 'Z:\Brayan\Matlab Codes\LCModel\lcmodelm                         
+   odelfiles\saved'                                                       

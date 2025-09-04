@@ -1,0 +1,87 @@
+ LCModel (Version 6.3-1N)
+ Slice_N1@12_10  28-Feb-2025 11:37:56
+
+$$CONC 27 lines in following concentration table = NCONC+1
+    Conc.  %SD /Cr+PCr  Metabolite                                         
+ 3.47E-04   4% 4.0E-04 Mac                                                 
+    2.642  94%   3.064 Cr                                                  
+    4.257  58%   4.936 PCr                                                 
+    4.401  25%   5.104 Ins                                                 
+   11.015  10%  12.774 NAA                                                 
+    5.575  21%   6.465 Tau                                                 
+    0.000 999%   0.000 PCho                                                
+    0.652  61%   0.757 GPC                                                 
+   12.541  10%  14.543 Glu                                                 
+    2.632  36%   3.052 Gln                                                 
+    0.000 999%   0.000 Ala                                                 
+    1.269 126%   1.472 Asc                                                 
+    2.899  36%   3.362 Asp                                                 
+    0.000 999%   0.000 GABA                                                
+    0.878  80%   1.018 Glc                                                 
+    0.565  93%   0.655 GSH                                                 
+    4.725  19%   5.479 Lac                                                 
+    2.416  37%   2.802 NAAG                                                
+    1.619  93%   1.878 PE                                                  
+    0.652  61%   0.757 GPC+PCho                                            
+   13.432   7%  15.576 NAA+NAAG                                            
+   15.173  10%  17.595 Glu+Gln                                             
+    6.899  12%   8.000 Cr+PCr                                              
+   13.432   7%  15.576 NAA+NAAG                                            
+    6.899  12%   8.000 Cr+PCr                                              
+   15.173  10%  17.595 Glu+Gln                                             
+
+$$MISC  6 lines in following misc. output table
+  FWHM = 0.041 ppm    S/N =   3                                            
+  Data shift = 0.016 ppm                                                   
+  Ph: 149 deg       0.0 deg/ppm                                            
+  alphaB,S = 3.1E+01,   1.6E+01                                            
+   19 spline knots.   Ns = 6(1)                                            
+   2 inflections.     1 extrema                                            
+
+$$DIAG  1 lines in following diagnostic table:
+   2 info's    RFALSI  4                                                  
+
+$$INPU 43 lines in following table of input changes:
+ hwdwat= 0.5                                                              
+ wconc= 44444.                                                            
+ ppmst= 4.1                                                               
+ ppmend= 0.2                                                              
+ nunfil= 768                                                              
+ nomit= 15                                                                
+ conrel=8                                                                 
+ namrel='Cr+PCr'                                                          
+ neach= 999                                                               
+ hzpppm= 400.216                                                          
+ filraw= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\Slice_N1@12_10.RAW'                                
+ filps= 'Z:\Brayan\Data Processing\28022025_2DFID                         
+   MRSI\Slice_N1\Data\Slice_N1@12_10.ps'                                  
+ filh2o= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\Slice_N1@12_10w.RAW'                               
+ filbas= 'Z:\Brayan\Basis_Sets\TE=1300microsec\9.                         
+   4T_29102024\9_4T_SIM_MRSI_Brayan_TE=1300micros                         
+   ec_9_4T_TRUEBasis29102024.BASIS'                                       
+ filcoo= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\Slice_N1@12_10.coord'                              
+ filtab= 'Z:\Brayan\Data Processing\28022025_2DFI                         
+   DMRSI\Slice_N1\Data\tables\Slice_N1@12_10.tabl                         
+   e'                                                                     
+ ltable= 7                                                                
+ lcoord=9                                                                 
+ n1hmet = 3                                                               
+ wsppm = 0.0                                                              
+ wsmet = 'Cr'                                                             
+ dorefs = F                                                               
+ dows= T                                                                  
+ dgppmx= 5                                                                
+ dgppmn= -5                                                               
+ sddegp= 0                                                                
+ degppm= 0                                                                
+ dkntmn= 0.25                                                             
+ deltat= 2e-04                                                            
+ chomit= '-CrCH2' 'Gua' 'Ser' 'Lip13a' 'Lip13b' '                         
+   Lip09' 'MM09' 'Lip20' 'MM20' 'MM12' 'MM14' 'MM                         
+   17' 'Ace' 'Cit' 'bHB'                                                  
+ chcomb= 'GPC+PCho' 'NAA+NAAG' 'Glu+Gln' 'Cr+PCr'                         
+ savdir= 'Z:\Brayan\Matlab Codes\LCModel\lcmodelm                         
+   odelfiles\saved'                                                       
