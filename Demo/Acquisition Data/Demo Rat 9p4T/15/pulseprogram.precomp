@@ -1,0 +1,1534 @@
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+;****************************************************************
+;
+; Copyright (c) 2013
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+; 
+; CSI_TEMPLATE - a gradient echo imaging method
+;
+;****************************************************************
+;
+; d0 - TR padding
+; d1 - T1 padding
+; d3 - GradDelayTime
+; d4 - RiseTime
+
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include" 1
+;****************************************************************
+;
+; Copyright (c) 2018-2021
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+;
+;****************************************************************
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl" 1
+;Avance4.incl
+;   for AV 4
+;
+;avance-version (16/08/18)
+;
+;$CLASS=Common Incl
+;$COMMENT=
+
+
+# 19 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+;setrtp0 denotes TimingController
+
+
+# 50 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+# 51 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+
+
+# 63 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+# 89 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+# 90 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+
+
+# 123 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+;#define LOWQ
+;#define HIGHQ
+
+
+;#define MIX_UP
+;#define MIX_DOWN
+# 136 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Avance.incl"
+;$Id:$
+# 15 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include" 2
+
+
+define delay adcEndInfoTagDel
+define delay rde1
+# 20 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+"rde1=de-de1"
+
+
+; Remark:  is the string concatenation mode for cpp with traditional option
+# 27 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+	
+
+
+	
+subroutine InitGradients
+subroutine InitDevices_NoGradients
+subroutine InitDevices
+subroutine UpdateDynPars_30s
+subroutine SetupGoTo
+subroutine AdcEnd_InfoTag
+# 19 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg" 2
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2003-2007
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; Declaration of pulseprogram parameters and subroutines for 
+; preparation  modules
+;
+; Must be included after MRI.include!
+;
+;****************************************************************
+
+;**** Fat Suppression ****
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/FatSup.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; FatSup.mod : Declaration of Fat Suppression Subroutine
+;
+;****************************************************************
+
+if (PVM_FatSupPerform == Yes)
+{
+  define pulse           fatSupPul   = {$PVM_FatSupRfLength}
+  define list<frequency> fatSupList  = {$PVM_FatSupFL}
+  
+  define delay fatSupRamp  = {$PVM_FatSupRampTime}
+  define delay fatSupWait  = {$PVM_FatSupGradWait}
+  define delay fatSupSpoil = {$PVM_FatSupSpoilDur}
+
+  ; convert from ms to s
+  "fatSupRamp  = fatSupRamp  / 1000"
+  "fatSupWait  = fatSupWait  / 1000"
+  "fatSupSpoil = fatSupSpoil / 1000"
+}
+subroutine FatSup
+# 21 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Flow Saturation ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/FlowSat.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; FlowSat.mod: Declaration of subroutines for Flow Saturation 
+; call
+; subr FlowSat()
+; subr FlowSatInit()
+; subr FlowSatInc()
+; 
+;****************************************************************
+
+if(PVM_InFlowSatOnOff == 1)
+{
+define list<frequency> modlis4 = {$PVM_InFlowSatFL}
+define list<grad_scalar> flowSatGrad={$PVM_InFlowSatGrad}
+
+define delay SfD0 = {$PVM_SfD0}
+define delay SfD2 = {$PVM_SfD2}
+# 27 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/FlowSat.mod"
+define pulse SfP0 = {$PVM_SfP0}
+define loopcounter SfLp0 = {$PVM_SfLp0}
+}
+
+
+subroutine FlowSat
+subroutine FlowSatInc
+subroutine FlowSatInit
+# 25 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Saturation Transfer ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/SatTrans.mod" 1
+;****************************************************************
+; $Source$
+;
+; Copyright (c) 2023
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+;
+; SatTrans.mod: Declaration of subroutine for Saturation transfer 
+; call
+; subr SatTrans()
+;
+; $Id$
+;****************************************************************
+;**** Saturation Transfer Module ****
+
+
+; PVM_SatTransFL:        List of offset frequencies to be measured.
+; PVM_SattransNPulses:   Number of pulses used in one saturation event
+; PVM_SattransPowerList: List of RF amplitudes for saturation pulses.
+;                        Two elements long: first element: 0 Watt,
+;                        used for one reference scan. Subsequent scans
+;                        use amplitude as specified in UI.
+; StRepCntr:             If Reference Scan is 'On' two power switch cmds
+;                        are required: before & after RefScan. Incrementing
+;                        counter with repetitions and resetting it to zero
+;                        when StReps is reached, this happens for cntr vals
+;                        0 & 1.
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/SatTrans.mod"
+if(PVM_SatTransOnOff)
+{
+  define list<frequency> modlis5    = {$PVM_SatTransFL}
+  define list<power> StRfPower      = {$PVM_SatTransPowerList}
+             
+  define delay StD0                 = {$PVM_StD0}
+  define delay StD1                 = {$PVM_StD1}
+  define delay StD2                 = {$PVM_StD2}
+  define delay StD3                 = {$PVM_StD3}
+
+  define pulse StP0                 = {$PVM_StP0}
+
+  define loopcounter StNPulses      = {$PVM_SatTransNPulses}
+  define loopcounter StReps         = {$PVM_SatTransRepetitions}
+# 47 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/SatTrans.mod"
+  define loopcounter StRepCntr
+  "StRepCntr = 0"
+}
+
+subroutine SatTransInit
+
+subroutine SatTransInc
+subroutine SatTrans
+# 29 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;*** FOV Saturation ***
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/FovSat.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; FovSat.mod : Declaration of FOV Saturation subroutine
+; call: subr FovSat()
+;
+;****************************************************************
+
+
+if (PVM_FovSatOnOff == On)
+{
+  define pulse           fovSatPul   = {$PVM_FovSatRfLength}
+  define list<frequency> fovSatList  = {$PVM_FovSatFL}
+  
+  define delay fovSatRamp  = {$PVM_FovSatRampTime}
+  define delay fovSatWait  = {$PVM_FovSatGradWait}
+  define delay fovSatSpoil = {$PVM_FovSatSpoilDur}
+# 26 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/FovSat.mod"
+  ; convert from ms to s
+  "fovSatRamp  = fovSatRamp  / 1000"
+  "fovSatWait  = fovSatWait  / 1000"
+  "fovSatSpoil = fovSatSpoil / 1000"  
+}
+
+subroutine FovSat
+
+# 33 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Black Blood ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/BlBlood.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; BlBlood.mod : Declaration of Black blood  subroutine
+;
+; call
+; subr BlBlood(ph0) : Black blood preparation with RF phaselist
+;                     ph0
+;
+;****************************************************************
+
+if(PVM_BlBloodOnOff)
+{
+define list<frequency> modlis8 = {$PVM_BlBloodFL}
+define delay BlbD0 = {$PVM_BlbD0}
+define delay BlbD1 = {$PVM_BlbD1}
+define delay BlbD2 = {$PVM_BlbD2}
+
+define pulse BlbP0 = {$PVM_BlbP0}
+}
+subroutine BlBlood
+# 37 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Trigger ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Trigger.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+;
+; Trigger.mod - Trigger Module
+;
+;****************************************************************
+
+if (PVM_TriggerModule == On)
+{
+  define delay trigDur = {$PVM_TriggerDur}
+  define delay trigDel = {$PVM_TriggerDelay}
+
+  ; convert from ms to s
+  "trigDur = trigDur / 1000"
+  "trigDel = trigDel / 1000"
+}
+subroutine Trigger
+subroutine TriggerPhase
+subroutine TriggerSlice
+# 41 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Trigger Out ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/TriggerOut.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+; $Id$
+;****************************************************************
+
+if (PVM_TriggerOutOnOff == On)
+{
+  define delay trigOutDur = {$PVM_TriggerOutDur}
+  define delay trigOutDel = {$PVM_TriggerOutDelay}
+
+  ; convert from ms to s
+  "trigOutDur = trigOutDur / 1000"
+  "trigOutDel = trigOutDel / 1000"
+}
+subroutine TriggerOut
+subroutine TriggerOutStart
+subroutine TriggerOutSlice
+subroutine TriggerOutVolume
+# 45 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Outer Volume Suppression ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; WsOvs.mod: Declaration of water suppression and Outer 
+;            volume suppression subroutines
+;
+; call 
+; subr Ovs(ph0) ;  execution of OVS with ph0 phaselist
+;
+; subr WsOvs(ph0,ph1) : execution of OVS with ph0 and WS with ph1
+;                       phaselist
+;****************************************************************
+
+;**** OuterVolumeSuppression ****
+
+if(PVM_OvsOnOff == 1)
+{
+define list<frequency> Ovslist={$PVM_OvsFrequencyList}
+define delay OvsD0 = {$PVM_OvsD0}
+define delay OvsD1 = {$PVM_OvsD1}
+define pulse OvsP0 = {$PVM_OvsP0}
+}
+subroutine Ovs
+# 62 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+;*** WaterSuppression Module with OVS ****
+
+if (PVM_WsMode)
+{
+
+define list<frequency> Wslist={$PVM_WsOffsetHz}
+define pulse WsP0 = {$PVM_WsP0}
+define pulse WsP1 = {$PVM_WsP1}
+define pulse WsP2 = {$PVM_WsP2}
+define delay WsNp0 
+"WsNp0 = WsP0"
+define delay WsNp1 
+"WsNp1 = WsP1"
+define delay WsNp2 
+"WsNp2 = WsP2"
+define list<delay> ChD1={$PVM_ChppgD1}
+define list<delay> ChD2={$PVM_ChppgD2}
+define list<delay> VpD1={$PVM_VpppgD1}
+define list<delay> VpD2={$PVM_VpppgD2}
+# 82 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+}
+
+
+subroutine WsOvsMain
+subroutine WsOvs
+subroutine Ws
+# 49 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Solvent Suppression module ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsSat.mod" 1
+;******************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$ 
+;
+; All Rights Reserved
+;
+; WsSat.mod - Declaration of water suppression and FOV saturation 
+;             subroutines
+; call
+; subr WsSat(ph0) : execution of WS with ph0 phaselist and 
+;                   FOV saturation (as passed as argument)    
+;      
+;*******************************************************************
+
+
+; Definitions for WsPpgParams are included in WsOvs.mod
+subroutine WsSatMain
+subroutine WsSat
+# 53 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Selective Inversion Recovery ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/SliceSelIr.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; SlicelSelIr.mod : declaration of slice Selective Inversion 
+;                   Recovery subroutine
+; call SliceSelIr()
+; 
+;
+;****************************************************************
+
+
+if(PVM_SelIrOnOff)
+{
+  define list<frequency> IrFL = {$PVM_SelIrFL} 
+  define delay IrD0 = {$PVM_SelIrD0} ; PVM_InterInvDelay
+  define delay IrD1 = {$PVM_SelIrD1} ; PVM_InterInvEndDelay[0]
+  define delay IrD2 = {$PVM_SelIrD2} ; Spoiler duration
+  define delay IrD4 = {$PVM_SelIrD4} ; risetime
+# 27 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/SliceSelIr.mod"
+  define pulse IrP0 = {$PVM_SelIrP0}
+  define loopcounter IrL0 = {$PVM_SelIrL0}
+  define loopcounter IrL1
+}
+
+subroutine SliceSelIr
+
+# 57 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Tagging ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Tagging.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2007
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; Tagging.mod : Declaration of tagging subroutine
+; call
+; subr Tagging()
+;
+;****************************************************************
+
+if(PVM_TaggingOnOff)
+{
+define list<frequency> taggfreq={$PVM_TaggingFL}
+
+define delay TaggD0 = {$PVM_TaggingD0}
+define delay TaggD1 = {$PVM_TaggingD1}
+define delay TaggD2 = {$PVM_TaggingD2}
+define delay TaggD3 = {$PVM_TaggingD3}
+define delay TaggD4 = {$PVM_TaggingD4}
+# 27 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Tagging.mod"
+define pulse TaggP0 = {$PVM_TaggingP0}
+define loopcounter TaggL0 = {$PVM_TaggingLp0}
+}
+
+subroutine Tagging
+
+# 61 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Noe ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Noe.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; Noe.mod: Declaration of Nuclear Overhouser Enhancement 
+;             subroutine
+; call
+; subr Noe()
+;
+;****************************************************************
+
+if(PVM_NoeOnOff == On)
+{
+define delay NoeD0 = {$PVM_NoeD0}
+define delay NoeD1 = {$PVM_NoeD1}
+}
+
+subroutine Noe
+# 65 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Evolution ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Evolution.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+;
+; Evolution.mod - Evolution Module
+;
+;****************************************************************
+
+if (PVM_EvolutionOnOff == On)
+{
+  define delay       evolDel  = {$PVM_EvolutionDelay}
+  define list<delay> evolTime = {$PVM_EvolutionTime}
+}
+
+subroutine Evolution
+# 69 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+
+;**** Drift Compensation ****
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/DriftComp.mod" 1
+;==========================================================
+;   subroutine for drift compensation
+;==========================================================
+
+
+if (PVM_DriftCompNavOnOff == On)
+{
+  define list<frequency> tx_drift_fq = {$PVM_DriftCompNavTxFrq}
+  define list<frequency> rx_drift_fq = {$PVM_DriftCompNavRxFrq}
+  define pulse DCP0 = {$PVM_DriftCompNavP0}     
+  define delay DCD1 = {$PVM_DriftCompNavD1}
+  define delay DCD2 = {$PVM_DriftCompNavD2}
+  define delay DCD3 = {$PVM_DriftCompNavD3}
+  define delay DCD4 = {$PVM_DriftCompNavD4}
+  define delay DCD5 = {$PVM_DriftCompNavD5}
+  define delay DCD6
+  "DCD6 = 20u - de"
+  define list<phase> dcph = { 0 }
+}
+subroutine DriftComp
+# 73 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/PrepModulesHead.mod" 2
+# 20 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg" 2
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/acqdec.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2012
+; Bruker BioSpin MRI GmbH 
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+; 
+; $Id$
+; 
+; All Rights Reserved
+; 
+; Declaration of subroutine for decoupling
+;
+;****************************************************************
+
+# 18 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/acqdec.mod"
+if(PVM_DecOnOff == On)
+{
+define delay DecD0 = {$PVM_DecD0}
+define delay DecD1 = {$PVM_DecD1}
+}
+define delay durx
+"durx = 20u - de - 1u" ; 20u - fixed delays
+
+
+subroutine acqdec
+subroutine acqdec_jobs
+# 21 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg" 2
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Navigator.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2011
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+; 
+; Navigator.mod - Preparation Module for Navigator
+;
+;****************************************************************
+
+if (PVM_NavOnOff == On)
+{
+  define list<frequency> navlist = {$PVM_NavFrequencyList}
+  define list<frequency> navrec ={$PVM_NavFreqRecList}
+  define list<grad_vector> vec ={$PVM_NavVec}
+  define pulse NavP0 = {$PVM_NavP0}	
+  define delay NAVD1 = {$PVM_NavD1}
+  define delay NAVD3 = {$PVM_NavD3}
+  define delay NAVD4 = {$PVM_NavD4}
+  define delay NAVD5 = {$PVM_NavD5}
+  
+  if(PVM_NavSpatEnc == Yes)
+  {
+     define list<grad_vector> vecRead ={$PVM_NavReadVec}
+  }
+# 29 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Navigator.mod"
+  define delay NAVD1mDE
+  "NAVD1mDE=NAVD1-de"
+  define delay NavDe20
+  "NavDe20 = 20u - de"
+}
+
+
+subroutine Navigator
+subroutine NavigatorSpat
+subroutine NavigatorSpatDum
+subroutine NavigatorDummy
+subroutine NavigatorGlobal
+# 22 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg" 2
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/DynamicShim.mod" 1
+;****************************************************************
+;
+; Copyright (c) 2018
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; $Id$
+;
+; All Rights Reserved
+;
+; DynamicShim.mod : Declaration of FOV Saturation subroutine
+; call: subr FovSat()
+;
+;****************************************************************
+
+if(PVM_DynamicShimEnable==Yes)
+{
+    ; specify a ramptime for dynamic shimming that enables a 200% step  
+    define delay dsramp = {$PVM_DynamicShimRisetime}
+    "dsramp = dsramp * 2e-3"
+    ; specify a duration of a dynamic shim switching event
+    define delay dshimdur =  {$PVM_DynamicShimEventDuration}
+    "dshimdur = dshimdur *1e-3"
+    define list <shim_vector> dynamicShim= {$PVM_DynamicShim}
+}
+subroutine DynamicShimApply
+subroutine DynamicShimInc
+subroutine DynamicShimRes
+# 23 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg" 2
+
+
+# 29 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+define list<frequency> freqTx1={$ACQ_O1_list}
+define list<frequency> freqTx2={$ACQ_O2_list}
+define list<frequency> freqRx={$ACQ_O1B_list}
+
+define list<loopcounter> avList={$AverageList}
+define loopcounter lds = {$PVM_DummyScans}
+
+define delay RefSpDur ={$RefSpDur}
+define delay FillTE1_1={$FillTE1_1}
+define delay FillTE1_2={$FillTE1_2}
+define delay FillTE2_1={$FillTE2_1}
+define delay FillTE2_2={$FillTE2_2}
+# 42 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+define delay d4m20
+"d4m20 = d4-20u" ;compensates for 20u delay (including de) in acqdec
+
+define delay d4d3
+"d4d3 = d4 + d3"
+
+# 49 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+grad_zero_for_gs <ACQ_spatial_phase_0, ACQ_spatial_phase_1, ACQ_spatial_phase_2>
+
+
+subr InitDevices
+;EXEC_begin InitDevices InitDevices()
+# 75 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+ 
+    
+;EXEC_begin InitGradients InitGradients()
+# 60 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+ 
+    define list <grad_index> xyzb0 = {0 1 2 3}
+    1m sync_grad 100
+    10u ctrlgrad 0  
+    1m shim_off  
+ 
+;EXEC_end   InitGradients
+# 77 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+    
+;EXEC_begin InitDevices_NoGradients InitDevices_NoGradients()
+# 69 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+ 
+    2u h2pulse       ;SEL_2H plus interleave_incr
+ 
+;EXEC_end   InitDevices_NoGradients
+# 78 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+ 
+;EXEC_end   InitDevices
+# 53 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+subr DynamicShimRes
+;EXEC_begin DynamicShimRes DynamicShimRes()
+# 45 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/DynamicShim.mod"
+ 
+   if(PVM_DynamicShimEnable==Yes)
+   {
+      0u   dynamicShim.res
+   }
+ 
+;EXEC_end   DynamicShimRes
+# 55 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+# 56 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+start,  0u
+
+if(PVM_NavOnOff == On)
+{
+	20u switch_realtime_tables
+	subr NavigatorGlobal
+;EXEC_begin NavigatorGlobal NavigatorGlobal(any sp2, phase ph0, phase ph0, phase ph1)
+# 119 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Navigator.mod"
+ 
+  if (PVM_NavOnOff == On)
+  {
+         2u     navrec(receive):f1
+         3u     navlist:f1
+	 5u     switch_Navigator
+     (NavP0     :sp2 ph0):f1
+        NavDe20						;20u-de
+                (rde1 de1 adc_Navigator   ph0 syrec_Navigator ) (1u 1u   ph1:r):f_Navigator
+      NAVD4     dwgen_Navigator
+      NAVD5     eoscnpzbwrif_Navigator
+      10u       switch_job0
+  }
+ 
+;EXEC_end   NavigatorGlobal
+# 62 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+}
+
+subr TriggerPhase
+;EXEC_begin TriggerPhase TriggerPhase()
+# 33 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Trigger.mod"
+ 
+  if (PVM_TriggerMode == per_PhaseStep)
+  {
+    
+;EXEC_begin Trigger Trigger()
+# 24 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Trigger.mod"
+ 
+  if (PVM_TriggerModule == On)
+  {
+    trigDur     trignl1
+    trigDel
+  }
+ 
+;EXEC_end   Trigger
+# 37 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Trigger.mod"
+  }
+ 
+;EXEC_end   TriggerPhase
+# 65 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+# 66 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+;----------------------------------start of the main loop ----------
+slice,  subr UpdateDynPars_30s
+;EXEC_begin UpdateDynPars_30s UpdateDynPars_30s()
+# 82 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+ 
+    29.8u switch_realtime_tables
+     0.1u update_interactive_parameters
+     0.1u blockrequest
+ 
+;EXEC_end   UpdateDynPars_30s
+# 68 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+        subr DynamicShimApply
+;EXEC_begin DynamicShimApply DynamicShimApply()
+# 29 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/DynamicShim.mod"
+ 
+   if(PVM_DynamicShimEnable==Yes)
+   {
+      dshimdur shim_ramp<dsramp> { dynamicShim[] };
+   }
+ 
+;EXEC_end   DynamicShimApply
+# 69 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+
+        10u				  freqRx(receive):f1
+
+;----------------------------------preparation modules -------------
+subr TriggerSlice
+;EXEC_begin TriggerSlice TriggerSlice()
+# 41 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Trigger.mod"
+ 
+  if (PVM_TriggerMode == per_Slice)
+  {
+    
+;EXEC_begin Trigger Trigger()
+# 24 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Trigger.mod"
+ 
+  if (PVM_TriggerModule == On)
+  {
+    trigDur     trignl1
+    trigDel
+  }
+ 
+;EXEC_end   Trigger
+# 45 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Trigger.mod"
+  }
+ 
+;EXEC_end   TriggerSlice
+# 75 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+subr Noe
+;EXEC_begin Noe Noe()
+# 25 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/Noe.mod"
+ 
+if(PVM_NoeOnOff == On)
+{
+   3u pl1:f2
+   NoeD0 cpds1:f2
+   1u do:f2
+   NoeD1
+}
+ 
+;EXEC_end   Noe
+# 76 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+subr WsOvs
+;EXEC_begin WsOvs WsOvs(phase ph0, phase ph0)
+# 252 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+  
+;EXEC_begin WsOvsMain WsOvsMain(phase ph0, phase ph0, any PVM_OvsOnOff)
+# 86 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+
+;-------------------------------------------------------------------------------
+; NO_SUPPRESSION
+;-------------------------------------------------------------------------------
+
+;WS_Mode == NO_SUPPRESSION
+if ( PVM_WsMode == 0 ) {
+
+if ( PVM_OvsOnOff == On ) {
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 97 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 98 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 99 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+}
+
+}
+
+
+;-------------------------------------------------------------------------------
+; CHESS scheme
+;-------------------------------------------------------------------------------
+if ( PVM_WsMode == 1 ) {
+2u 	Wslist:f1
+;first pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP0:sp50 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp0
+}
+	ChD1[0] grad_ramp{ PVM_ChTrim[0], PVM_ChTrim[1], PVM_ChTrim[2] }
+	ChD2[0] grad_off
+if ( PVM_OvsOnOff == On ) {
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 120 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+2u 	Wslist:f1
+}
+
+;second pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP1:sp51 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp1
+}
+	ChD1[1] grad_ramp{ PVM_ChTrim[3], PVM_ChTrim[4], PVM_ChTrim[5] }
+	ChD2[1] grad_off
+if ( PVM_OvsOnOff == On ) {
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 134 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+2u 	Wslist:f1
+}
+
+;third pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP2:sp52 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+        WsNp2	
+}
+	ChD1[2] grad_ramp{ PVM_ChTrim[6], PVM_ChTrim[7], PVM_ChTrim[8] }
+	ChD2[2] grad_off
+if ( PVM_OvsOnOff == On ) {
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 148 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+2u
+}
+
+};end of CHESS
+
+
+;-------------------------------------------------------------------------------
+; VAPOR scheme
+;-------------------------------------------------------------------------------
+if ( PVM_WsMode == 2 ) {
+2u 	Wslist:f1
+;first pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP0:sp50 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp0
+}
+	VpD1[0] grad_ramp{ PVM_VpTrim[0], PVM_VpTrim[1], PVM_VpTrim[2] }
+	VpD2[0] grad_off
+
+
+;second pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP0:sp50 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+        WsNp0	
+}
+	VpD1[1] grad_ramp{ PVM_VpTrim[3], PVM_VpTrim[4], PVM_VpTrim[5] }
+	VpD2[1] grad_off
+
+
+;third pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP1:sp51 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp1	
+}
+	VpD1[2] grad_ramp{ PVM_VpTrim[6], PVM_VpTrim[7], PVM_VpTrim[8] }
+	VpD2[2] grad_off
+
+;fourth pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP0:sp50 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp0
+}
+
+if ( PVM_OvsOnOff == On ) {
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 201 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+2u      Wslist:f1
+}
+	VpD1[3] grad_ramp{ PVM_VpTrim[9], PVM_VpTrim[10], PVM_VpTrim[11] }
+	VpD2[3] grad_off
+
+
+;5.th pulse
+if ( PVM_WsOnOff == On ) {
+(	WsP1:sp51 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp1
+}
+	VpD1[4] grad_ramp{ PVM_VpTrim[12], PVM_VpTrim[13], PVM_VpTrim[14] }
+	VpD2[4] grad_off
+if ( PVM_OvsOnOff == On ) {
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 218 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+2u 	Wslist:f1
+}
+
+
+;6.th pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP0:sp50 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp0	
+}
+	VpD1[5] grad_ramp{ PVM_VpTrim[15], PVM_VpTrim[16], PVM_VpTrim[17] }
+	VpD2[5] grad_off
+
+
+;7.th pulse
+if ( PVM_WsOnOff == On ) {
+	(WsP1:sp51 ph0):f1
+}
+if ( PVM_WsOnOff == Off ) {
+	WsNp1
+}
+	VpD1[6] grad_ramp{ PVM_VpTrim[18], PVM_VpTrim[19], PVM_VpTrim[20] }
+	VpD2[6] grad_off
+if ( PVM_OvsOnOff == On ) {
+
+;EXEC_begin Ovs Ovs(phase ph0)
+# 32 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;-------------------------------------------------------------------------------
+;	delays		grads			rf/rec		comments
+;-------------------------------------------------------------------------------
+	;pulses 1 + 2	
+	OvsD0 	grad_ramp{  PVM_OvsTrim0, 0.0, 0.0 }	Ovslist:f1
+	(OvsP0:sp53 ph0):f1	
+	5u                                              Ovslist.inc
+	5u				         	Ovslist:f1
+	(OvsP0:sp53 ph0):f1										
+	OvsD1	grad_ramp{  PVM_OvsTrim1, 0.0, 0.0 }	Ovslist.inc				
+	
+	;pulses 3 + 4
+	OvsD0 	grad_ramp{  0.0, PVM_OvsTrim0, 0.0 }	Ovslist:f1	
+	(OvsP0:sp53 ph0):f1	
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, PVM_OvsTrim2, 0.0 }    Ovslist.inc
+			
+	;pulses 5 + 6
+	OvsD0 	grad_ramp{  0.0, 0.0, PVM_OvsTrim0 }	Ovslist:f1			
+	(OvsP0:sp53 ph0):f1						
+        5u                                              Ovslist.inc
+	5u 					        Ovslist:f1
+	(OvsP0:sp53 ph0):f1
+	OvsD1	grad_ramp{  0.0, 0.0, PVM_OvsTrim3 }    Ovslist.inc
+	OvsD0 	grad_off
+ 
+;EXEC_end   Ovs
+# 244 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+2u
+}
+
+};end vapor
+ ;end subr WsOvsMain
+;EXEC_end   WsOvsMain
+# 254 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/WsOvs.mod"
+ 
+;EXEC_end   WsOvs
+# 77 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+subr FovSat
+;EXEC_begin FovSat FovSat()
+# 33 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/FovSat.mod"
+ 
+  if (PVM_FovSatOnOff == On)
+  {
+                 5u   PVM_FovSatGrad.res
+                 5u   fovSatList.res
+
+    fov18, fovSatRamp   grad_ramp<magnet_coord>{PVM_FovSatGrad[]} fovSatList:f1
+         (fovSatPul   :sp41):f1
+        fovSatSpoil   grad_ramp{0, 0, PVM_FovSatSpoilAmp}
+                 0u   fovSatList.inc
+                 0u   PVM_FovSatGrad.inc        
+    lo to fov18 times PVM_FovSatNSlices
+         
+         fovSatRamp   grad_off
+         fovSatWait
+  }
+ 
+;EXEC_end   FovSat
+# 78 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+subr FatSup
+;EXEC_begin FatSup FatSup()
+# 31 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/FatSup.mod"
+ 
+  if (PVM_FatSupPerform == Yes)
+  {
+           10u       fatSupList:f1
+    (fatSupPul       :sp40):f1
+   fatSupSpoil       grad_shape {0, 0, PVM_FatSupSpoilAmp}
+    fatSupRamp       grad_off
+    fatSupWait
+  }
+ 
+;EXEC_end   FatSup
+# 79 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+# 80 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+        d6	       grad_ramp{ 0 , 0 , g5 }  ;Spoiler
+;----------------------------------slice selection------------------	
+	d4 	       grad_ramp{ 0 , 0 , g0 }         freqTx1:f1
+	(p0:sp0 ph0):f1
+	d4 	       grad_off		               freqTx1.inc
+
+if (LocalizationMode == Voxel_PRESS)
+{
+	FillTE1_1
+	RefSpDur       grad_ramp{RefSpAmp, 0, 0}       freqTx1:f1
+	d4	       grad_ramp{RefGrad1, 0, 0}       freqTx1.inc
+	(p1:sp1 ph1):f1
+	RefSpDur       grad_ramp{RefSpAmp, 0, 0}
+	d4	grad_off
+	FillTE1_2
+
+	FillTE2_1
+	RefSpDur      grad_ramp{0, RefSpAmp, 0}        freqTx1:f1
+	d4	      grad_ramp{0, RefGrad2, 0}        freqTx1.inc
+	(p1:sp1 ph1):f1
+	RefSpDur      grad_ramp{0,RefSpAmp, 0}
+	d4	      grad_off
+	FillTE2_2
+}
+# 105 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+if (LocalizationMode == Slice_SE)
+{
+	FillTE1_1
+	RefSpDur      grad_ramp{0, 0, RefSpAmp}        freqTx2:f1
+	d4	      grad_ramp{0, 0, RefGrad1}        freqTx2.inc
+	(p1:sp1 ph1):f1
+	RefSpDur      grad_ramp{0, 0, RefSpAmp}
+	d4	      grad_off
+	FillTE1_2
+}
+
+if (LocalizationMode == Slice_FID)
+{
+	FillTE1_1
+}
+
+# 122 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+;----------------------------------slice rephase and encoding -----
+	d1 	      grad_ramp{ ACQ_spatial_phase_0*g2 , ACQ_spatial_phase_1*g3 , g1+ACQ_spatial_phase_2*g4 }     ;switching of +/-g1 in method
+	d4m20  	      grad_off
+
+;----------------------------------acquisition---------------
+subr acqdec
+;EXEC_begin acqdec acqdec(phase ph30, phase ph31, any aq_job0)
+# 28 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/acqdec.mod"
+ 
+  if (PVM_DecOnOff == Off)
+  {
+      durx
+      (rde1 de1 adc_job0   ph30 syrec_job0 ) (1u 1u   ph31:r):f_job0
+      1u
+      aq_job0        dwgen_job0
+  }
+  if (PVM_DecOnOff == On)
+  {
+      durx pl2:f2
+      (rde1 de1 adc_job0   ph30 syrec_job0 ) (1u 1u   ph31:r):f_job0
+      1u        dwgen_job0
+      DecD0 cpd2:f2
+      DecD1 do:f2
+  }
+ 
+;EXEC_end   acqdec
+# 128 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+	1m            eoscnpzbwrif_job0
+
+	d0
+# 132 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+;----------------------------------slice loop-----------------------
+        subr DynamicShimInc
+;EXEC_begin DynamicShimInc DynamicShimInc()
+# 37 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/DynamicShim.mod"
+ 
+   if(PVM_DynamicShimEnable==Yes)
+   {
+      0u   dynamicShim.inc
+   }
+ 
+;EXEC_end   DynamicShimInc
+# 134 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+	0u grad_matrix.inc
+        lo to slice times NSLICES
+        subr DynamicShimRes
+;EXEC_begin DynamicShimRes DynamicShimRes()
+# 45 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/DynamicShim.mod"
+ 
+   if(PVM_DynamicShimEnable==Yes)
+   {
+      0u   dynamicShim.res
+   }
+ 
+;EXEC_end   DynamicShimRes
+# 137 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+;---------------------------------- dummy scans --------------------
+        if "lds>0"
+        {
+          "lds = lds-1"
+           goto start
+        }
+;----------------------------------averaging loop-------------------
+        lo to start times avList
+        0u avList.inc
+;----------------------------------1d loop--------------------------
+	0u ACQ_spatial_phase_0.inc
+        0u ACQ_spatial_phase_1.inc 
+        0u ACQ_spatial_phase_2.inc
+	lo to start times l1
+
+        lo to start times NAE
+        lo to start times NR
+
+subr SetupGoTo
+;EXEC_begin SetupGoTo SetupGoTo(any start)
+# 90 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/MRI.include"
+ 
+    if (ACQ_scan_type != Scan_Experiment)
+    {
+        goto start
+    }
+ 
+;EXEC_end   SetupGoTo
+# 156 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+# 157 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+exit
+
+ph0 = 0  ; exc pulse
+ph1 = 1  ; ref pulse
+ph31 = 0 ; receiver
+ph30 = 0 ; reference
+
+# 165 "/root/.topspin-BladeEpu/local_acqu/tuneDirs/20250228_092135_28022025_RatMRSI_HighResAnd3D_BA_28022025_RatMRSI_HighResAnd3D_BA_1_1/15/lists/pp/CSI.ppg"
+	
+
+
