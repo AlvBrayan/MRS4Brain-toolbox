@@ -211,6 +211,8 @@ for i = 1:length(obj.DWS_struct)
         end
         save(sum_processed_study.liststring,'sum_processed_study');
 
+        clear fidtot;
+
     catch ME
         msg = {'Error while doing the processing on the experiment : ',obj.DWS_struct(i).exp_name,  ...
             'Error message : ',ME.message};
