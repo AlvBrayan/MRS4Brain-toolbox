@@ -50,7 +50,7 @@ The *MRS4Brain Toolbox* is written in MATLAB 2023 or later (MathWorks, USA) and 
   1.	Download and install docker desktop (no account is required)
   2.	Start docker desktop
   3.	Run in Windows Powershell: `wsl --update` (if `wsl` is not installed, please run `wsl --install`)
-  4.	Run in Windows Powershell: `docker pull antsx/ants:latest`
+  4.	Run in Windows Powershell: `docker pull antsx/ants:v2.5.0`
   5.	Check that the image is successfully installed on docker by running in Windows Powershell : `docker run --rm antsx/ants /opt/ants/bin/antsRegistration`. If the console returns something akin to what is seen in the printscreen below, ANTs has been successfully installed on your computer docker !
 
 ![image](https://github.com/AlvBrayan/MRS4Brain-toolbox/assets/137405058/c0046519-ebd1-4a5e-a031-0522b8f337ca)
