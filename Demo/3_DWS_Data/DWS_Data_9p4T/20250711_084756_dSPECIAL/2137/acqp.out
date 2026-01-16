@@ -1,0 +1,15 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums, RLE encoded arrays, symbol visibility
+$$ 2025-07-11 11:12:18.470 +0200  cristina@cibmsafe94t1
+$$ /opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/37/acqp.out
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$ACQ_sw_version=( 65 )
+<PV-360.3.5>
+##$ACQ_abs_time=(1752224933, 711, 120)
+$$ @vis= ACQP_OUT ACQ_sw_version ACQ_abs_time
+##END=
+$$ File finished by PARX at 2025-07-11 11:12:18.470 +0200
