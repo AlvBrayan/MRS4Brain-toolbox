@@ -104,8 +104,10 @@ try
         [~, ind_line_prime] = max(SNR_data .* squeeze(obj.Brain_mask(ii,:,:)));
         maxSNR_ind_line(ii) = ind_line_prime(maxSNR_ind_column(ii));
                 
-
-        save(fullfile(obj.data_folder,num2str(obj.metab_expnb),['SNR_map_' num2str(ii) '.mat']),'SNR_data');
+        if(~exist(fullfile(obj.results_folder,'SNRmaps'),'dir'))
+            mkdir(obj.results_folder,'SNRmaps');
+        end
+        save(fullfile(obj.results_folder,'SNRmaps',['SNR_map_',num2str(ii),'.mat']),'SNR_data');
 
         if save_figure
             % Plot

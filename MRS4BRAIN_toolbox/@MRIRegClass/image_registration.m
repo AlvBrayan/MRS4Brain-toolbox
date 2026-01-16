@@ -69,8 +69,24 @@ try
     % Do ANTs registration with current image as fixed and template as
     % moving using Docker with antsx/ants installed on it
 
-    toolbox_folder = pwd;
-    cd(obj.tmp_registration_path)
+    toolbox_folder = pwd; cd(obj.tmp_registration_path);
+
+    % Check & pull Docker software
+    [~,antsID] = system(sprintf('docker images -q antsx/ants:v2.5.0'));
+    if isempty(strtrim(antsID))
+        fprintf(2,['So... you and the toolbox are meeting for the very first time, huh? \n'...
+                   '------------------------------------------------------------------- \n']);
+        fprintf(1,['Please wait while installing the co-registration software... \n'...
+                   '... it’s our first time, so be gentle 😅 ... \n'...
+                   '>> Now’s the perfect time for a coffee break ☕ 😉 \n']);      
+        fprintf(2,'>> I will send you a message here when I am DONE ... \n');
+
+        system(sprintf('docker pull antsx/ants:v2.5.0'));
+
+        fprintf(2,"HEY... I'M DONE !!! GO AHEAD... \n");
+    end
+
+    % Quick registration with ANTs
     start_docker = '';
     if strcmp(computer,'MACI64')
         start_docker = '/usr/local/bin/docker run -v "./tmp_registration:/data" --rm antsx/ants:v2.5.0';
@@ -79,15 +95,12 @@ try
     elseif strcmp(computer,'GLNXA64')
         mkdir(fullfile(obj.tmp_registration_path,'tmp_registration','data'));
     end
-    [~,cmdout] = system([start_docker ' /opt/ants/bin/antsRegistrationSyNQuick.sh -d 3' ...
-        ' -f /data/' image_fn '.nii.gz' ...
-        ' -m /data/' temp_anat_fn '.nii.gz' ...
-        ' -o ' 'reg_' ...
-        ' -t s'],"-echo");
+    [~,cmdout] = system([start_docker ' /opt/ants/bin/antsRegistrationSyNQuick.sh -d 3 -t s' ...
+                                      ' -f /data/' image_fn '.nii.gz -m /data/' temp_anat_fn '.nii.gz -o reg_'],"-echo");
 
     time_elapsed = 0;
     check_files_reg1 = {fullfile(obj.tmp_registration_path,'tmp_registration','reg_Warped.nii.gz'),...
-        fullfile(obj.tmp_registration_path,'tmp_registration','reg_InverseWarped.nii.gz')};
+                        fullfile(obj.tmp_registration_path,'tmp_registration','reg_InverseWarped.nii.gz')};
     
     while any(~isfile(check_files_reg1))
         pause(0.5)
@@ -141,9 +154,15 @@ try
     % Brain mask
     Brain_mask = logical(niftiread(fullfile(obj.tmp_registration_path,'tmp_registration','brain_mask.nii.gz')));
     obj.Brain_mask = Brain_mask;
-    
+
     % Skull stripping
     obj.skstr_image = double(obj.original_image) .* obj.Brain_mask;
+
+    HeadProneOrientation = getappdata(0,'HeadProneOrientation');
+    if HeadProneOrientation==1
+        Brain_mask = Brain_mask(:,end:-1:1,:);
+        obj.Brain_mask = Brain_mask;
+    end
 
     if ~isfolder(fullfile(obj.result_folder,'Registration'))
         mkdir(fullfile(obj.result_folder,'Registration'))

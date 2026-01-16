@@ -8,10 +8,11 @@ if nargin < 2
     save_figure = true;
 end
 
+HeadProneOrientation = getappdata(0,'HeadProneOrientation');
 try
     MatSize = obj.acq_params.matrix_sz; % MRSI Matrix Size
     fmax = obj.acq_params.spectralwidth/2;
-    f = fmax:-2 * fmax/(obj.acq_params.np_met - 1):-fmax;
+    freq = fmax:-2 * fmax/(obj.acq_params.np_met - 1):-fmax;
     
     % Linewidth map initialization
     obj.Linewidth_map = zeros(obj.Nslices,MatSize(1),MatSize(2));
@@ -20,6 +21,10 @@ try
         FWHM_map = zeros(MatSize(1),MatSize(2)); % Linewidth map init
         mean_FWHM = 0;
         ft_ref_temp = fftshift(fft(ifft(ifft(squeeze(obj.ref_mat_tkkn(:,:,:,ii)),[],2),[],3),[],1),1);
+            
+        if HeadProneOrientation==0 
+            ft_ref_temp = ft_ref_temp(:,end:-1:1,:);
+        end
 
         % 0 order-phase correction applied
         [ft_ref,~] = obj.MRSI_0orderphasecorrection_water(ft_ref_temp, ...
@@ -44,10 +49,10 @@ try
                 end
     
                 %Then, we translate those indexes into frequencies (Hz)
-                left_Hz = f(left_ind);
-                left_Hz_under = f(left_ind-1);
-                right_Hz = f(right_ind);
-                right_Hz_under = f(right_ind+1);
+                left_Hz = freq(left_ind);
+                left_Hz_under = freq(left_ind-1);
+                right_Hz = freq(right_ind);
+                right_Hz_under = freq(right_ind+1);
     
                 %Finally, we use a linear interpolation to find the expected
                 %frequency where we are at half maximum
@@ -57,9 +62,13 @@ try
     
                 right_alpha = int_spect(right_ind)/(int_spect(right_ind+1)-int_spect(right_ind));
                 right_ans = (1+right_alpha)*right_Hz - right_alpha*right_Hz_under;
+                
+                % Avoid NaN values
+                if isnan(left_ans);  left_ans = 0;  end
+                if isnan(right_ans); right_ans = 0; end
     
-                FWHM_map(x,y) = (left_ans-right_ans)*obj.Brain_mask(ii,x,y); % Linewidth map for slice ii
-                mean_FWHM = mean_FWHM+(left_ans-right_ans)*obj.Brain_mask(ii,x,y);
+                FWHM_map(x,y) = (left_ans-right_ans); %*obj.Brain_mask(ii,x,y); % Linewidth map for slice ii
+                mean_FWHM = mean_FWHM+(left_ans-right_ans); %*obj.Brain_mask(ii,x,y);
             end
         end
     
@@ -71,13 +80,15 @@ try
         obj.Linewidth_map(ii,:,:) = FWHM_map;
         obj.avg_Linewidth(ii) = mean_FWHM;
     
-        
+        if(~exist(fullfile(obj.results_folder,'LWmaps'),'dir'))
+            mkdir(obj.results_folder,'LWmaps');
+        end
+        save(fullfile(obj.results_folder,'LWmaps',['Lw_map_',num2str(ii),'.mat']),'FWHM_map');
+              
         % Save figure on the data folder
-        save(fullfile(obj.data_folder,num2str(obj.metab_expnb),['Lw_map_' num2str(ii) '.mat']),'FWHM_map');
-
         if save_figure
             % Plot
-            f = figure('Visible','off');
+            fg = figure('Visible','off');
             imagesc(FWHM_map)
             title(['Linewidth map (mean = ' num2str(mean_FWHM) ' Hz) : NSlice = ' num2str(ii)])
             clim([0 60])
@@ -92,21 +103,22 @@ try
             if(~exist(fullfile(obj.data_folder,'Linewidths'),'dir'))
                 mkdir(obj.data_folder,'Linewidths');
             end
-            set(f,'CreateFcn','set(gcbo,''Visible'',''on'')'); 
+            set(fg,'CreateFcn','set(gcbo,''Visible'',''on'')'); 
             filename = fullfile(obj.data_folder,'Linewidths', ...
                 ['E' num2str(obj.ref_expnb) '_LinewidthHz_Slice' num2str(ii)]);
-            saveas(f,filename,'fig');
-            saveas(f,filename,'png');
+            saveas(fg,filename,'fig');
+            saveas(fg,filename,'png');
             set(g,'CreateFcn','set(gcbo,''Visible'',''on'')'); 
             filename = fullfile(obj.data_folder,'Linewidths', ...
                 ['E' num2str(obj.ref_expnb) '_Linewidthppm_Slice' num2str(ii)]);
             saveas(g,filename,'fig');
             saveas(g,filename,'png');
-
-            close([f,g]);
+            
+            close([fg,g]);
         end
         
     end
+
 catch ME
     msg = {'Linewidth map calculus error :',ME.message};
 end

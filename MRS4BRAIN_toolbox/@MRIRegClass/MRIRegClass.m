@@ -39,11 +39,9 @@ classdef MRIRegClass < handle
         Volumetry                       % Volumetry of each brain regions (Left and Right)
     end
 
-
     methods(Access = public)
-
         function obj = MRIRegClass(Nifti_image,mrireg_param,Bruker_folder,result_folder,head_prone)
-
+            
             % MRI REGISTRATION PARAMETERS 
             obj.MRIReg_parameters = mrireg_param;
             
@@ -69,8 +67,7 @@ classdef MRIRegClass < handle
         varargout = update_px_dim(varargin);            % Change the dimension of pixels to correspond to human brain
         varargout = image_registration(varargin);       % Register the MRI rat brain to the anatomical template
         varargout = brain_mask(varargin);               % Create a brain mask from a segmentation Nifti file
-        varargout = image_segmentation(varargin);q      % Apply brain segmentation using the transformations found
+        varargout = image_segmentation(varargin);       % Apply brain segmentation using the transformations found
         varargout = labels_translation(varargin);       % Translate the labels number to corresponding regions
-        
     end
 end
