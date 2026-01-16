@@ -1,0 +1,30 @@
+##TITLE=Parameter List, ParaVision 360 V1.1
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums
+$$ 2022-05-31 14:19:24.880 +0200  cristina@cibmscannerd
+$$ /opt/nmrdata/user/Cristina/data/20220531_122600_MRSI_Rat_Reproducibility_31052022_MRSI_Rat_Reproducibility_31052022_1_1/20/AdjStatePerScan
+$$ process /opt/PV-360.1.1/prog/bin/parxserver
+##$AdjScanStateCompleted=No
+##$AdjScanStateAdjName=( 4, 128 )
+<ATS_Scan> <SHIM_Scan> <ArrayPhase> <RCVR_Standard>
+##$AdjScanStateTime=( 4 )
+<2022-05-31T12:13:27,317+0000> <2022-05-31T12:18:39,483+0000> 
+<2022-05-31T12:18:50,807+0000> <2022-05-31T12:19:11,554+0000>
+##$AdjScanStateExpno=( 4 )
+20 20 20 20
+##$AdjScanStateState=( 4 )
+adj_successful adj_successful adj_successful adj_successful
+##$AdjScanStateResultId=( 4, 65 )
+<2.16.756.5.5.100.8323328.22134.1653999517.2248> 
+<2.16.756.5.5.100.8323328.22134.1653999518.2262> 
+<2.16.756.5.5.100.8323328.22134.1653999529.2307> 
+<2.16.756.5.5.100.8323328.22134.1653999550.2357>
+##$AdjScanStateMethod=( 4, 128 )
+<Bruker:CSI> <Bruker:AdjShim> <Bruker:CSI> <Bruker:CSI>
+##$AdjScanStateModality=( 4 )
+MR_Modality MR_Modality MR_Modality MR_Modality
+##END=
+$$ File finished by PARX at 2022-05-31 14:19:24.880 +0200
