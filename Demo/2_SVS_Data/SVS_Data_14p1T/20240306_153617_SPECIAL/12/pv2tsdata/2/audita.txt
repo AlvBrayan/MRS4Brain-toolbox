@@ -1,0 +1,12 @@
+##TITLE= Audit trail, TopSpin 4.1.4
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= cristina
+$$ /opt/nmrdata/PV-360.3.3/data/cristina/20240306_153617_SHAM761_SVS_malefemale_hippostriat_w6_JM_1_1/12/pv2tsdata/2/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2025-12-04 16:33:13.685 +0100>,<cristina>,<cibmsafe14t1>,<parx>,<TopSpin 4.1.4>,
+      <Created by ParaVision>)
+##END=
+
+$$ hash MD5
+$$ 8F 3C 57 DC 26 DB 5B C4 25 EA A6 A2 FB BC 10 17
