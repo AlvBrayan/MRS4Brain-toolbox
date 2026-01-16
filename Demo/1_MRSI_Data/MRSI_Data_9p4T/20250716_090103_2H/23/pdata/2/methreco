@@ -1,0 +1,29 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums, RLE encoded arrays, symbol visibility
+$$ 2025-07-16 11:29:29.442 +0200  cristina@cibmsafe94t1
+$$ /opt/PV-360.3.5/data/cristina/20250716_090103_MAR_003121_MAR_003121_1_1/23/pdata/2/methreco
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$RetroFrequencyLock_OnOff=Off
+##$KFiltering=On
+##$PVM_SpectAutoProcessing=No
+##$PVM_SpectAutoPhaseCorr=( 1 )
+No
+##$PVM_SpectExpLineBroadening=( 1 )
+No
+##$PVM_SpectExpLineBroadeningHz=( 1 )
+0.01
+##$PVM_SpectAutoBaselineCorr=( 1 )
+No
+##$PVM_SpectZeroFillingFactor=( 1 )
+1
+##$PVM_SpectAutoProcessingPpmRange=( 1, 2 )
+4 1
+##$PVM_SpectAutoProcessingPeakNoiseRatio=10
+$$ @vis= MethodRecoGroup RetroFrequencyLock_OnOff KFiltering
+$$ @vis= SpectAutoProcessing PVM_SpectAutoProcessing
+##END=
+$$ File finished by PARX at 2025-07-16 11:29:29.442 +0200
