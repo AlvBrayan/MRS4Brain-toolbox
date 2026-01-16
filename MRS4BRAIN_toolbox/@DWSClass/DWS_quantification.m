@@ -93,7 +93,7 @@ elseif strcmp(computer,'PCWIN64')
     cd(dws_param.LCModel_path)
     [status, cmdout] = system(['LCModel.exe < "' Cfile_name '"']);
 elseif strcmp(computer,'GLNXA64')
-    cd(svs_param.LCModel_path)
+    cd(dws_param.LCModel_path)
     [status, ~] = system(['/home/lcmodel/.lcmodel/bin/lcmodel < "' Cfile_name '"']);
 end
 
@@ -133,9 +133,9 @@ end
 basis_set = dws_param.Basis_set;
 cfile = fullfile(LCModel_results_folder,[filenameRAW,'.CONTROL']);
 fileid = fopen(cfile,'w');
-fprintf(fileid,' $LCMODL\n');
+fprintf(fileid,' $LCMODL\n'); 
 fprintf(fileid,' ATTH2O = 1.0\n'); % attenuation of the NMR-visible water signal
-fprintf(fileid,'NRATIO = %.2f\n',dws_param.NRATIO); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
+fprintf(fileid,'NRATIO = %i\n',dws_param.NRATIO); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
 % if ~dws_param.NRATIO
 %     fprintf(fileid,'NRATIO = 0\n'); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
 % end

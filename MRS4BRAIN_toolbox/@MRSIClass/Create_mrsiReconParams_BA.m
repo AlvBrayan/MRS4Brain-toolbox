@@ -2,6 +2,7 @@
 % See the LICENSE.TXT file for more details.
 
 function mrsiReconParams = Create_mrsiReconParams_BA(obj,mrsiData_tkk,PercentThres,BrainMap)
+mrsiReconParams.results_folder = obj.results_folder;
 
 MatSize = obj.acq_params.matrix_sz;
 

@@ -24,6 +24,12 @@ if isfile(brain_mask_fn)
     Brain_mask = logical(niftiread(brain_mask_fn));
     obj.Brain_mask = Brain_mask;
 
+    HeadProneOrientation = getappdata(0,'HeadProneOrientation');
+    if HeadProneOrientation==1
+        Brain_mask = Brain_mask(:,end:-1:1,:);
+        obj.Brain_mask = Brain_mask;
+    end
+
     if ~isfolder(fullfile(obj.result_folder,'Registration'))
         mkdir(fullfile(obj.result_folder,'Registration'))
     end

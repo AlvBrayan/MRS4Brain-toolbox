@@ -87,7 +87,7 @@ try
     
     GUIparamnames = {"acq_time_spec","acquisition_time","spectralwidth","sequence","np_met","nucleus",...
         "matrix_sz","resfreq","acq_freqshift","ppm_ref","ppm_workoffset",...
-        "rep_time","gain_met","gain_ref","voxs","nrep","nav","acq_delay"};
+        "rep_time","gain_met","voxs","nrep","nav","acq_delay"};
     
     acq_params = fill_params(acq_params,methodfile,BRUKERparamnames,GUIparamnames);
 

@@ -66,6 +66,15 @@ for i = 1:length(obj.DWS_struct)
                 fids2lb = out2.fids.*repmat(exp(-tt*pi*dws_param.LBall).',1,out2.averages);
                 out2lb.fids = fids2lb;
                 out2lb.specs = fftshift(fft(out2lb.fids.',[],2),2).';
+                if ~isempty(badAverages)
+                    fprintf(2,['!!! ATTENTION !!! Noisy shots: ',num2str(badAverages(:)'),' ---> REMOVED ☹☹ \n'])
+                    txt  = vertcat({obj.DWS_struct(i).exp_name},{''},{['!!! ATTENTION !!! Noisy shots: ',num2str(badAverages(:)'),' ---> REMOVED ☹☹']});
+                    tdir = fullfile(obj.result_dir,obj.foldername,['Removed_shots_in_',obj.DWS_struct(i).exp_name,'.txt']); writecell(txt,tdir);    
+                else
+                    fprintf(2,'!!! ATTENTION !!! No noisy shots 😊😊 \n')
+                    txt  = vertcat({obj.DWS_struct(i).exp_name},{''},{'!!! ATTENTION !!! No noisy shots 😊😊'});
+                    tdir = fullfile(obj.result_dir,obj.foldername,['No_removed_shots_in_',obj.DWS_struct(i).exp_name,'.txt']); writecell(txt,tdir);  
+                end
             else
                 metric = zeros(study.multiplicity,1);
                 badAverages = [];

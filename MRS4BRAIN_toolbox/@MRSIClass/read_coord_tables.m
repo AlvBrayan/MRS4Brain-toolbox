@@ -109,7 +109,7 @@ for pa = 1:qp
         fclose(fid);
         S = S{1,1};
         idx_ppmaxis = find(contains(S, 'points on ppm-axis = NY'));
-        idx_SNR_FWHM = contains(S, 'S/N');
+        idx_SNR_FWHM = find(contains(S, 'S/N'));
         idx_data_points = find(contains(S, 'NY phased data points follow'));
         idx_phase = find(contains(S, 'Ph:'));
         idx_baseline_points = find(contains(S, 'NY background values follow'));
@@ -191,9 +191,15 @@ for pa = 1:qp
                         % Getting the baseline points from coord file
                         baseline_pts_tot(:,i,j) = cat(2,S2{2*diff_points+1:end}).';
                         % Getting the SNR & FWHM
-                        S2 = cellfun(@str2double,cellfun(@strsplit, ...
-                            S(idx_SNR_FWHM),'UniformOutput',false),'UniformOutput',false);
-                        SF = rmmissing(S2{:});
+
+                        % S2 = cellfun(@str2double,cellfun(@strsplit, ...
+                        %    S(idx_SNR_FWHM),'UniformOutput',false),'UniformOutput',false);
+                        % SF = rmmissing(S2{:});
+
+                        SNRline = S(idx_SNR_FWHM);
+                        SF(1) = str2num(extractBefore(extractAfter(SNRline{:},'FWHM ='),'ppm'));
+                        SF(2) = str2num(extractAfter(SNRline{:},'S/N ='));
+
                         SNR(i,j) = SF(2);
                         FWHM(i,j) = SF(1);
                         % Getting the 0 & 1st order phase
@@ -245,7 +251,7 @@ for pa = 1:qp
     else
         obj.Final_met_map(slice) = met_map;
     end
-    save(fullfile(directory_results,'metab_map.mat'),"met_map")
+    save(fullfile(directory_results,'metab_map.mat'),"met_map");
 end
 
 %% Additional functions

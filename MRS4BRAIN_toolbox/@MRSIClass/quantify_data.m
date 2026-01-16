@@ -61,31 +61,24 @@ for pa = 1:qp
     name_list = {src_dir.name}; % Metabolite and reference files
     size_name = length(name_list)/2;
 
-
-    tic
     parfor t = 1:size_name
         size(name_list);
         filename = name_list{2*t-1};
         filename = filename(1:end-4);
-        % if ~isfile(fullfile(MRSI_datadir,[filename '.ps']))
         BatchLCModel(filename,MRSI_datadir,mrsi_params,acq_params,control_path);
-        % end
     end
     if any(~cellfun(@isempty,msg))
         return
     end
-    toc
-
-    tic
+    
+    % Quantify missed voxels if any during parfor
     for t = 1:size_name
         filename = name_list{2*t-1};
         filename = filename(1:end-4);
-        if ~isfile(fullfile(MRSI_datadir,[filename '.ps'])) %Check if all data were well quantified
+        if ~isfile(fullfile(MRSI_datadir,[filename '.ps'])) % Check if any voxels aren't quantified
             BatchLCModel(filename,MRSI_datadir,mrsi_params,acq_params,control_path);
         end
     end
-    toc
-    
 end
 cd(current_dir)
 end
@@ -114,7 +107,7 @@ end
 function msg = BatchLCModel(filename,MRSIdataDir,mrsi_params,acq_params,control_path)
 
 % Controlfile
-Cfile_name = create_control_file(filename,MRSIdataDir,mrsi_params,acq_params,control_path);
+Cfile_name = create_control_file(filename,MRSIdataDir,mrsi_params,acq_params,control_path); 
 
 % Run LCModel
 if strcmp(computer,'MACI64')
@@ -153,11 +146,13 @@ end
 % OUTPUT :
 % cfile              = Control filename
 function cfile = create_control_file(filename,MRSIdataDir,mrsi_params,acq_params,cfile_dir)
+
 % Input initialization
 basis_set = mrsi_params.Basis_set;
 if nargin < 5
     cfile_dir = MRSIdataDir;
 end
+
 cfile = fullfile(cfile_dir,[filename,'.CONTROL']);
 fileid = fopen(cfile,'w');
 fprintf(fileid,' $LCMODL\n');
@@ -188,7 +183,9 @@ fprintf(fileid,' CONREL = %.2f\n',mrsi_params.Rel_conc); % Relative metabolite c
 fprintf(fileid,' DELTAT = %.2i\n',1./acq_params.spectralwidth); % 1/samplerate
 fprintf(fileid,' DKNTMN = %1.2f\n',mrsi_params.DKNTMN); % DKNTMN
 %  DOECC = F
+
 fprintf(fileid,' DOWS = T\n'); % DO water scaling
+
 %  DOREFS = T
 fprintf(fileid,' FWHMBA = 0.0050\n');
 fprintf(fileid,' HZPPPM = %.3f\n',acq_params.resfreq); % NMRfreq
@@ -196,7 +193,9 @@ fprintf(fileid,' LCOORD = 9\n'); % Save coord file, Y : LCOORD = 9, N : LCOORD =
 fprintf(fileid,' LTABLE = 7\n'); % Save table file, Y : LTABLE = 7, N : LTABLE = 0
 fprintf(fileid," NAMREL = '%s'\n",mrsi_params.Rel_met); % Relative metabolite name
 fprintf(fileid,' NCALIB = 0\n');
+
 fprintf(fileid,' NUNFIL = %i\n',acq_params.np_met); % FidPoints
+
 fprintf(fileid," PGNORM = 'US'\n");
 fprintf(fileid,' PPMEND = %1.2f\n',mrsi_params.PPMend); % right edge of the window
 fprintf(fileid,' PPMST = %1.2f\n',mrsi_params.PPMstart); % left edge of the window

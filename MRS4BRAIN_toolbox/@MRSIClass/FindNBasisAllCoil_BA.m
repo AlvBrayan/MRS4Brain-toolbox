@@ -12,9 +12,10 @@ MaxNbasis = 64; %Must be a power of 2
 
 [NCoil,Nt,Nx,Ny] = size(mrsiReconParams.mrsiData);
 
-Lipid_SingSpect_fsc = zeros(Nt,MaxNbasis,NCoil);
+% Lipid_SingSpect_fsc = zeros(Nt,MaxNbasis,NCoil);
 % LipidMask_rrf = zeros(Nx,Ny,Nt);
 
+Lipid_SingSpect_fsc = [];
 for coil = 1:NCoil
     CoilLipids_rrf = permute(fft(mrsiReconParams.SENSE(coil,:,:).*ifft(ifft(Lipids_tkk,[],2),[],3),[],1),[2,3,1]);
 
@@ -31,6 +32,10 @@ for coil = 1:NCoil
     LipidMask_rrf = repmat(squeeze(CoilLipid_mask),[1 1 Nt]);
     Lipid_stack_rf = reshape(CoilLipids_rrf(LipidMask_rrf > 0),[],Nt);
     [~,~,Vorig] = svd(Lipid_stack_rf,'econ');
+
+    while (nnz(CoilLipid_mask)<MaxNbasis)
+        MaxNbasis = MaxNbasis/2;
+    end
 
     Lipid_SingSpect_fsc(:,:,coil) = Vorig(:,1:MaxNbasis);
 end

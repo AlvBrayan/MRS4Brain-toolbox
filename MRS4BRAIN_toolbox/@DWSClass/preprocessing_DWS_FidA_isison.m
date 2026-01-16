@@ -85,6 +85,16 @@ for i = 1:length(obj.DWS_struct)
                 fids2blb = out2b.fids.*repmat(exp(-tt*pi*dws_param.LBall).',1,out2b.averages);
                 out2blb.fids = fids2blb;
                 out2blb.specs = fftshift(fft(out2blb.fids.',[],2),2).';
+                if ~isempty(badAveragesa) | ~isempty(badAveragesb)
+                    badavg = union(badAveragesa,badAveragesb); 
+                    fprintf(2,['!!! ATTENTION !!! Noisy shots: ',num2str(badavg(:).'),' ---> REMOVED  ☹☹ \n'])
+                    txt  = vertcat({obj.DWS_struct(i).exp_name},{''},{['!!! ATTENTION !!! Noisy shots: ',num2str(badavg(:).'),' ---> REMOVED  ☹☹']});
+                    tdir = fullfile(obj.result_dir,obj.foldername,['Removed_shots_in_',obj.DWS_struct(i).exp_name,'.txt']); writecell(txt,tdir); 
+                else
+                    fprintf(2,'!!! ATTENTION !!! No noisy shots 😊😊 \n')
+                    txt  = vertcat({obj.DWS_struct(i).exp_name},{''},{'!!! ATTENTION !!! No noisy shots 😊😊'}); 
+                    tdir = fullfile(obj.result_dir,obj.foldername,['No_removed_shots_in_',obj.DWS_struct(i).exp_name,'.txt']); writecell(txt,tdir);  
+                end
             else
                 metrica = zeros(round(study.multiplicity/2),1); metricb = metrica;
                 badAveragesa = []; badAveragesb = [];
@@ -211,7 +221,7 @@ for i = 1:length(obj.DWS_struct)
         end
         save(sum_processed_study.liststring,'sum_processed_study');
 
-        clear fidtot;
+       clear fid2sum fidtot
 
     catch ME
         msg = {'Error while doing the processing on the experiment : ',obj.DWS_struct(i).exp_name,  ...
