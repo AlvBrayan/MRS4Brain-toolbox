@@ -78,6 +78,15 @@ for i = 1:length(obj.SVS_struct)
                 fids2clb=out2c.fids.*repmat(exp(-tt*pi*svs_param.LBall).',1,out2c.averages);
                 out2clb.fids=fids2clb;
                 out2clb.specs=fftshift(fft(out2clb.fids.',[],2),2).';
+                if ~isempty(badAveragesc)
+                    fprintf(2,['!!! ATTENTION !!! Noisy shots: ',num2str(badAveragesc(:)'),' ---> REMOVED ☹☹ \n'])
+                    txt  = vertcat({obj.SVS_struct(i).exp_name},{''},{['!!! ATTENTION !!! Noisy shots: ',num2str(badAveragesc(:)'),' ---> REMOVED ☹☹']});
+                    tdir = fullfile(obj.result_dir,obj.foldername,['Removed_shots_in_',obj.SVS_struct(i).exp_name,'.txt']); writecell(txt,tdir);   
+                else
+                    fprintf(2,'!!! ATTENTION !!! No noisy shots 😊😊 \n')
+                    txt  = vertcat({obj.SVS_struct(i).exp_name},{''},{'!!! ATTENTION !!! No noisy shots 😊😊'});
+                    tdir = fullfile(obj.result_dir,obj.foldername,['No_removed_shots_in_',obj.SVS_struct(i).exp_name,'.txt']); writecell(txt,tdir);    
+                end
             else
                 out2c=out1c;
                 out2c.fids=conj(out2c.fids);
@@ -102,8 +111,6 @@ for i = 1:length(obj.SVS_struct)
             fidmocor(ind:end,:) = [];
             
             fidmocor = conj(fidmocor);
-
-            clear fid2sum fidtot
     
             %% 4-add all the info to the Matlab study structure
 
@@ -197,6 +204,8 @@ for i = 1:length(obj.SVS_struct)
             mkdir(fullfile(obj.result_dir,obj.foldername,'processed','sum'));
         end
         save(sum_processed_study.liststring,'sum_processed_study');
+        
+        clear fid2sum fidtot
 
     catch ME
         msg = {'Error while doing the processing on the experiment : ',obj.SVS_struct(i).exp_name,  ...
