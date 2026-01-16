@@ -1,0 +1,29 @@
+##TITLE= Audit trail, TopSpin 4.1.4
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= cristina
+$$ /opt/nmrdata/PV-360.3.3/data/cristina/20240530_092213_BDL776_sham_male_30052024_BDL776_sham_male_30052024_1_1/24/pv2tsdata/1/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2024-05-30 11:32:50.586 +0200>,<cristina>,<cibmscannerd>,<parx>,<TopSpin 4.1.4>,
+      <Created by ParaVision>)
+(   2,<2024-05-30 11:32:50.962 +0200>,<cristina>,<cibmscannerd>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: SI = 8K FT_mod = 6 PKNL = 1 F1: SI = 160 FT_mod = 6 FCOR = 0.5 MC2 = 0
+       data hash MD5: 8K * 160
+       AC 6F E8 59 DC FF E5 2E 5F 69 08 30 6D A7 5C 45>)
+(   3,<2024-05-30 11:32:51.105 +0200>,<cristina>,<cibmscannerd>,<apkm>,<TopSpin 4.1.4>,
+      <apkm, pseudo-2D mode 
+       data hash MD5: 8K * 160
+       31 E7 E7 3C 6B 0B 53 BA B8 3C 31 F8 95 F9 03 C5>)
+(   4,<2024-05-30 11:32:51.161 +0200>,<cristina>,<cibmscannerd>,<proc2d>,<TopSpin 4.1.4>,
+      <abs1 F1: ABSG = 5 ABSF1 = 198519 ABSF2 = 198519
+       data hash MD5: 8K * 160
+       31 E7 E7 3C 6B 0B 53 BA B8 3C 31 F8 95 F9 03 C5>)
+(   5,<2024-05-30 11:32:51.226 +0200>,<cristina>,<cibmscannerd>,<proc2d>,<TopSpin 4.1.4>,
+      <abs2 F2: ABSG = 5 ABSF1 = 10.00069 ABSF2 = 7.963688e-05
+       data hash MD5: 8K * 160
+       8D F7 AE 00 CC 6C 54 0A 50 04 68 61 65 B1 6A BF>)
+##END=
+
+$$ hash MD5
+$$ 9C 00 9D 25 2B 89 FF C9 9C 9D 10 DB 9A B2 34 44
