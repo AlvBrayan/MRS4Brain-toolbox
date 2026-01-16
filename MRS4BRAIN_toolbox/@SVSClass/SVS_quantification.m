@@ -131,7 +131,7 @@ cfile = fullfile(LCModel_results_folder,[filenameRAW,'.CONTROL']);
 fileid = fopen(cfile,'w');
 fprintf(fileid,' $LCMODL\n');
 fprintf(fileid,' ATTH2O = 1.0\n'); % attenuation of the NMR-visible water signal
-fprintf(fileid,'NRATIO = %.2f\n',svs_param.NRATIO); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
+fprintf(fileid,'NRATIO = %i\n',svs_param.NRATIO); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
 % if ~svs_param.NRATIO
 %     fprintf(fileid,'NRATIO = 0\n'); % NRATIO parameter : number of soft constraints on concentration ratios (default = 12)
 % end

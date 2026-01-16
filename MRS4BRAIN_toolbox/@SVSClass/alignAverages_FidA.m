@@ -107,7 +107,7 @@ for m = 1:B
             datarange = op_freqrange(in,minppm,maxppm);
             start = datarange.fids(datarange.t >= 0 & datarange.t < tmax,n,m);
             parsFit = nlinfit(start,base,@op_freqPhaseShiftComplexRangeNest,parsGuess);
-            fids(:,n,m) = op_freqPhaseShiftNest(parsFit,in.fids(:,n,m));
+            fids(:,n,m) = op_freqPhaseShiftNest(parsFit,conj(in.fids(:,n,m))); %CHANGED BY BA 08012026
             fs(n,m) = parsFit(1);
             phs(n,m) = parsFit(2);
             %plot(in.ppm,fftshift(ifft(fids(:,1,m))),in.ppm,fftshift(ifft(fids(:,n,m))));
@@ -115,7 +115,7 @@ for m = 1:B
     end
 end
 
-fids = conj(fids);
+% fids = conj(fids); CHANGED BY BA 08012026
 %re-calculate Specs using fft
 specs = fftshift(ifft(fids,[],in.dims.t),in.dims.t);
 
@@ -252,7 +252,7 @@ end
 
 function out = op_freqrange(in,ppmmin,ppmmax)
 %Calculate Specs using fft
-fullspecs = fftshift(ifft(in.fids,[],in.dims.t),in.dims.t);
+fullspecs = fftshift(ifft(conj(in.fids),[],in.dims.t),in.dims.t); %CHANGED BY BA 08012026
 %now take only the specified range of the spectrum
 specs = fullspecs(in.ppm > ppmmin & in.ppm < ppmmax,:,:);
 %convert back to time domain
