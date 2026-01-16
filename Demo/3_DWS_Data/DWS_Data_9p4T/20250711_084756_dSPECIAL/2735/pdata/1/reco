@@ -1,0 +1,330 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums, RLE encoded arrays, symbol visibility
+$$ 2025-07-11 11:03:44.978 +0200  cristina@cibmsafe94t1
+$$ /opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/pdata/1/reco
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$RECO_time=<2025-07-11T11:03:44,937+0200>
+##$RECO_abs_time=(1752224624, 937, 120)
+##$RECO_base_image_uid=( 65 )
+<2.16.756.5.5.200.8323328.1372159.1752223789.1952>
+##$RECO_fov=( 1 )
+5.8
+##$RECO_size=( 1 )
+4096
+##$RecoAutoDerive=No
+##$RecoDim=1
+##$RecoSpatDim=0
+##$RecoObjectsPerRepetition=1
+##$RecoObjectsPerSetupStep=1
+##$RecoSortObjectsPerRepetition=1
+##$RecoNumRepetitions=196
+##$RecoNumOutputChan=1
+##$RecoEncodingFrames=1
+##$RecoRepetitionGroupSize=1
+##$RecoPreppassProcDim=0
+##$RECO_inp_order=NO_REORDERING
+##$RECO_inp_size=( 1 )
+4096
+##$RECO_ft_size=( 1 )
+4096
+##$RECO_offset=( 1, 1 )
+0
+##$RECO_qopts=( 1 )
+NO_QOPTS
+##$RECO_wdw_mode=( 1 )
+NO_WDW
+##$RECO_lb=( 1 )
+-0.5
+##$RECO_sw=( 1 )
+0
+##$RECO_gb=( 1 )
+0.5
+##$RECO_sbs=( 1 )
+1
+##$RECO_tm1=( 1 )
+0.25
+##$RECO_tm2=( 1 )
+0.75
+##$RECO_ft_mode=( 1 )
+COMPLEX_FT
+##$RECO_pc_mode=( 1 )
+NO_PC
+##$RECO_pc_lin=( 1 )
+(0, 0)
+##$RECO_rotate=( 1, 1 )
+0.5
+##$RECO_ppc_mode=NO_PPC
+##$RECO_ppc_degree=1
+##$RECO_transposition=( 1 )
+0
+##$RECO_image_type=MAGNITUDE_IMAGE
+##$RECO_image_threshold=0.15
+##$RECO_wordtype=_16BIT_SGN_INT
+##$RECO_map_mode=ABSOLUTE_MAPPING
+##$RECO_map_range=( 2 )
+-2147483647 2147483647
+##$RECO_map_percentile=( 2 )
+1 99.9
+##$RECO_map_error=0.025
+##$RECO_minima=( 196 )
+111.227680242023 181.955482761798 127.597997190625 58.3041358180904 
+47.4121931103174 78.6564883862945 32.2071052593634 64.1028491140844 
+155.380885601723 125.716279038129 153.047157015804 15.8896968703159 
+210.058319453474 79.4436902180027 119.235879803006 57.7277675112335 
+124.546766655541 30.2245786864053 73.8849425301226 73.9349247158653 
+68.7351970539959 65.6323579262181 131.222742699984 146.433656044364 
+30.6382370777323 106.134431715906 152.693284927476 81.8969280346159 
+222.382501515516 95.0639295266089 73.5613601038208 130.167190221015 
+43.7430165496503 85.324036977945 8.44577440820522 26.6910430372992 
+65.435428585557 162.515058501396 26.7516359374901 125.712558118439 
+71.6378056848929 128.076683451184 33.7911434774745 135.95424342893 
+44.3010169526239 61.6912893331386 148.160560936394 39.4497798936429 
+22.7188838113009 115.40345371316 49.2013644193949 100.752995484203 
+50.9583334163278 49.6646996107082 102.578922694539 123.686878054894 
+112.297769256201 149.964052145927 66.7092193121102 97.3952790117696 
+147.436423668601 21.860027715399 28.0851017823588 44.3348795901447 
+40.4785382103358 60.2331158098203 122.626033335569 42.3945048246989 
+123.111937073398 56.3143002131419 146.887233048745 46.1650487193342 
+103.26982538679 37.4918257260749 39.8977646379535 15.7851718525613 
+134.476956666325 127.429004125271 135.206494532556 85.9559020793723 
+186.211714646541 24.993756669813 113.696536759464 61.6722188215514 
+151.196079713632 155.1490886383 40.2290173011 27.5786082201722 
+125.808076849033 58.7169751844829 113.271402402013 65.836870003833 
+170.022183228724 22.5403608973607 74.7978203063505 94.2493390774447 
+150.421384537533 74.0597462450394 63.7269509139698 101.829827316178 
+199.764707243385 49.918681250399 122.544888735342 50.9367785603208 
+63.2779794579114 127.839174900388 129.960278410193 118.756900578039 
+123.617019651114 106.736307010551 53.0161433970697 30.1935544361007 
+84.9508668250629 159.31723949739 117.816902691322 87.9054013661607 
+69.6498738009585 70.1089337264473 126.621609506772 97.876740759266 
+28.1925670620605 53.652750254133 118.744346823655 39.1609372970843 
+111.805506941622 103.879538670697 114.548665516639 68.2000577134764 
+144.670627852522 72.0656788038652 118.766640750606 65.4521636123527 
+53.4566696203529 125.376221257919 50.1416633190739 40.6984156466459 
+48.4162557539349 130.52452316393 59.3845018060985 57.4615937657945 
+180.113274875646 60.0949180963337 59.9048180377198 61.5485186154643 
+27.1180178243147 80.5759749081045 105.268627235515 59.911002419541 
+23.2774537237947 76.4645603515072 136.403894377744 13.8305518393734 
+122.935469432378 24.5907596187651 57.6038729576246 139.137696444281 
+98.5060031923263 105.604520819647 67.8562853616519 61.641150237946 
+83.2674938030692 92.1608483562474 81.2747698846415 73.0972420109825 
+51.9925936577607 29.3080843378674 123.593479338439 55.8184744556771 
+125.31379397242 42.989783446605 117.852588846437 96.8158619256128 
+66.0828455664897 37.0986005150384 22.7169818680772 61.8463468662619 
+50.0423178653963 86.9429079197556 53.1410744268686 79.5628965377135 
+91.5989413065713 111.524909375715 72.4535465411905 33.1266028752999 
+45.3799243970598 20.5564217698727 105.368417623263 50.1926140827876 
+175.622457682421 63.7569742464694 99.0732246738318 89.3496936805341 
+22.4206874938197 27.3297449456985 78.5361051910175 159.566114412833
+##$RECO_maxima=( 196 )
+28708.4295913706 22690.0512862343 27100.0978925773 21945.5856925564 
+29373.6207159392 21732.8259449403 24656.4497520587 17521.905282178 
+26747.5966672691 22211.6279554163 21708.1635637863 19574.2383649513 
+26515.7540133212 20600.8556314378 23756.6422717268 18448.690814874 
+22011.4451421936 19008.6621038042 28302.9513687558 20322.7702685343 
+25484.9400705799 18082.7599795127 28242.1046371544 21221.8207704913 
+25248.8678475773 18918.8634217723 27673.968525317 20639.1526420311 
+28720.5996793568 18039.3590476729 23966.956266676 21886.4841439956 
+26762.4724665445 21648.9363426398 27771.5473654892 22612.2808919556 
+28128.2439520846 21747.4272833816 27051.1065588642 20529.1182910274 
+32198.7467492277 21570.480612445 25029.4169466767 19866.3232250033 
+22497.3893779438 18566.692943453 24002.3971792726 21567.810301506 
+26543.8216875003 21964.2840277084 25582.3115354775 20580.6838000896 
+20943.1423017066 21255.2021011707 21492.5080653675 21351.7085936878 
+27271.2006848754 21152.4759284774 25282.7389549381 17351.7827265086 
+25756.216840632 16860.9745205191 19313.7800301104 17859.8240691265 
+23481.402140286 18292.1351911529 24972.2648728658 20321.1325347539 
+26260.3023485313 17991.2668128433 23110.9749164109 21050.8164002311 
+23195.7402394893 20147.3353545936 28861.9484387444 18077.1406152441 
+27096.650296142 20380.3749595194 26197.5429199293 20602.1178546505 
+21080.1363077212 18940.7060263652 23718.0756870434 19283.4280657214 
+25627.1362026736 27582.321353804 23631.9905040416 21264.4579885051 
+27421.8249511363 20604.7707425458 24433.5477815748 18819.474761712 
+26037.0138815487 25092.8318435616 24600.429138234 20332.8725668389 
+29618.5310111269 17212.2649206794 24290.4654681294 20516.8330752375 
+27991.606046768 16853.8100879292 21571.3581996109 22171.9069882305 
+26899.5727677998 18397.5143317767 25632.7384306535 24746.9482602263 
+25574.931625474 19000.6309579198 28442.45035647 17603.0473148905 
+26376.5525907396 23800.0847543872 27101.9006689674 19405.1238533282 
+29481.6614763175 17238.2908240582 22427.7137351241 21930.5210644028 
+27678.4391100335 23286.7058795795 30957.5852678728 20337.038671775 
+25537.8701733808 16997.5836200463 26106.8097750575 17701.5681476058 
+27789.7079316456 18921.5645420373 26418.6042307136 20217.6677471791 
+29036.6378580648 16164.1688124122 28192.2247662813 19815.6675970976 
+27971.343911397 20388.6959564326 21062.7474596342 20040.7619852494 
+29078.1682384946 20713.6201701192 24287.3807146768 19841.4574038114 
+28959.7553014619 19371.2818825253 32406.8091722058 24683.5518504985 
+28307.7328552824 20739.4751864172 22457.6683940422 19337.5534520783 
+22568.9551478466 20595.6512885136 24002.5357181472 17608.7891379772 
+28417.746674807 22849.0559693559 21243.4511473086 20820.090108603 
+21502.9484260105 22615.0665015544 26290.1677492724 16875.6706568722 
+29068.0560779579 18889.7936732666 28566.6335952787 20277.9162196661 
+28212.6919130378 17905.74381823 25881.277558094 18527.6895412993 
+29004.9922476542 23861.4094409866 26709.0737158473 18428.1458834264 
+25317.867804188 22347.3913647496 24848.6171518382 18348.2201700724 
+24021.9186391466 20651.4937050071 27675.751465788 24412.0239051094 
+23028.1517156463 20619.4937296039 20857.7669475354 18879.843699174 
+28583.465681113 19350.6434519285 26008.2747924709 16322.2415573464 
+24611.6781838603 22500.8488269615 32766.5 21502.9174772338
+##$RECO_map_min=( 196 )
+@196*(-4575.91771719069)
+##$RECO_map_max=( 196 )
+@196*(4575.91771719069)
+##$RECO_map_offset=( 196 )
+@196*(0)
+##$RECO_map_slope=( 196 )
+@196*(7.16064012185002)
+##$RECO_byte_order=littleEndian
+##$RecoUserUpdate=Yes
+##$RecoReverseSegment=0
+##$RecoB0DemodOff=0
+##$RecoB0DemodDelay=0
+##$RecoFTOrder=( 1 )
+-1
+##$RecoHalfFTAlgorithm=ZEROFILLING
+##$RecoHalfFT=( 1 )
+No
+##$RecoHalfFTPos=( 1 )
+2048
+##$RecoHalfFTAcq=No
+##$RecoNoFT=No
+##$RecoExportSortedData=No
+##$RecoCorrPhase=RecoCorrPhaseOff
+##$RecoCorrPhaseRef=-1
+##$RECO_map_user_slope=1
+##$RECO_map_user_offset=0
+##$RecoNumInputChan=4
+##$RecoScaleChan=( 4 )
+0.530920052 0.548250066 0.671002 0.520566084
+##$RecoPhaseChan=( 4 )
+0 0 0 0
+##$RecoCombineMode=AddImages
+##$RecoEncGenInt=0
+##$RecoSortDim=0
+##$RecoSortSize=( 1 )
+0
+##$RecoSortRange=( 1 )
+0
+##$RecoSortSegment=( 1 )
+0
+##$RecoSortMaps=( 1 )
+0
+##$RecoGrappaAccelFactor=1
+##$RecoGrappaAccelFactor2=1
+##$RecoGrappaKernelRead=5
+##$RecoGrappaKernelPhase=4
+##$RecoGrappaKernelPhase2=4
+##$RecoGrappaKernelTime=3
+##$RecoGrappaNumRefRead=64
+##$RecoGrappaNumRefPhase=0
+##$RecoGrappaNumRefPhase2=0
+##$RecoGrappaIncludeRefLines=Yes
+##$RecoGrappaFirstRepOnly=No
+##$RecoGrappaReadCenter=0
+##$RecoGrappaPhaseCenter=0
+##$RecoGrappaPhaseCenter2=0
+##$RecoGrappaTruncThresh=0.01
+##$RecoGrappaLambda=0.01
+##$RecoGrappaCoefReps=1
+##$RecoSliceGrappaAccelFactor=1
+##$RecoSliceGrappaBlipValue=1
+##$RecoSliceGrappaKernelRead=5
+##$RecoSliceGrappaKernelPhase=4
+##$RecoSliceGrappaNumRefRead=0
+##$RecoSliceGrappaNumRefPhase=0
+##$RecoSliceGrappaReadCenter=0
+##$RecoSliceGrappaPhaseCenter=0
+##$RecoSliceGrappaTruncThresh=0.01
+##$RecoSliceGrappaLambda=0.01
+##$RecoSliceGrappaOff=No
+##$RecoGrappa3D=No
+##$RecoGrappaCaipirinha=No
+##$RecoGrappaTCaipirinha=No
+##$RecoGrappaVirtualCoils=No
+##$RecoGrappaVirtualCoilsLambda=2
+##$RecoGrappaPeak=No
+##$RecoGrappaTimeLoop=No
+##$RecoGrappaOne=No
+##$RecoGrappaOneLambda=0.1
+##$RecoSegGrappa=No
+##$RecoSegGrappaCalibrateFromB0=No
+##$RecoSegGrappaInt=0
+##$RecoSegGrappaSegments=1
+##$RecoSegGrappaTruncThresh=0.01
+##$RecoSegGrappaLambda=0.01
+##$RecoSegGrappaLambdaSeg=2
+##$RecoItGrappa=1
+##$RecoCS=No
+##$RecoRegridN=Off
+##$RecoStageNrPasses=3
+##$RecoStagePasses=( 3 )
+(<FIRSTPASS>, 0) (<PREPPASS>, 1) (<MAPPASS>, 2)
+##$RecoStageNrNodes=69
+##$RecoStageNodes=( 69 )
+(<job0>, 0, <RecoSharedQueueSource 
+Q0{queueId=Job_In0;initQueue=true;appendPsId=true;dim=2;procDim=1;sizes={16384,1};nr=196;dataRep=SIGNED;baseField=COMPLEX;wordSize=4}>) (<job0>, 0, <RecoSharedQueueSink QS{queueId=Job_Out0;initQueue=true;appendPsId=true}>) (<job0>, 0, <RecoFileSink FS{jobNdx=0;writeAcqPars=true;filename="/opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/rawdata.job0"}>) (<job0>, 0, <RecoProgressMonitorFilter PM{reportScanProgress="1/1"}>) (<job0>, 0, <RecoTeeFilter TeeStorage>) (<job0>, 0, <RecoCastFilter CastToFloatMain{dataRep=FLOAT;wordSize=8}>) (<job0>, 0, <RecoTeeFilter TeeAverage>) (<job0>, 0, <RecoDummySink DummyAverage>) (<job0>, 0, <RecoAcqOutFilter Av{displayEachAccumulation=1;displayEachScan=0;displayEachPeStep=0;displayFt=0;magnitudeImage=1;shuffle=0;ftSize=4096;size=4096;offset=0;cnt=2;ndx=0;procnoPath="/opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/pdata/1/";displayObjects=1;modalityType=1;innerObjects=1;outerObjects=1;average=1;numRecs=4;overlayCurves=0;}>) (<job0>, 0, <RecoCastFilter CastToIntMain{dataRep=SIGNED;wordSize=4}>) (<job1>, 0, <RecoSharedQueueSource Q0{queueId=Job_In1;initQueue=true;appendPsId=true;dim=2;procDim=1;sizes={512,1};nr=196;dataRep=SIGNED;baseField=COMPLEX;wordSize=4}>) (<job1>, 0, <RecoSharedQueueSink QS{queueId=Job_Out1;initQueue=true;appendPsId=true}>) (<job1>, 0, <RecoFileSink FS{jobNdx=1;writeAcqPars=false;filename="/opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/rawdata.Navigator"}>) (<job1>, 0, <RecoCastFilter CastToFloatMain{dataRep=FLOAT;wordSize=8}>) (<job1>, 0, <RecoDetermineB0Filter DB{width=\<ACQ_DriftCompFilterWidth\>;step=\<ACQ_DriftCompStep\>;sampleBW=20000.000000;B0Value=\<ACQ_DriftCompOffset\>;activeReceivers=4;debugFiles=0;}>) (<job1>, 0, <RecoReloadB0Filter B0{B0Value=\<ACQ_DriftCompOffset\>;B0CC=625000.000000;simulationMode=false}>) (<job1>, 0, <RecoAcqOutFilter Av{displayEachAccumulation=0;displayEachScan=1;displayEachPeStep=0;displayFt=0;magnitudeImage=1;shuffle=0;ftSize=4096;size=4096;offset=0;cnt=2;ndx=1;procnoPath="/opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/pdata/1/";displayObjects=1;modalityType=1;innerObjects=1;outerObjects=1;average=1;numRecs=4;overlayCurves=0;}>) (<job1>, 0, <RecoCastFilter CastToIntMain{dataRep=SIGNED;wordSize=4}>) (<job1>, 0, <RecoTeeFilter TeeStorage>) (<input>, 0, <RecoFileSource FS0{initFromRawJob=0;procDim=1;numChan=4;contData=true;}>) (<input>, 0, <RecoSharedQueueSink JQ0{queueId=Job_Out0;appendPsId=true;initQueue=true;}>) (<input>, 0, <RecoFileSource FS1{initFromRawJob=1;procDim=1;numChan=4;contData=true;}>) (<input>, 0, <RecoSharedQueueSink JQ1{queueId=Job_Out1;appendPsId=true;initQueue=true;}>) (<compute>, 0, <RecoSharedQueueSource Q0{initFromJob=0;queueId=Job_Out0;appendPsId=true;}>) (<compute>, 0, <RecoSharedQueueSource JQ1{initFromJob=1;queueId=Job_Out1;appendPsId=true;}>) (<compute>, 0, <RecoDummySink JS1{verbose=false}>) (<compute>, 0, <RecoBufferSink S0{procDim=1;frameDim=2;bufferId="FIRSTPASS0";memId="out0"}>) (<compute>, 0, <RecoBufferSink S1{procDim=1;frameDim=2;bufferId="FIRSTPASS1";memId="out1"}>) (<compute>, 0, <RecoBufferSink S2{procDim=1;frameDim=2;bufferId="FIRSTPASS2";memId="out2"}>) (<compute>, 0, <RecoBufferSink S3{procDim=1;frameDim=2;bufferId="FIRSTPASS3";memId="out3"}>) (<compute>, 0, <RecoSplitFilter SP0{dim=1; keepBlocksize=1}>) (<compute>, 0, <RecoCastFilter CAST0{dataRep=FLOAT; wordSize=8}>) (<compute>, 0, <RecoCastFilter CAST1{dataRep=FLOAT; wordSize=8}>) (<compute>, 0, <RecoCastFilter CAST2{dataRep=FLOAT; wordSize=8}>) (<compute>, 0, <RecoCastFilter CAST3{dataRep=FLOAT; wordSize=8}>) (<compute>, 1, <RecoBufferSource Q0{procDim=1;frameDim=2;bufferId="FIRSTPASS0";memId="out0"}>) (<compute>, 1, <RecoBufferSource Q1{procDim=1;frameDim=2;bufferId="FIRSTPASS1";memId="out1"}>) (<compute>, 1, <RecoBufferSource Q2{procDim=1;frameDim=2;bufferId="FIRSTPASS2";memId="out2"}>) (<compute>, 1, <RecoBufferSource Q3{procDim=1;frameDim=2;bufferId="FIRSTPASS3";memId="out3"}>) (<compute>, 1, <RecoBufferSink S0{procDim=1;frameDim=2;bufferId="PREPPASS0";memId="in0"}>) (<compute>, 1, <RecoScaleFilter SCALE0{scaleFactor=\<RecoScaleChan[0]\>; phaseOffset=\<RecoPhaseChan[0]\>}>) (<compute>, 1, <RecoScaleFilter SCALE1{scaleFactor=\<RecoScaleChan[1]\>; phaseOffset=\<RecoPhaseChan[1]\>}>) (<compute>, 1, <RecoScaleFilter SCALE2{scaleFactor=\<RecoScaleChan[2]\>; phaseOffset=\<RecoPhaseChan[2]\>}>) (<compute>, 1, <RecoScaleFilter SCALE3{scaleFactor=\<RecoScaleChan[3]\>; phaseOffset=\<RecoPhaseChan[3]\>}>) (<compute>, 1, <RecoAddFilter SOS0>) (<compute>, 1, <RecoMagnitudeFilter G0>) (<compute>, 1, <RecoMinMaxFilter M0{map_min=\<RECO_map_min\>;map_max=\<RECO_map_max\>;}>) (<compute>, 2, <RecoBufferSource Q0{procDim=1;frameDim=2;bufferId="PREPPASS0";memId="in0"}>) (<compute>, 2, <RecoSharedQueueSink S0{initQueue=true;queueId=RecoComp_Out;appendPsId=true;}>) (<compute>, 2, <RecoMapFilter MAP0{symmetricMode=true;minima=\<RECO_minima\>;maxima=\<RECO_maxima\>;slope=\<RECO_map_slope\>;offset=\<RECO_map_offset\>;map_min=\<RECO_map_min\>;map_max=\<RECO_map_max\>;rangeMin=-32766.500000;rangeMax=32766.500000;perObjectMode=false;cutoffMode=true;}>) (<compute>, 2, <RecoCastFilter CAST0{dataRep=SIGNED;wordSize=2}>) (<output>, 2, <RecoSharedQueueSource Q{queueId=RecoComp_Out;appendPsId=true;procDim=1;initFromRECO=true;}>) (<output>, 2, <RecoProfileDisplayFilter DISP{isRecoDisp=true;dim=1;modalityType=1;procnoPath="/opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/pdata/1/";}>) (<output>, 2, <RecoFileSink S{writePars=true;shuffle=false;filename="2dseq";numChans=1;}>) (<compute>, 0, <RecoAverageFilter AVE0{avList=\<AverageList\>;avListSize=1;nObj=1;newSize=\<RECO_inp_size\>;}>) (<compute>, 0, <RecoAverageFilter AVE1{avList=\<AverageList\>;avListSize=1;nObj=1;newSize=\<RECO_inp_size\>;}>) (<compute>, 0, <RecoAverageFilter AVE2{avList=\<AverageList\>;avListSize=1;nObj=1;newSize=\<RECO_inp_size\>;}>) (<compute>, 0, <RecoAverageFilter AVE3{avList=\<AverageList\>;avListSize=1;nObj=1;newSize=\<RECO_inp_size\>;}>) (<compute>, 0, <RecoSpectCorrFilter SPECTCORR0{useNav  = 0;refPoint = 0;digShift = 76.125;refcor = 1;refData = \<PVM_RefScan[0]\>;filterWidth = 0;relNavBw = 4}>) (<compute>, 0, <RecoSpectCorrFilter SPECTCORR1{useNav  = 0;refPoint = 0;digShift = 76.125;refcor = 1;refData = \<PVM_RefScan[1]\>;filterWidth = 0;relNavBw = 4}>) (<compute>, 0, <RecoSpectCorrFilter SPECTCORR2{useNav  = 0;refPoint = 0;digShift = 76.125;refcor = 1;refData = \<PVM_RefScan[2]\>;filterWidth = 0;relNavBw = 4}>) (<compute>, 0, <RecoSpectCorrFilter SPECTCORR3{useNav  = 0;refPoint = 0;digShift = 76.125;refcor = 1;refData = \<PVM_RefScan[3]\>;filterWidth = 0;relNavBw = 4}>) (<compute>, 1, <RecoFTShiftFilter FTS0{shift=0.5; winDirection=0; exponent=1}>) (<compute>, 1, <RecoFTFilter FT0{direction=0; exponent=1}>) (<compute>, 1, <RecoTeeFilter T0>) (<compute>, 1, <RecoCastFilter FILECAST0{wordSize=4; dataRep=SIGNED}>) (<compute>, 1, <RecoFileSink FSINK0{filename="/opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/fid";shuffle=true}>) (<compute>, 1, <RecoZfillFilter ZFILL0{fillingPosition=1.0;fixedSize=4096}>) (<compute>, 1, <RecoDivideFilter DIV0{divisor=4}>)
+##$RecoStageNrEdges=60
+##$RecoStageEdges=( 60 )
+(<job0>, 0, <Q0-\>PM>) (<job0>, 0, <PM-\>TeeStorage>) (<job0>, 0, 
+<TeeStorage-\>CastToFloatMain>) (<job0>, 0, <CastToFloatMain-\>TeeAverage>) 
+(<job0>, 0, <TeeAverage-\>Av>) (<job0>, 0, <Av-\>DummyAverage>) (<job0>, 0, 
+<TeeAverage-\>CastToIntMain>) (<job0>, 0, <CastToIntMain-\>QS>) (<job0>, 0, 
+<TeeStorage-\>FS>) (<job1>, 0, <Q0-\>CastToFloatMain>) (<job1>, 0, 
+<CastToFloatMain-\>DB>) (<job1>, 0, <DB-\>B0>) (<job1>, 0, <B0-\>Av>) (<job1>,
+ 0, <Av-\>CastToIntMain>) (<job1>, 0, <CastToIntMain-\>TeeStorage>) (<job1>, 
+0, <TeeStorage-\>QS>) (<job1>, 0, <TeeStorage-\>FS>) (<input>, 0, <FS0-\>JQ0>)
+ (<input>, 0, <FS1-\>JQ1>) (<compute>, 0, <JQ1-\>JS1>) (<compute>, 0, 
+<Q0-\>SP0>) (<compute>, 0, <SP0-\>CAST0>) (<compute>, 0, <SP0-\>CAST1>) 
+(<compute>, 0, <SP0-\>CAST2>) (<compute>, 0, <SP0-\>CAST3>) (<compute>, 0, 
+<AVE0-\>S0>) (<compute>, 0, <AVE1-\>S1>) (<compute>, 0, <AVE2-\>S2>) 
+(<compute>, 0, <AVE3-\>S3>) (<compute>, 1, <Q0-\>SCALE0>) (<compute>, 1, 
+<Q1-\>SCALE1>) (<compute>, 1, <Q2-\>SCALE2>) (<compute>, 1, <Q3-\>SCALE3>) 
+(<compute>, 1, <SCALE0-\>SOS0.0>) (<compute>, 1, <SCALE1-\>SOS0.1>) (<compute>
+, 1, <SCALE2-\>SOS0.2>) (<compute>, 1, <SCALE3-\>SOS0.3>) (<compute>, 1, 
+<FT0-\>G0>) (<compute>, 1, <G0-\>M0>) (<compute>, 1, <M0-\>S0>) (<compute>, 2,
+ <Q0-\>MAP0>) (<compute>, 2, <MAP0-\>CAST0>) (<compute>, 2, <CAST0-\>S0>) 
+(<output>, 2, <Q-\>DISP>) (<output>, 2, <DISP-\>S>) (<compute>, 0, 
+<SPECTCORR0-\>AVE0>) (<compute>, 0, <SPECTCORR1-\>AVE1>) (<compute>, 0, 
+<SPECTCORR2-\>AVE2>) (<compute>, 0, <SPECTCORR3-\>AVE3>) (<compute>, 0, 
+<CAST0-\>SPECTCORR0>) (<compute>, 0, <CAST1-\>SPECTCORR1>) (<compute>, 0, 
+<CAST2-\>SPECTCORR2>) (<compute>, 0, <CAST3-\>SPECTCORR3>) (<compute>, 1, 
+<T0-\>FTS0>) (<compute>, 1, <FTS0-\>FT0>) (<compute>, 1, <SOS0-\>T0>) 
+(<compute>, 1, <T0-\>DIV0>) (<compute>, 1, <FILECAST0-\>ZFILL0>) (<compute>, 
+1, <ZFILL0-\>FSINK0>) (<compute>, 1, <DIV0-\>FILECAST0>)
+##$ACQ_SetupRecoDisplay=Yes
+##$ACQ_SetupImageType=MAGNITUDE_IMAGE
+##$RecoDisplay=Yes
+##$RecoEachNR=No
+##$RecoPrototype=No
+##$RecoGradientLinearityCorrection=No
+##$RecoGradientLinearityCorrectionDebug=1
+##$RecoGradientLinearityCorrectionApprox=No
+$$ @vis= RECO RECO_INSTANCE RECO_fov RECO_size RecoAutoDerive RecoDim
+$$ @vis= RecoSpatDim RecoObjectsPerRepetition RecoObjectsPerSetupStep
+$$ @vis= RecoSortObjectsPerRepetition RecoNumRepetitions RecoNumOutputChan
+$$ @vis= RecoEncodingFrames RecoRepetitionGroupSize RECO_inp_order
+$$ @vis= RECO_inp_size RECO_ft_size RECO_wdw_mode RECO_ft_mode RECO_pc_mode
+$$ @vis= RECO_rotate RECO_transposition RECO_image_type RECO_wordtype
+$$ @vis= RECO_map_mode RECO_byte_order RecoModeUser RecoUserUpdate
+$$ @vis= RecoB0DemodOff RecoWindow RecoFTOrder RecoHalfFT RecoHalfFTPos
+$$ @vis= RecoHalfFTAcq RecoNoFT RecoExportSortedData RecoCorrPhase
+$$ @vis= RecoCorrPhaseRef RecoMap RecoNumInputChan RecoScaleChan RecoPhaseChan
+$$ @vis= RecoCombineMode RecoEncGenInt RecoSortGroup RecoSortDim
+$$ @vis= RecoGrappaGroup RecoGrappaAccelFactor RecoGrappaAccelFactor2
+$$ @vis= RecoGrappaFirstRepOnly RecoGrappaCoefReps RecoSliceGrappaAccelFactor
+$$ @vis= RecoSliceGrappaBlipValue RecoSliceGrappaOff RecoGrappa3D
+$$ @vis= RecoGrappaCaipirinha RecoGrappaTCaipirinha RecoGrappaOne
+$$ @vis= RecoSegGrappa RecoSegGrappaCalibrateFromB0 RecoSegGrappaInt
+$$ @vis= RecoSegGrappaSegments RecoItGrappa RecoCSGroup RecoCS
+$$ @vis= RecoRegridNGroup RecoRegridN RecoStageGroup RecoStageNrPasses
+$$ @vis= RecoStagePasses RecoStageNrNodes RecoStageNodes RecoStageNrEdges
+$$ @vis= RecoStageEdges RECO_GS ACQ_SetupRecoDisplay ACQ_SetupImageType
+$$ @vis= RECO_GO RecoDisplay RecoEachNR RecoPrototype
+$$ @vis= RecoGradientLinearityCorrection RecoGradientLinearityCorrectionDebug
+$$ @vis= RecoGradientLinearityCorrectionApprox
+##END=
+$$ File finished by PARX at 2025-07-11 11:03:44.979 +0200

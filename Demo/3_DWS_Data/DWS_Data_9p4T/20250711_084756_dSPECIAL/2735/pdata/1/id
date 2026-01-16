@@ -1,0 +1,15 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums
+$$ 2025-07-11 10:49:50.133 +0200  cristina@cibmsafe94t1
+$$ /opt/PV-360.3.5/data/cristina/20250711_084756_Toi_dMRS_20250711_RatFem_dSPECIAL_dMRI_1_4/35/pdata/1/id
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$DATASET_KEY=( 65 )
+<2.16.756.5.5.200.8323328.1372159.1752223789.1952>
+##$DATASET_Modality=MR_Modality
+##$DATASET_ExperimentValid=Yes
+##END=
+$$ File finished by PARX at 2025-07-11 10:49:50.133 +0200
