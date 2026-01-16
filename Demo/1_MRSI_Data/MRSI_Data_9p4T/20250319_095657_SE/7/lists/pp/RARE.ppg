@@ -1,0 +1,178 @@
+;****************************************************************
+;
+; Copyright (c) 2002
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+;
+; a RARE imaging experiment
+;
+;****************************************************************
+;
+;
+
+#include <MRI.include>
+#include <PrepModulesHead.mod>
+#include <Fws.mod>
+
+define list<frequency> freqTx = {$ACQ_O1_list} ; no auto increment desired
+define list<frequency> freqRx = {$ACQ_O1B_list}
+
+define loopcounter lds = {$PVM_DummyScans}
+
+define delay denab
+"denab = d3 - de"
+
+define delay d5m40u
+"d5m40u = d5 - 40u"
+
+INIT_DEVICES
+
+#define r2d ACQ_spatial_phase_1
+#define r3d ACQ_spatial_phase_2
+
+grad_zero_for_gs <r2d, r3d>
+
+
+;pre-setting the r2d counter for the dummy scans:
+
+decr,   0u      r2d.dec
+	0u      r3d.dec
+        lo to decr times l1        ;PVM_DummyScans * PVM_RareFactor
+
+;----------------------- preparation modules -----------------------
+                subr FlowSatInit()
+                subr SatTransInit()
+
+start,  0u           r2d.store
+	0u           r3d.store
+
+acc,    0u
+
+                subr DriftComp()
+
+    if(PVM_BlBloodOnOff == On)
+    {
+                subr TriggerPhase()
+    }
+                subr BlBlood(ph0)
+                subr TriggerPhase()
+                subr SliceSelIr()
+
+slice,               UPDATE_DYN_PARS_30u 	
+       10u           freqRx(receive):f1
+        0u           freqRx.inc
+
+                subr TriggerSlice()
+                subr FlowSat()
+                subr Tagging()
+                subr FovSat()
+                subr SatTrans()
+                subr FatSup()
+
+;---------------------------- excitation ---------------------------
+        d9           grad_ramp{g1, 0, g1}                ;TR spoiler
+        d3           grad_ramp{ 0, 0, g0}    freqTx:f1     ;slice on
+
+       (p0:sp0       ph0):f1                              ;exc pulse
+
+        d2           grad_ramp{g2, 0, g7}                 ;read deph
+        d1           grad_off                             ;TE-fill 1
+
+                subr FwsDelTE1(freqTx)
+
+;--------------------------- refocusing ----------------------------
+echo1,  0u           r2d.restore
+	0u           r3d.restore
+echo,   d3           grad_ramp{ 0, 0, g0}                  ;slice on
+
+       (p1:sp1       ph1):f1                               ;pi-pulse
+
+        d5           grad_ramp{g8, r2d*g4, g3-r3d*g6} ;enc+slice-reph
+        d6           grad_off                            ;TE-fill 2a
+
+                subr FwsDelTE2a(freqTx)
+
+     denab           grad_ramp{g5, 0, 0}               ;read-on + acq
+                     ADC_INIT_(job0, ph0, ph1)
+
+  AQ_(job0)          ADC_START_(job0)
+
+        d6           grad_off                            ;TE-fill 2b
+
+                subr FwsDelTE2b(freqTx)
+
+    d5m40u           grad_ramp{g8, -r2d*g4, g3+r3d*g6} ;enc+slice-reph2
+       40u           ADC_END_(job0)
+
+        0u           r2d.inc
+	0u           r3d.inc
+
+     lo to echo  times PVM_RareFactor
+
+     lo to echo1 times PVM_NEchoImages
+
+;----------------------------- flipback ----------------------------
+    if( PVM_FlipBackOnOff == On)
+    {
+        d3           grad_ramp{0, 0, g0}                   ;slice on
+
+       (p1:sp1       ph1):f1                               ;pi-pulse
+
+        d1           grad_off
+        d2           grad_ramp{g2, 0, g7}              ;read-dephase
+        d3           grad_ramp{ 0, 0, g0}                  ;slice on
+
+       (p0:sp0       ph3):f1                               ;flipback
+    }
+
+        d3           grad_off
+
+;---------------------------- slice loop ---------------------------
+        0u           grad_matrix.inc
+        d0           freqTx.inc
+
+                subr FlowSatInc()
+
+     lo to slice times NSLICES
+
+       d10
+
+;--------------------------- dummy loop ----------------------------
+                    "lds = lds - 1"
+    if "lds>=0" goto start
+
+
+;-------------------- fat water separation loop --------------------
+                subr FwsLoop(acc)
+
+;-------------------------- averaging loop -------------------------
+        0u           ipp0
+        0u           ipp3
+
+     lo to acc times NA
+
+;-----------------------------  common-loop (2D/3D)  -----------------------------
+        0u           rpp0
+        0u           rpp3
+
+     lo to start times l2        ; PVM_EncGenTotalSteps / PVM_RareFactor
+
+;---------------------- motion averaging loop ----------------------
+     lo to start times NAE
+
+;-------------------------- sattrans loop --------------------------
+                subr SatTransInc()
+
+;------------------------- repetition loop -------------------------
+                subr Evolution()
+
+     lo to start times NR
+
+SETUP_GOTO(start)
+exit
+
+ph0 = 0 2
+ph1 = 1
+ph3 = 2 0
