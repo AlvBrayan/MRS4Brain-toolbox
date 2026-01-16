@@ -1,0 +1,33 @@
+##TITLE=Parameter List, ParaVision 360 V3.3
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums
+$$ 2024-05-30 11:03:09.246 +0200  cristina@cibmscannerd
+$$ /opt/nmrdata/PV-360.3.3/data/cristina/20240530_092213_BDL776_sham_male_30052024_BDL776_sham_male_30052024_1_1/25/AdjStatePerScan
+$$ process /opt/PV-360.3.3/prog/bin/parxserver
+##$AdjScanStateCompleted=No
+##$AdjScanStateAdjName=( 5, 128 )
+<ATS_Scan> <SHIM_Scan> <ArrayPhase> <ReferenceScan> <RCVR_Standard>
+##$AdjScanStateTime=( 5 )
+<2024-05-30T11:02:17,062+0200> <2024-05-30T11:02:17,886+0200> 
+<2024-05-30T11:02:18,772+0200> <2024-05-30T11:02:26,662+0200> 
+<2024-05-30T11:03:03,850+0200>
+##$AdjScanStateExpno=( 5 )
+25 25 25 25 25
+##$AdjScanStateState=( 5 )
+adj_successful adj_successful adj_successful adj_successful adj_successful
+##$AdjScanStateResultId=( 5, 65 )
+<2.16.756.5.5.200.8323328.53286.1717059737.2079> 
+<2.16.756.5.5.200.8323328.53286.1717059737.2091> 
+<2.16.756.5.5.200.8323328.53286.1717059738.2107> 
+<2.16.756.5.5.200.8323328.53286.1717059739.2123> 
+<2.16.756.5.5.200.8323328.53286.1717059776.2141>
+##$AdjScanStateMethod=( 5, 128 )
+<User:specialjmDWspIRnoXtt> <Bruker:AdjShim> <User:specialjmDWspIRnoXtt> 
+<User:specialjmDWspIRnoXtt> <User:specialjmDWspIRnoXtt>
+##$AdjScanStateModality=( 5 )
+MR_Modality MR_Modality MR_Modality MR_Modality MR_Modality
+##END=
+$$ File finished by PARX at 2024-05-30 11:03:09.247 +0200
