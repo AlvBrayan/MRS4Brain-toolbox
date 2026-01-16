@@ -1,0 +1,34 @@
+##TITLE=Parameter List, ParaVision 360 V3.5
+##JCAMPDX=4.24
+##DATATYPE=Parameter Values
+##ORIGIN=Bruker BioSpin MRI GmbH
+##OWNER=cristina
+$$ Write Options: Symbolic Enums, RLE encoded arrays, symbol visibility
+$$ 2024-10-29 21:23:59.210 +0100  cristina@cibmsafe94t1
+$$ /opt/PV-360.3.5/data/cristina/20241029_191407_291024_BDL791_shamFem_6w_MRSI_SVS_291024_BDL791_shamFem_6w_MRSI_SVS_1_1/22/pdata/1/methreco
+$$ process /opt/PV-360.3.5/prog/bin/parxserver
+##$RetroFrequencyLock_OnOff=Off
+##$Edc_OnOff=On
+##$EdcManualFilter=No
+##$EdcFilterWidthHz=120
+##$CalcLineWidth=On
+##$LineWidth=( 1, 1, 1 )
+10.3779930809002
+##$PVM_SpectAutoProcessing=No
+##$PVM_SpectAutoPhaseCorr=( 1 )
+No
+##$PVM_SpectExpLineBroadening=( 1 )
+No
+##$PVM_SpectExpLineBroadeningHz=( 1 )
+0.01
+##$PVM_SpectAutoBaselineCorr=( 1 )
+No
+##$PVM_SpectZeroFillingFactor=( 1 )
+1
+##$PVM_SpectAutoProcessingPpmRange=( 1, 2 )
+4 1
+##$PVM_SpectAutoProcessingPeakNoiseRatio=10
+$$ @vis= MethodRecoGroup RetroFrequencyLock_OnOff Edc_OnOff EdcManualFilter
+$$ @vis= CalcLineWidth LineWidth SpectAutoProcessing PVM_SpectAutoProcessing
+##END=
+$$ File finished by PARX at 2024-10-29 21:23:59.210 +0100

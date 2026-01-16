@@ -1,0 +1,83 @@
+;****************************************************************
+;
+; Copyright (c) 2006
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+;
+; STEAM.ppg - voxel selective spectroscopy  method
+;
+;****************************************************************
+
+#include <MRI.include>
+
+#include <PrepModulesHead.mod>
+#include <STEAM_Head.mod>
+#include <Navigator.mod>
+
+define loopcounter lds={$PVM_DummyScans}
+
+define list<loopcounter> avList={$AverageList}
+
+define list<frequency> freqRx={$ACQ_O1B_list}
+
+INIT_DEVICES
+
+;-------D/P-----GRAD----------------------------RF/ACQ------------
+
+        0u                              rpp1
+        0u                              rpp2
+        0u                              rpp3
+        0u				rpp31
+
+start, UPDATE_DYN_PARS_30u   
+       10u				freqRx(receive):f1	
+
+subr TriggerSlice()
+subr Noe()
+subr WsOvs(ph0,ph0)
+
+;---------localisation  module------------------------------------
+subr SteamSpecLoc(sp1,ph1,ph2,ph3,ph0,ph31)
+	1m	ADC_END_(job0)
+
+if(PVM_NavOnOff == On)
+{	
+	20u     switch_realtime_tables
+	subr NavigatorGlobal(sp0, ph31, ph0, ph31)
+}
+	d0
+;---------dummy scans ------------------------------------------------
+	"lds = lds - 1"		
+	if "lds>=0" goto start	
+;---------averaging & phase cycling-----------------------------------
+	if ( ACQ_scan_type == Scan_Experiment ) 
+	{
+		0u					ipp1
+		0u					ipp2
+		0u 					ipp3
+		0u 					ipp31
+	}
+	lo to start times avList	
+	0u					avList.inc
+	0u					rpp1
+	0u					rpp2
+	0u 					rpp3
+	0u 					rpp31
+        
+        lo to start times NR
+SETUP_GOTO(start)
+exit
+
+
+ph0 = 0
+ph1 = {0 0 0 0 0 0 0 0  0 0 0 0 0 0 0 0}^2^1^3
+ph2 = {0 0 1 1 0 0 1 1  2 2 3 3 2 2 3 3}^2^1^3
+ph3 = {0 2 0 2 1 3 1 3  0 2 0 2 1 3 1 3}^2^1^3
+ph31= {0 2 1 3 1 3 2 0  2 0 3 1 3 1 0 2}^2^1^3
+
+
+
+
+
