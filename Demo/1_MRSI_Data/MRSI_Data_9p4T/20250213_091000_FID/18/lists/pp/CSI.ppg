@@ -1,0 +1,170 @@
+;****************************************************************
+;
+; Copyright (c) 2013
+; Bruker BioSpin MRI GmbH
+; D-76275 Ettlingen, Germany
+;
+; All Rights Reserved
+; 
+; CSI_TEMPLATE - a gradient echo imaging method
+;
+;****************************************************************
+;
+; d0 - TR padding
+; d1 - T1 padding
+; d3 - GradDelayTime
+; d4 - RiseTime
+
+#include <MRI.include>
+#include <PrepModulesHead.mod> 
+#include <acqdec.mod>
+#include <Navigator.mod>
+#include <DynamicShim.mod>
+
+
+#define r1d ACQ_spatial_phase_0
+#define r2d ACQ_spatial_phase_1
+#define r3d ACQ_spatial_phase_2
+
+define list<frequency> freqTx1={$ACQ_O1_list}
+define list<frequency> freqTx2={$ACQ_O2_list}
+define list<frequency> freqRx={$ACQ_O1B_list}
+
+define list<loopcounter> avList={$AverageList}
+define loopcounter lds = {$PVM_DummyScans}
+
+define delay RefSpDur ={$RefSpDur}
+define delay FillTE1_1={$FillTE1_1}
+define delay FillTE1_2={$FillTE1_2}
+define delay FillTE2_1={$FillTE2_1}
+define delay FillTE2_2={$FillTE2_2}
+
+define delay d4m20
+"d4m20 = d4-20u" ;compensates for 20u delay (including de) in acqdec
+
+define delay d4d3
+"d4d3 = d4 + d3"
+
+
+grad_zero_for_gs <r1d, r2d, r3d>
+
+
+INIT_DEVICES
+
+subr DynamicShimRes()
+
+start,  0u
+
+if(PVM_NavOnOff == On)
+{
+	20u switch_realtime_tables
+	subr NavigatorGlobal(sp2, ph0, ph0, ph1)
+}
+
+subr TriggerPhase()
+
+;----------------------------------start of the main loop ----------
+slice,  UPDATE_DYN_PARS_30u
+        subr DynamicShimApply()
+
+        10u				  freqRx(receive):f1
+
+;----------------------------------preparation modules -------------
+
+subr TriggerSlice()
+subr Noe()
+subr WsOvs(ph0,ph0)
+subr FovSat()
+subr FatSup()
+
+        d6	       grad_ramp{ 0 , 0 , g5 }  ;Spoiler
+;----------------------------------slice selection------------------	
+	d4 	       grad_ramp{ 0 , 0 , g0 }         freqTx1:f1
+	(p0:sp0 ph0):f1
+	d4 	       grad_off		               freqTx1.inc
+
+if (LocalizationMode == Voxel_PRESS)
+{
+	FillTE1_1
+	RefSpDur       grad_ramp{RefSpAmp, 0, 0}       freqTx1:f1
+	d4	       grad_ramp{RefGrad1, 0, 0}       freqTx1.inc
+	(p1:sp1 ph1):f1
+	RefSpDur       grad_ramp{RefSpAmp, 0, 0}
+	d4	grad_off
+	FillTE1_2
+
+	FillTE2_1
+	RefSpDur      grad_ramp{0, RefSpAmp, 0}        freqTx1:f1
+	d4	      grad_ramp{0, RefGrad2, 0}        freqTx1.inc
+	(p1:sp1 ph1):f1
+	RefSpDur      grad_ramp{0,RefSpAmp, 0}
+	d4	      grad_off
+	FillTE2_2
+}
+
+if (LocalizationMode == Slice_SE)
+{
+	FillTE1_1
+	RefSpDur      grad_ramp{0, 0, RefSpAmp}        freqTx2:f1
+	d4	      grad_ramp{0, 0, RefGrad1}        freqTx2.inc
+	(p1:sp1 ph1):f1
+	RefSpDur      grad_ramp{0, 0, RefSpAmp}
+	d4	      grad_off
+	FillTE1_2
+}
+
+if (LocalizationMode == Slice_FID)
+{
+	FillTE1_1
+}
+
+
+;----------------------------------slice rephase and encoding -----
+	d1 	      grad_ramp{ r1d*g2 , r2d*g3 , g1+r3d*g4 }     ;switching of +/-g1 in method
+	d4m20  	      grad_off
+
+;----------------------------------acquisition---------------
+subr acqdec(ph30,ph31, AQ_(job0))                     ; lasts aqq+20u	
+	1m            ADC_END_(job0)
+
+	d0
+
+;----------------------------------slice loop-----------------------
+        subr DynamicShimInc()
+	0u grad_matrix.inc
+        lo to slice times NSLICES
+        subr DynamicShimRes()
+;---------------------------------- dummy scans --------------------
+        if "lds>0"
+        {
+          "lds = lds-1"
+           goto start
+        }
+;----------------------------------averaging loop-------------------
+        lo to start times avList
+        0u avList.inc
+;----------------------------------1d loop--------------------------
+	0u r1d.inc
+        0u r2d.inc 
+        0u r3d.inc
+	lo to start times l1
+
+        lo to start times NAE
+        lo to start times NR
+
+SETUP_GOTO(start)
+
+exit
+
+ph0 = 0  ; exc pulse
+ph1 = 1  ; ref pulse
+ph31 = 0 ; receiver
+ph30 = 0 ; reference
+
+
+	
+
+
+
+
+
