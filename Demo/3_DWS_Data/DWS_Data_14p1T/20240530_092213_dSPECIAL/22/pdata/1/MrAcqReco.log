@@ -1,0 +1,94 @@
+2024/05/30  10:35:44.335  [INFO]    MrAcqRecoPlugin: Plugin::init(): run 'gsauto -psMode 65 -prototypeMode 0 -adjName Reference Scan -procnoPath /opt/nmrdata/PV-360.3.3/data/cristina/20240530_092213_BDL776_sham_male_30052024_BDL776_sham_male_30052024_1_1/22/pdata/1 -serverName MrAcqReco_2.16.756.5.5.200.8323328.53286.1717058032.1656_82049_271074982_65 -logSeverityLevel SL_INFO ')
+2024/05/30  10:35:44.499  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': pulse program in compilation
+2024/05/30  10:35:50.777  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': loading TRX2
+2024/05/30  10:35:50.781  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': loading TRX3
+2024/05/30  10:35:50.808  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': prepare Gradients for Gradient Controller
+2024/05/30  10:35:51.168  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Loading AQS Rack
+2024/05/30  10:35:51.169  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Load GTU and TRX
+2024/05/30  10:35:51.296  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Start GTU and TRX
+2024/05/30  10:35:51.352  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': automatic adjustment in progress
+2024/05/30  10:35:51.566  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': acquisition started
+2024/05/30  10:36:01.566  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:36:01.871  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Sendgui': statusparsmodified
+2024/05/30  10:36:01.873  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Sendgui': statusparsmodified
+2024/05/30  10:36:01.985  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': acquisition  finished 
+2024/05/30  10:36:01.987  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 0. Message kind 'TerminateNormal': 
+2024/05/30  10:36:01.995  [INFO]    MrAcqRecoPlugin: Plugin::beforeStop(): finished
+2024/05/30  10:36:03.574  [INFO]    MrAcqRecoPlugin: Plugin::init(): run 'gsauto -psMode 65 -prototypeMode 0 -adjName Receiver Gain -procnoPath /opt/nmrdata/PV-360.3.3/data/cristina/20240530_092213_BDL776_sham_male_30052024_BDL776_sham_male_30052024_1_1/22/pdata/1 -serverName MrAcqReco_2.16.756.5.5.200.8323328.53286.1717058032.1656_82049_271074982_65 -logSeverityLevel SL_INFO ')
+2024/05/30  10:36:03.740  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': pulse program in compilation
+2024/05/30  10:36:10.491  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': loading TRX2
+2024/05/30  10:36:10.494  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': loading TRX3
+2024/05/30  10:36:10.526  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': prepare Gradients for Gradient Controller
+2024/05/30  10:36:10.886  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Loading AQS Rack
+2024/05/30  10:36:10.887  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Load GTU and TRX
+2024/05/30  10:36:11.015  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Start GTU and TRX
+2024/05/30  10:36:11.073  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': automatic adjustment in progress
+2024/05/30  10:36:11.309  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': acquisition started
+2024/05/30  10:36:15.604  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Sendgui': statusparsmodified
+2024/05/30  10:36:15.605  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Sendgui': statusparsmodified
+2024/05/30  10:36:15.714  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': acquisition  finished 
+2024/05/30  10:36:15.717  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 0. Message kind 'TerminateNormal': 
+2024/05/30  10:36:15.725  [INFO]    MrAcqRecoPlugin: Plugin::beforeStop(): finished
+2024/05/30  10:36:17.215  [INFO]    MrAcqRecoPlugin: Plugin::init(): run 'gop -psMode 65 -prototypeMode 0 -procnoPath /opt/nmrdata/PV-360.3.3/data/cristina/20240530_092213_BDL776_sham_male_30052024_BDL776_sham_male_30052024_1_1/22/pdata/1 -serverName MrAcqReco_2.16.756.5.5.200.8323328.53286.1717058032.1656_82049_271074982_65 -logSeverityLevel SL_INFO ')
+2024/05/30  10:36:17.400  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': pulse program in compilation
+2024/05/30  10:36:24.285  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': loading TRX2
+2024/05/30  10:36:24.288  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': loading TRX3
+2024/05/30  10:36:24.318  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': prepare Gradients for Gradient Controller
+2024/05/30  10:36:24.684  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Loading AQS Rack
+2024/05/30  10:36:24.686  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Load GTU and TRX
+2024/05/30  10:36:24.806  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': Start GTU and TRX
+2024/05/30  10:36:24.865  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': acquisition in progress
+2024/05/30  10:36:25.132  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': acquisition started
+2024/05/30  10:36:35.132  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:36:45.133  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:36:55.133  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:37:05.134  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:37:15.134  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:37:25.135  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:37:35.135  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:37:45.135  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:37:55.136  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:38:05.136  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:38:15.137  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:38:25.137  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:38:35.138  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:38:45.138  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:38:55.139  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:39:05.139  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:39:15.140  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:39:25.140  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:39:35.141  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:39:45.141  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:39:55.142  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:40:05.142  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:40:15.143  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:40:25.143  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:40:35.144  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:40:45.145  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:40:55.145  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:41:05.146  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:41:15.146  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:41:25.147  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:41:35.147  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:41:45.148  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:41:55.148  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:42:05.149  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:42:15.149  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:42:25.150  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:42:35.150  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:42:45.151  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:42:55.151  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:43:05.152  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:43:15.152  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:43:25.153  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:43:35.153  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:43:45.154  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:43:55.155  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:44:05.155  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:44:15.156  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:44:25.156  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Empty': 
+2024/05/30  10:44:31.077  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Sendgui': statusparsmodified
+2024/05/30  10:44:31.080  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Sendgui': statusparsmodified
+2024/05/30  10:44:31.179  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 1. Message kind 'Show_status': acquisition  finished 
+2024/05/30  10:44:31.350  [INFO]    MrAcqRecoPlugin: AcqClient::getMessageCorba(): return 0. Message kind 'TerminateNormal': 
+2024/05/30  10:44:31.796  [INFO]    MrAcqRecoPlugin: Plugin::beforeStop(): finished
