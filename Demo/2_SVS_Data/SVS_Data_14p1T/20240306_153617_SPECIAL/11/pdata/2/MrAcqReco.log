@@ -1,0 +1,2 @@
+2025/12/04  16:31:43.612  [INFO]    MrAcqRecoPlugin: Plugin::init(): run 'reco -psMode 87 -prototypeMode 0 -procnoPath /opt/nmrdata/PV-360.3.3/data/cristina/20240306_153617_SHAM761_SVS_malefemale_hippostriat_w6_JM_1_1/11/pdata/2 -serverName MrAcqReco_2.16.756.5.5.200.8323328.7578.1764862270.55_82049_281151182_87 -logSeverityLevel SL_INFO ')
+2025/12/04  16:31:48.792  [INFO]    MrAcqRecoPlugin: Plugin::beforeStop(): finished
