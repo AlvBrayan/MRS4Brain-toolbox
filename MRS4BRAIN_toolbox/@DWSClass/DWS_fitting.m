@@ -24,7 +24,7 @@ function DWS_fitting(obj)
 idx_met = find([obj.DWS_struct.met_bool]);
 b_value = zeros(length(idx_met),1);
 for t = 1:length(idx_met)
-    params = obj.DWS_struct(t).raw_study.dwsparams;
+    params = obj.DWS_struct(idx_met(t)).raw_study.dwsparams;
     b_value(t) = params.bvalue * 10^(-3);
 end
 obj.b_value = b_value;
