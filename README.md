@@ -1,7 +1,7 @@
 ![image](https://github.com/AlvBrayan/MRS4Brain-toolbox/assets/137405058/426b8e15-a07f-4758-bc38-48535edbc710)
 
 ## Description:
-The *MRS4Brain Toolbox* is developed by [*MRS4Brain*](https://www.epfl.ch/labs/mrs4brain/) research group @ CIBM MRI EPFL AIT and was designed to offer advanced functionalities for Bruker preclinical MRSI data, encompassing preprocessing, fitting, quantification, semi-automatic quality control, co-registration and segmentation of metabolic maps using anatomical images, all conveniently integrated within a single open-source graphical user interface (GUI). The development of this user-friendly toolbox aims to streamline the processing workflow and enhance the accessibility of MRSI for researchers in the preclinical field.
+The *MRS4Brain Toolbox* is developed by [*MRS4Brain*](https://www.epfl.ch/labs/mrs4brain/) research group @ CIBM PCI EPFL and was designed to offer advanced functionalities for Bruker preclinical MRSI data, encompassing preprocessing, fitting, quantification, semi-automatic quality control, co-registration and segmentation of metabolic maps using anatomical images, all conveniently integrated within a single open-source graphical user interface (GUI). The development of this user-friendly toolbox aims to streamline the processing workflow and enhance the accessibility of MRSI for researchers in the preclinical field.
 
 The *MRS4Brain Toolbox* is written in MATLAB 2023 or later (MathWorks, USA) and encompasses three distinct spectroscopy modalities (MRSI, single voxel MRS, dMRS), with our primary focus directed towards MRSI.
 
