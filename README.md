@@ -2,6 +2,7 @@
 
 ## Description:
 The *MRS4Brain Toolbox* is developed by [*MRS4Brain*](https://www.epfl.ch/labs/mrs4brain/) research group @ CIBM PCI EPFL and was designed to offer advanced functionalities for Bruker preclinical MRSI data, encompassing preprocessing, fitting, quantification, semi-automatic quality control, co-registration and segmentation of metabolic maps using anatomical images, all conveniently integrated within a single open-source graphical user interface (GUI). The development of this user-friendly toolbox aims to streamline the processing workflow and enhance the accessibility of MRSI for researchers in the preclinical field.
+https://link.springer.com/article/10.1007/s10334-026-01351-w 
 
 The *MRS4Brain Toolbox* is written in MATLAB 2023 or later (MathWorks, USA) and encompasses three distinct spectroscopy modalities (MRSI, single voxel MRS, dMRS), with our primary focus directed towards MRSI.
 
@@ -88,6 +89,11 @@ Dunja Simicic, Brayan Alves, Jessie Mosso, Guillaume Briand, Thanh Phong Lê, Ru
 Brayan Alves, Dunja Simicic, Jessie Mosso, Thanh Phong Lê, Guillaume Briand, Wolfgang Bogner, Bernard Lanz, Bernhard Strasser, Antoine Klauser, Cristina Cudalbu
 
 *Published in NMR in Biomedicine* : [DOI: 10.1002/nbm.5211](https://doi.org/10.1002/nbm.5211)
+
+“*MRS4Brain: a software for preclinical proton and deuterium-based MR spectroscopic imaging data*”
+
+Brayan Alves, Tan Toi Phan, Guillaume Briand, Alessio Siviglia, Gianna Nossa, Jessie Mosso, Eloïse Mougel, Jamie Near, Thi Ngoc Anh Dinh, Omar Zenteno, Bernard Lanz, Thanh Phong Lê, Cristina Cudalbu 
+*Published in MAGMA* :[DOI: 10.1007/s10334-026-01351-w](https://doi.org/10.1007/s10334-026-01351-w)
 
 ## Contact, Feedback, Suggestions: 
 
